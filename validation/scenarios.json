@@ -1,0 +1,785 @@
+{
+  "cases": [
+    {
+      "passes": [
+        "contact-shadows",
+        "compose",
+        "bloom-seed",
+        "bloom-x",
+        "bloom-y",
+        "final"
+      ],
+      "name": "default",
+      "allocations": [
+        {
+          "graphTargetBytes": 12902400,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "graphTargetBytes": 29030400,
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "graphTargetBytes": 51609600,
+          "width": 2560,
+          "height": 1440
+        },
+        {
+          "graphTargetBytes": 116121600,
+          "width": 3840,
+          "height": 2160
+        }
+      ],
+      "overrides": {}
+    },
+    {
+      "passes": [
+        "compose",
+        "final"
+      ],
+      "name": "minimal",
+      "allocations": [
+        {
+          "graphTargetBytes": 11059200,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "graphTargetBytes": 24883200,
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "graphTargetBytes": 44236800,
+          "width": 2560,
+          "height": 1440
+        },
+        {
+          "graphTargetBytes": 99532800,
+          "width": 3840,
+          "height": 2160
+        }
+      ],
+      "overrides": {
+        "BLOOM_STRENGTH": 0.0,
+        "VEGETATION_WIND": 0.0,
+        "SHADOW_QUALITY": 0.0,
+        "WATER_ENABLED": 0.0,
+        "AO_QUALITY": 0.0
+      }
+    },
+    {
+      "passes": [
+        "contact-shadows",
+        "compose",
+        "bloom-seed",
+        "bloom-x",
+        "bloom-y",
+        "final"
+      ],
+      "name": "enhanced",
+      "allocations": [
+        {
+          "graphTargetBytes": 12902400,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "graphTargetBytes": 29030400,
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "graphTargetBytes": 51609600,
+          "width": 2560,
+          "height": 1440
+        },
+        {
+          "graphTargetBytes": 116121600,
+          "width": 3840,
+          "height": 2160
+        }
+      ],
+      "overrides": {
+        "EDGE_SMOOTHING": 1.0,
+        "SHADOW_QUALITY": 2.0,
+        "AO_QUALITY": 2.0,
+        "WATER_WAVES": 1.0,
+        "SHADOW_DISTANCE": 96.0
+      }
+    },
+    {
+      "passes": [
+        "contact-shadows",
+        "compose",
+        "bloom-seed",
+        "bloom-x",
+        "bloom-y",
+        "final"
+      ],
+      "name": "all-maximum",
+      "allocations": [
+        {
+          "graphTargetBytes": 12902400,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "graphTargetBytes": 29030400,
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "graphTargetBytes": 51609600,
+          "width": 2560,
+          "height": 1440
+        },
+        {
+          "graphTargetBytes": 116121600,
+          "width": 3840,
+          "height": 2160
+        }
+      ],
+      "overrides": {
+        "SHADOW_QUALITY": 3.0,
+        "SHADOW_DISTANCE": 128.0,
+        "VEGETATION_WIND": 1.0,
+        "LIGHT_WARMTH": 1.0,
+        "NIGHT_BRIGHTNESS": 1.5,
+        "EMISSIVE_STRENGTH": 1.0,
+        "WATER_ENABLED": 1.0,
+        "WATER_WAVES": 1.0,
+        "WATER_DENSITY": 2.0,
+        "WATER_REFLECTION": 1.0,
+        "AO_QUALITY": 2.0,
+        "AO_STRENGTH": 1.0,
+        "FOG_STRENGTH": 1.0,
+        "BLOOM_STRENGTH": 0.16,
+        "BLOOM_THRESHOLD": 0.95,
+        "EXPOSURE": 1.3,
+        "CONTRAST": 1.08,
+        "SATURATION": 1.1,
+        "EDGE_SMOOTHING": 1.0,
+        "WET_SURFACES": 1.0,
+        "DITHERING": 1.0,
+        "CAVE_VISIBILITY": 1.0
+      }
+    },
+    {
+      "passes": [
+        "contact-shadows",
+        "compose",
+        "bloom-seed",
+        "bloom-x",
+        "bloom-y",
+        "final"
+      ],
+      "name": "shadow-0-water-0",
+      "allocations": [
+        {
+          "graphTargetBytes": 12902400,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "graphTargetBytes": 29030400,
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "graphTargetBytes": 51609600,
+          "width": 2560,
+          "height": 1440
+        },
+        {
+          "graphTargetBytes": 116121600,
+          "width": 3840,
+          "height": 2160
+        }
+      ],
+      "overrides": {
+        "SHADOW_QUALITY": 0.0,
+        "WATER_ENABLED": 0.0
+      }
+    },
+    {
+      "passes": [
+        "contact-shadows",
+        "compose",
+        "bloom-seed",
+        "bloom-x",
+        "bloom-y",
+        "final"
+      ],
+      "name": "shadow-0-water-1",
+      "allocations": [
+        {
+          "graphTargetBytes": 12902400,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "graphTargetBytes": 29030400,
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "graphTargetBytes": 51609600,
+          "width": 2560,
+          "height": 1440
+        },
+        {
+          "graphTargetBytes": 116121600,
+          "width": 3840,
+          "height": 2160
+        }
+      ],
+      "overrides": {
+        "SHADOW_QUALITY": 0.0,
+        "WATER_ENABLED": 1.0
+      }
+    },
+    {
+      "passes": [
+        "contact-shadows",
+        "compose",
+        "bloom-seed",
+        "bloom-x",
+        "bloom-y",
+        "final"
+      ],
+      "name": "shadow-1-water-0",
+      "allocations": [
+        {
+          "graphTargetBytes": 12902400,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "graphTargetBytes": 29030400,
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "graphTargetBytes": 51609600,
+          "width": 2560,
+          "height": 1440
+        },
+        {
+          "graphTargetBytes": 116121600,
+          "width": 3840,
+          "height": 2160
+        }
+      ],
+      "overrides": {
+        "SHADOW_QUALITY": 1.0,
+        "WATER_ENABLED": 0.0
+      }
+    },
+    {
+      "passes": [
+        "contact-shadows",
+        "compose",
+        "bloom-seed",
+        "bloom-x",
+        "bloom-y",
+        "final"
+      ],
+      "name": "shadow-1-water-1",
+      "allocations": [
+        {
+          "graphTargetBytes": 12902400,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "graphTargetBytes": 29030400,
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "graphTargetBytes": 51609600,
+          "width": 2560,
+          "height": 1440
+        },
+        {
+          "graphTargetBytes": 116121600,
+          "width": 3840,
+          "height": 2160
+        }
+      ],
+      "overrides": {
+        "SHADOW_QUALITY": 1.0,
+        "WATER_ENABLED": 1.0
+      }
+    },
+    {
+      "passes": [
+        "contact-shadows",
+        "compose",
+        "bloom-seed",
+        "bloom-x",
+        "bloom-y",
+        "final"
+      ],
+      "name": "shadow-2-water-0",
+      "allocations": [
+        {
+          "graphTargetBytes": 12902400,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "graphTargetBytes": 29030400,
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "graphTargetBytes": 51609600,
+          "width": 2560,
+          "height": 1440
+        },
+        {
+          "graphTargetBytes": 116121600,
+          "width": 3840,
+          "height": 2160
+        }
+      ],
+      "overrides": {
+        "SHADOW_QUALITY": 2.0,
+        "WATER_ENABLED": 0.0
+      }
+    },
+    {
+      "passes": [
+        "contact-shadows",
+        "compose",
+        "bloom-seed",
+        "bloom-x",
+        "bloom-y",
+        "final"
+      ],
+      "name": "shadow-2-water-1",
+      "allocations": [
+        {
+          "graphTargetBytes": 12902400,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "graphTargetBytes": 29030400,
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "graphTargetBytes": 51609600,
+          "width": 2560,
+          "height": 1440
+        },
+        {
+          "graphTargetBytes": 116121600,
+          "width": 3840,
+          "height": 2160
+        }
+      ],
+      "overrides": {
+        "SHADOW_QUALITY": 2.0,
+        "WATER_ENABLED": 1.0
+      }
+    },
+    {
+      "passes": [
+        "contact-shadows",
+        "compose",
+        "bloom-seed",
+        "bloom-x",
+        "bloom-y",
+        "final"
+      ],
+      "name": "shadow-3-water-0",
+      "allocations": [
+        {
+          "graphTargetBytes": 12902400,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "graphTargetBytes": 29030400,
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "graphTargetBytes": 51609600,
+          "width": 2560,
+          "height": 1440
+        },
+        {
+          "graphTargetBytes": 116121600,
+          "width": 3840,
+          "height": 2160
+        }
+      ],
+      "overrides": {
+        "SHADOW_QUALITY": 3.0,
+        "WATER_ENABLED": 0.0
+      }
+    },
+    {
+      "passes": [
+        "contact-shadows",
+        "compose",
+        "bloom-seed",
+        "bloom-x",
+        "bloom-y",
+        "final"
+      ],
+      "name": "shadow-3-water-1",
+      "allocations": [
+        {
+          "graphTargetBytes": 12902400,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "graphTargetBytes": 29030400,
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "graphTargetBytes": 51609600,
+          "width": 2560,
+          "height": 1440
+        },
+        {
+          "graphTargetBytes": 116121600,
+          "width": 3840,
+          "height": 2160
+        }
+      ],
+      "overrides": {
+        "SHADOW_QUALITY": 3.0,
+        "WATER_ENABLED": 1.0
+      }
+    },
+    {
+      "passes": [
+        "compose",
+        "bloom-seed",
+        "bloom-x",
+        "bloom-y",
+        "final"
+      ],
+      "name": "ao-disabled",
+      "allocations": [
+        {
+          "graphTargetBytes": 11980800,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "graphTargetBytes": 26956800,
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "graphTargetBytes": 47923200,
+          "width": 2560,
+          "height": 1440
+        },
+        {
+          "graphTargetBytes": 107827200,
+          "width": 3840,
+          "height": 2160
+        }
+      ],
+      "overrides": {
+        "AO_QUALITY": 0.0
+      }
+    },
+    {
+      "passes": [
+        "compose",
+        "bloom-seed",
+        "bloom-x",
+        "bloom-y",
+        "final"
+      ],
+      "name": "ao-zero-strength",
+      "allocations": [
+        {
+          "graphTargetBytes": 11980800,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "graphTargetBytes": 26956800,
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "graphTargetBytes": 47923200,
+          "width": 2560,
+          "height": 1440
+        },
+        {
+          "graphTargetBytes": 107827200,
+          "width": 3840,
+          "height": 2160
+        }
+      ],
+      "overrides": {
+        "AO_QUALITY": 2.0,
+        "AO_STRENGTH": 0.0
+      }
+    },
+    {
+      "passes": [
+        "contact-shadows",
+        "compose",
+        "bloom-seed",
+        "bloom-x",
+        "bloom-y",
+        "final"
+      ],
+      "name": "ao-eight-samples",
+      "allocations": [
+        {
+          "graphTargetBytes": 12902400,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "graphTargetBytes": 29030400,
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "graphTargetBytes": 51609600,
+          "width": 2560,
+          "height": 1440
+        },
+        {
+          "graphTargetBytes": 116121600,
+          "width": 3840,
+          "height": 2160
+        }
+      ],
+      "overrides": {
+        "AO_QUALITY": 2.0
+      }
+    },
+    {
+      "passes": [
+        "contact-shadows",
+        "compose",
+        "final"
+      ],
+      "name": "bloom-disabled",
+      "allocations": [
+        {
+          "graphTargetBytes": 11980800,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "graphTargetBytes": 26956800,
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "graphTargetBytes": 47923200,
+          "width": 2560,
+          "height": 1440
+        },
+        {
+          "graphTargetBytes": 107827200,
+          "width": 3840,
+          "height": 2160
+        }
+      ],
+      "overrides": {
+        "BLOOM_STRENGTH": 0.0
+      }
+    },
+    {
+      "passes": [
+        "contact-shadows",
+        "compose",
+        "bloom-seed",
+        "bloom-x",
+        "bloom-y",
+        "final"
+      ],
+      "name": "edge-smoothing",
+      "allocations": [
+        {
+          "graphTargetBytes": 12902400,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "graphTargetBytes": 29030400,
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "graphTargetBytes": 51609600,
+          "width": 2560,
+          "height": 1440
+        },
+        {
+          "graphTargetBytes": 116121600,
+          "width": 3840,
+          "height": 2160
+        }
+      ],
+      "overrides": {
+        "EDGE_SMOOTHING": 1.0
+      }
+    },
+    {
+      "passes": [
+        "contact-shadows",
+        "compose",
+        "final"
+      ],
+      "name": "bloom-off-edge-on",
+      "allocations": [
+        {
+          "graphTargetBytes": 11980800,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "graphTargetBytes": 26956800,
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "graphTargetBytes": 47923200,
+          "width": 2560,
+          "height": 1440
+        },
+        {
+          "graphTargetBytes": 107827200,
+          "width": 3840,
+          "height": 2160
+        }
+      ],
+      "overrides": {
+        "BLOOM_STRENGTH": 0.0,
+        "EDGE_SMOOTHING": 1.0
+      }
+    },
+    {
+      "passes": [
+        "contact-shadows",
+        "compose",
+        "bloom-seed",
+        "bloom-x",
+        "bloom-y",
+        "final"
+      ],
+      "name": "cave-visibility-off",
+      "allocations": [
+        {
+          "graphTargetBytes": 12902400,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "graphTargetBytes": 29030400,
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "graphTargetBytes": 51609600,
+          "width": 2560,
+          "height": 1440
+        },
+        {
+          "graphTargetBytes": 116121600,
+          "width": 3840,
+          "height": 2160
+        }
+      ],
+      "overrides": {
+        "CAVE_VISIBILITY": 0.0
+      }
+    },
+    {
+      "passes": [
+        "contact-shadows",
+        "compose",
+        "bloom-seed",
+        "bloom-x",
+        "bloom-y",
+        "final"
+      ],
+      "name": "wet-surfaces-off",
+      "allocations": [
+        {
+          "graphTargetBytes": 12902400,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "graphTargetBytes": 29030400,
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "graphTargetBytes": 51609600,
+          "width": 2560,
+          "height": 1440
+        },
+        {
+          "graphTargetBytes": 116121600,
+          "width": 3840,
+          "height": 2160
+        }
+      ],
+      "overrides": {
+        "WET_SURFACES": 0.0
+      }
+    },
+    {
+      "passes": [
+        "contact-shadows",
+        "compose",
+        "bloom-seed",
+        "bloom-x",
+        "bloom-y",
+        "final"
+      ],
+      "name": "dithering-off",
+      "allocations": [
+        {
+          "graphTargetBytes": 12902400,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "graphTargetBytes": 29030400,
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "graphTargetBytes": 51609600,
+          "width": 2560,
+          "height": 1440
+        },
+        {
+          "graphTargetBytes": 116121600,
+          "width": 3840,
+          "height": 2160
+        }
+      ],
+      "overrides": {
+        "DITHERING": 0.0
+      }
+    }
+  ]
+}
