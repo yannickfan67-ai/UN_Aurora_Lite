@@ -1,0 +1,5269 @@
+{
+  "modules": [
+    {
+      "case": "default",
+      "entry": "shaders/ao.fsh",
+      "variant": "base",
+      "samplers": [
+        "Depth"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "occlusionAndDistance"
+      ],
+      "bytes": 16676,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "default",
+      "entry": "shaders/compose.fsh",
+      "variant": "base",
+      "samplers": [
+        "Scene",
+        "Depth",
+        "HandDepth",
+        "Ambient"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "sceneLinear"
+      ],
+      "bytes": 14720,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "default",
+      "entry": "shaders/bloom-seed.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source",
+        "HandDepth"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 9036,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "default",
+      "entry": "shaders/blur-x.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 7844,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "default",
+      "entry": "shaders/blur-y.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 7844,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "default",
+      "entry": "shaders/final.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source",
+        "HandDepth",
+        "Bloom"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 11104,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "default",
+      "entry": "shaders/terrain.vsh",
+      "variant": "base",
+      "samplers": [
+        "u_SectionTimeInfo",
+        "u_LightTex"
+      ],
+      "uniforms": [
+        "SulkanWind",
+        "u_Globals"
+      ],
+      "inputs": [
+        "a_Position",
+        "a_LightAndData",
+        "a_SulkanMaterial",
+        "a_TexCoord",
+        "a_Color"
+      ],
+      "outputs": [
+        "auroraPosition",
+        "auroraUv",
+        "auroraTint",
+        "auroraLight",
+        "auroraFade",
+        "auroraMaterial"
+      ],
+      "bytes": 13968,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "default",
+      "entry": "shaders/terrain.fsh",
+      "variant": "opaque",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 81780,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "default",
+      "entry": "shaders/terrain.fsh",
+      "variant": "cutout-0.1",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 81944,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "default",
+      "entry": "shaders/terrain.fsh",
+      "variant": "cutout-0.5",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 81944,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "minimal",
+      "entry": "shaders/compose.fsh",
+      "variant": "base",
+      "samplers": [
+        "Scene",
+        "Depth",
+        "HandDepth"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "sceneLinear"
+      ],
+      "bytes": 12584,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "minimal",
+      "entry": "shaders/final.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 10684,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "minimal",
+      "entry": "shaders/terrain.vsh",
+      "variant": "base",
+      "samplers": [
+        "u_SectionTimeInfo",
+        "u_LightTex"
+      ],
+      "uniforms": [
+        "SulkanWind",
+        "u_Globals"
+      ],
+      "inputs": [
+        "a_Position",
+        "a_LightAndData",
+        "a_SulkanMaterial",
+        "a_TexCoord",
+        "a_Color"
+      ],
+      "outputs": [
+        "auroraPosition",
+        "auroraUv",
+        "auroraTint",
+        "auroraLight",
+        "auroraFade",
+        "auroraMaterial"
+      ],
+      "bytes": 13964,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "minimal",
+      "entry": "shaders/terrain.fsh",
+      "variant": "opaque",
+      "samplers": [
+        "u_BlockTex",
+        "u_LightTex",
+        "Opaque",
+        "OpaqueDepth"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 45996,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "minimal",
+      "entry": "shaders/terrain.fsh",
+      "variant": "cutout-0.1",
+      "samplers": [
+        "u_BlockTex",
+        "u_LightTex",
+        "Opaque",
+        "OpaqueDepth"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 46164,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "minimal",
+      "entry": "shaders/terrain.fsh",
+      "variant": "cutout-0.5",
+      "samplers": [
+        "u_BlockTex",
+        "u_LightTex",
+        "Opaque",
+        "OpaqueDepth"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 46164,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "enhanced",
+      "entry": "shaders/ao.fsh",
+      "variant": "base",
+      "samplers": [
+        "Depth"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "occlusionAndDistance"
+      ],
+      "bytes": 16660,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "enhanced",
+      "entry": "shaders/compose.fsh",
+      "variant": "base",
+      "samplers": [
+        "Scene",
+        "Depth",
+        "HandDepth",
+        "Ambient"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "sceneLinear"
+      ],
+      "bytes": 14716,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "enhanced",
+      "entry": "shaders/bloom-seed.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source",
+        "HandDepth"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 9036,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "enhanced",
+      "entry": "shaders/blur-x.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 7840,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "enhanced",
+      "entry": "shaders/blur-y.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 7840,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "enhanced",
+      "entry": "shaders/final.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source",
+        "HandDepth",
+        "Bloom"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 12404,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "enhanced",
+      "entry": "shaders/terrain.vsh",
+      "variant": "base",
+      "samplers": [
+        "u_SectionTimeInfo",
+        "u_LightTex"
+      ],
+      "uniforms": [
+        "SulkanWind",
+        "u_Globals"
+      ],
+      "inputs": [
+        "a_Position",
+        "a_LightAndData",
+        "a_SulkanMaterial",
+        "a_TexCoord",
+        "a_Color"
+      ],
+      "outputs": [
+        "auroraPosition",
+        "auroraUv",
+        "auroraTint",
+        "auroraLight",
+        "auroraFade",
+        "auroraMaterial"
+      ],
+      "bytes": 13968,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "enhanced",
+      "entry": "shaders/terrain.fsh",
+      "variant": "opaque",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 87908,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "enhanced",
+      "entry": "shaders/terrain.fsh",
+      "variant": "cutout-0.1",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 88072,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "enhanced",
+      "entry": "shaders/terrain.fsh",
+      "variant": "cutout-0.5",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 88072,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "all-maximum",
+      "entry": "shaders/ao.fsh",
+      "variant": "base",
+      "samplers": [
+        "Depth"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "occlusionAndDistance"
+      ],
+      "bytes": 16636,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "all-maximum",
+      "entry": "shaders/compose.fsh",
+      "variant": "base",
+      "samplers": [
+        "Scene",
+        "Depth",
+        "HandDepth",
+        "Ambient"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "sceneLinear"
+      ],
+      "bytes": 14676,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "all-maximum",
+      "entry": "shaders/bloom-seed.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source",
+        "HandDepth"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 9012,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "all-maximum",
+      "entry": "shaders/blur-x.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 7820,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "all-maximum",
+      "entry": "shaders/blur-y.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 7820,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "all-maximum",
+      "entry": "shaders/final.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source",
+        "HandDepth",
+        "Bloom"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 12392,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "all-maximum",
+      "entry": "shaders/terrain.vsh",
+      "variant": "base",
+      "samplers": [
+        "u_SectionTimeInfo",
+        "u_LightTex"
+      ],
+      "uniforms": [
+        "SulkanWind",
+        "u_Globals"
+      ],
+      "inputs": [
+        "a_Position",
+        "a_LightAndData",
+        "a_SulkanMaterial",
+        "a_TexCoord",
+        "a_Color"
+      ],
+      "outputs": [
+        "auroraPosition",
+        "auroraUv",
+        "auroraTint",
+        "auroraLight",
+        "auroraFade",
+        "auroraMaterial"
+      ],
+      "bytes": 13944,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "all-maximum",
+      "entry": "shaders/terrain.fsh",
+      "variant": "opaque",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 86960,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "all-maximum",
+      "entry": "shaders/terrain.fsh",
+      "variant": "cutout-0.1",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 87124,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "all-maximum",
+      "entry": "shaders/terrain.fsh",
+      "variant": "cutout-0.5",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 87124,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-0-water-0",
+      "entry": "shaders/ao.fsh",
+      "variant": "base",
+      "samplers": [
+        "Depth"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "occlusionAndDistance"
+      ],
+      "bytes": 16684,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-0-water-0",
+      "entry": "shaders/compose.fsh",
+      "variant": "base",
+      "samplers": [
+        "Scene",
+        "Depth",
+        "HandDepth",
+        "Ambient"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "sceneLinear"
+      ],
+      "bytes": 14728,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-0-water-0",
+      "entry": "shaders/bloom-seed.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source",
+        "HandDepth"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 9044,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-0-water-0",
+      "entry": "shaders/blur-x.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 7852,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-0-water-0",
+      "entry": "shaders/blur-y.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 7852,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-0-water-0",
+      "entry": "shaders/final.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source",
+        "HandDepth",
+        "Bloom"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 11116,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-0-water-0",
+      "entry": "shaders/terrain.vsh",
+      "variant": "base",
+      "samplers": [
+        "u_SectionTimeInfo",
+        "u_LightTex"
+      ],
+      "uniforms": [
+        "SulkanWind",
+        "u_Globals"
+      ],
+      "inputs": [
+        "a_Position",
+        "a_LightAndData",
+        "a_SulkanMaterial",
+        "a_TexCoord",
+        "a_Color"
+      ],
+      "outputs": [
+        "auroraPosition",
+        "auroraUv",
+        "auroraTint",
+        "auroraLight",
+        "auroraFade",
+        "auroraMaterial"
+      ],
+      "bytes": 13976,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-0-water-0",
+      "entry": "shaders/terrain.fsh",
+      "variant": "opaque",
+      "samplers": [
+        "u_BlockTex",
+        "u_LightTex",
+        "Opaque",
+        "OpaqueDepth"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 46016,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-0-water-0",
+      "entry": "shaders/terrain.fsh",
+      "variant": "cutout-0.1",
+      "samplers": [
+        "u_BlockTex",
+        "u_LightTex",
+        "Opaque",
+        "OpaqueDepth"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 46180,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-0-water-0",
+      "entry": "shaders/terrain.fsh",
+      "variant": "cutout-0.5",
+      "samplers": [
+        "u_BlockTex",
+        "u_LightTex",
+        "Opaque",
+        "OpaqueDepth"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 46180,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-0-water-1",
+      "entry": "shaders/ao.fsh",
+      "variant": "base",
+      "samplers": [
+        "Depth"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "occlusionAndDistance"
+      ],
+      "bytes": 16684,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-0-water-1",
+      "entry": "shaders/compose.fsh",
+      "variant": "base",
+      "samplers": [
+        "Scene",
+        "Depth",
+        "HandDepth",
+        "Ambient"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "sceneLinear"
+      ],
+      "bytes": 14728,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-0-water-1",
+      "entry": "shaders/bloom-seed.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source",
+        "HandDepth"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 9044,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-0-water-1",
+      "entry": "shaders/blur-x.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 7852,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-0-water-1",
+      "entry": "shaders/blur-y.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 7852,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-0-water-1",
+      "entry": "shaders/final.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source",
+        "HandDepth",
+        "Bloom"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 11116,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-0-water-1",
+      "entry": "shaders/terrain.vsh",
+      "variant": "base",
+      "samplers": [
+        "u_SectionTimeInfo",
+        "u_LightTex"
+      ],
+      "uniforms": [
+        "SulkanWind",
+        "u_Globals"
+      ],
+      "inputs": [
+        "a_Position",
+        "a_LightAndData",
+        "a_SulkanMaterial",
+        "a_TexCoord",
+        "a_Color"
+      ],
+      "outputs": [
+        "auroraPosition",
+        "auroraUv",
+        "auroraTint",
+        "auroraLight",
+        "auroraFade",
+        "auroraMaterial"
+      ],
+      "bytes": 13976,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-0-water-1",
+      "entry": "shaders/terrain.fsh",
+      "variant": "opaque",
+      "samplers": [
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 54684,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-0-water-1",
+      "entry": "shaders/terrain.fsh",
+      "variant": "cutout-0.1",
+      "samplers": [
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 54848,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-0-water-1",
+      "entry": "shaders/terrain.fsh",
+      "variant": "cutout-0.5",
+      "samplers": [
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 54848,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-1-water-0",
+      "entry": "shaders/ao.fsh",
+      "variant": "base",
+      "samplers": [
+        "Depth"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "occlusionAndDistance"
+      ],
+      "bytes": 16684,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-1-water-0",
+      "entry": "shaders/compose.fsh",
+      "variant": "base",
+      "samplers": [
+        "Scene",
+        "Depth",
+        "HandDepth",
+        "Ambient"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "sceneLinear"
+      ],
+      "bytes": 14728,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-1-water-0",
+      "entry": "shaders/bloom-seed.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source",
+        "HandDepth"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 9044,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-1-water-0",
+      "entry": "shaders/blur-x.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 7852,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-1-water-0",
+      "entry": "shaders/blur-y.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 7852,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-1-water-0",
+      "entry": "shaders/final.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source",
+        "HandDepth",
+        "Bloom"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 11116,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-1-water-0",
+      "entry": "shaders/terrain.vsh",
+      "variant": "base",
+      "samplers": [
+        "u_SectionTimeInfo",
+        "u_LightTex"
+      ],
+      "uniforms": [
+        "SulkanWind",
+        "u_Globals"
+      ],
+      "inputs": [
+        "a_Position",
+        "a_LightAndData",
+        "a_SulkanMaterial",
+        "a_TexCoord",
+        "a_Color"
+      ],
+      "outputs": [
+        "auroraPosition",
+        "auroraUv",
+        "auroraTint",
+        "auroraLight",
+        "auroraFade",
+        "auroraMaterial"
+      ],
+      "bytes": 13976,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-1-water-0",
+      "entry": "shaders/terrain.fsh",
+      "variant": "opaque",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "Opaque",
+        "OpaqueDepth"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 73188,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-1-water-0",
+      "entry": "shaders/terrain.fsh",
+      "variant": "cutout-0.1",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "Opaque",
+        "OpaqueDepth"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 73352,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-1-water-0",
+      "entry": "shaders/terrain.fsh",
+      "variant": "cutout-0.5",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "Opaque",
+        "OpaqueDepth"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 73352,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-1-water-1",
+      "entry": "shaders/ao.fsh",
+      "variant": "base",
+      "samplers": [
+        "Depth"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "occlusionAndDistance"
+      ],
+      "bytes": 16684,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-1-water-1",
+      "entry": "shaders/compose.fsh",
+      "variant": "base",
+      "samplers": [
+        "Scene",
+        "Depth",
+        "HandDepth",
+        "Ambient"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "sceneLinear"
+      ],
+      "bytes": 14728,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-1-water-1",
+      "entry": "shaders/bloom-seed.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source",
+        "HandDepth"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 9044,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-1-water-1",
+      "entry": "shaders/blur-x.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 7852,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-1-water-1",
+      "entry": "shaders/blur-y.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 7852,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-1-water-1",
+      "entry": "shaders/final.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source",
+        "HandDepth",
+        "Bloom"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 11116,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-1-water-1",
+      "entry": "shaders/terrain.vsh",
+      "variant": "base",
+      "samplers": [
+        "u_SectionTimeInfo",
+        "u_LightTex"
+      ],
+      "uniforms": [
+        "SulkanWind",
+        "u_Globals"
+      ],
+      "inputs": [
+        "a_Position",
+        "a_LightAndData",
+        "a_SulkanMaterial",
+        "a_TexCoord",
+        "a_Color"
+      ],
+      "outputs": [
+        "auroraPosition",
+        "auroraUv",
+        "auroraTint",
+        "auroraLight",
+        "auroraFade",
+        "auroraMaterial"
+      ],
+      "bytes": 13976,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-1-water-1",
+      "entry": "shaders/terrain.fsh",
+      "variant": "opaque",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 81792,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-1-water-1",
+      "entry": "shaders/terrain.fsh",
+      "variant": "cutout-0.1",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 81956,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-1-water-1",
+      "entry": "shaders/terrain.fsh",
+      "variant": "cutout-0.5",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 81956,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-2-water-0",
+      "entry": "shaders/ao.fsh",
+      "variant": "base",
+      "samplers": [
+        "Depth"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "occlusionAndDistance"
+      ],
+      "bytes": 16684,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-2-water-0",
+      "entry": "shaders/compose.fsh",
+      "variant": "base",
+      "samplers": [
+        "Scene",
+        "Depth",
+        "HandDepth",
+        "Ambient"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "sceneLinear"
+      ],
+      "bytes": 14728,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-2-water-0",
+      "entry": "shaders/bloom-seed.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source",
+        "HandDepth"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 9044,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-2-water-0",
+      "entry": "shaders/blur-x.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 7852,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-2-water-0",
+      "entry": "shaders/blur-y.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 7852,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-2-water-0",
+      "entry": "shaders/final.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source",
+        "HandDepth",
+        "Bloom"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 11116,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-2-water-0",
+      "entry": "shaders/terrain.vsh",
+      "variant": "base",
+      "samplers": [
+        "u_SectionTimeInfo",
+        "u_LightTex"
+      ],
+      "uniforms": [
+        "SulkanWind",
+        "u_Globals"
+      ],
+      "inputs": [
+        "a_Position",
+        "a_LightAndData",
+        "a_SulkanMaterial",
+        "a_TexCoord",
+        "a_Color"
+      ],
+      "outputs": [
+        "auroraPosition",
+        "auroraUv",
+        "auroraTint",
+        "auroraLight",
+        "auroraFade",
+        "auroraMaterial"
+      ],
+      "bytes": 13976,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-2-water-0",
+      "entry": "shaders/terrain.fsh",
+      "variant": "opaque",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "Opaque",
+        "OpaqueDepth"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 79332,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-2-water-0",
+      "entry": "shaders/terrain.fsh",
+      "variant": "cutout-0.1",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "Opaque",
+        "OpaqueDepth"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 79496,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-2-water-0",
+      "entry": "shaders/terrain.fsh",
+      "variant": "cutout-0.5",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "Opaque",
+        "OpaqueDepth"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 79496,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-2-water-1",
+      "entry": "shaders/ao.fsh",
+      "variant": "base",
+      "samplers": [
+        "Depth"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "occlusionAndDistance"
+      ],
+      "bytes": 16684,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-2-water-1",
+      "entry": "shaders/compose.fsh",
+      "variant": "base",
+      "samplers": [
+        "Scene",
+        "Depth",
+        "HandDepth",
+        "Ambient"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "sceneLinear"
+      ],
+      "bytes": 14728,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-2-water-1",
+      "entry": "shaders/bloom-seed.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source",
+        "HandDepth"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 9044,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-2-water-1",
+      "entry": "shaders/blur-x.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 7852,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-2-water-1",
+      "entry": "shaders/blur-y.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 7852,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-2-water-1",
+      "entry": "shaders/final.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source",
+        "HandDepth",
+        "Bloom"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 11116,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-2-water-1",
+      "entry": "shaders/terrain.vsh",
+      "variant": "base",
+      "samplers": [
+        "u_SectionTimeInfo",
+        "u_LightTex"
+      ],
+      "uniforms": [
+        "SulkanWind",
+        "u_Globals"
+      ],
+      "inputs": [
+        "a_Position",
+        "a_LightAndData",
+        "a_SulkanMaterial",
+        "a_TexCoord",
+        "a_Color"
+      ],
+      "outputs": [
+        "auroraPosition",
+        "auroraUv",
+        "auroraTint",
+        "auroraLight",
+        "auroraFade",
+        "auroraMaterial"
+      ],
+      "bytes": 13976,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-2-water-1",
+      "entry": "shaders/terrain.fsh",
+      "variant": "opaque",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 87936,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-2-water-1",
+      "entry": "shaders/terrain.fsh",
+      "variant": "cutout-0.1",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 88100,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-2-water-1",
+      "entry": "shaders/terrain.fsh",
+      "variant": "cutout-0.5",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 88100,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-3-water-0",
+      "entry": "shaders/ao.fsh",
+      "variant": "base",
+      "samplers": [
+        "Depth"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "occlusionAndDistance"
+      ],
+      "bytes": 16684,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-3-water-0",
+      "entry": "shaders/compose.fsh",
+      "variant": "base",
+      "samplers": [
+        "Scene",
+        "Depth",
+        "HandDepth",
+        "Ambient"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "sceneLinear"
+      ],
+      "bytes": 14728,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-3-water-0",
+      "entry": "shaders/bloom-seed.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source",
+        "HandDepth"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 9044,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-3-water-0",
+      "entry": "shaders/blur-x.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 7852,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-3-water-0",
+      "entry": "shaders/blur-y.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 7852,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-3-water-0",
+      "entry": "shaders/final.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source",
+        "HandDepth",
+        "Bloom"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 11116,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-3-water-0",
+      "entry": "shaders/terrain.vsh",
+      "variant": "base",
+      "samplers": [
+        "u_SectionTimeInfo",
+        "u_LightTex"
+      ],
+      "uniforms": [
+        "SulkanWind",
+        "u_Globals"
+      ],
+      "inputs": [
+        "a_Position",
+        "a_LightAndData",
+        "a_SulkanMaterial",
+        "a_TexCoord",
+        "a_Color"
+      ],
+      "outputs": [
+        "auroraPosition",
+        "auroraUv",
+        "auroraTint",
+        "auroraLight",
+        "auroraFade",
+        "auroraMaterial"
+      ],
+      "bytes": 13976,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-3-water-0",
+      "entry": "shaders/terrain.fsh",
+      "variant": "opaque",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "Opaque",
+        "OpaqueDepth"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 78472,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-3-water-0",
+      "entry": "shaders/terrain.fsh",
+      "variant": "cutout-0.1",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "Opaque",
+        "OpaqueDepth"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 78636,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-3-water-0",
+      "entry": "shaders/terrain.fsh",
+      "variant": "cutout-0.5",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "Opaque",
+        "OpaqueDepth"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 78636,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-3-water-1",
+      "entry": "shaders/ao.fsh",
+      "variant": "base",
+      "samplers": [
+        "Depth"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "occlusionAndDistance"
+      ],
+      "bytes": 16684,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-3-water-1",
+      "entry": "shaders/compose.fsh",
+      "variant": "base",
+      "samplers": [
+        "Scene",
+        "Depth",
+        "HandDepth",
+        "Ambient"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "sceneLinear"
+      ],
+      "bytes": 14728,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-3-water-1",
+      "entry": "shaders/bloom-seed.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source",
+        "HandDepth"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 9044,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-3-water-1",
+      "entry": "shaders/blur-x.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 7852,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-3-water-1",
+      "entry": "shaders/blur-y.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 7852,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-3-water-1",
+      "entry": "shaders/final.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source",
+        "HandDepth",
+        "Bloom"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 11116,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-3-water-1",
+      "entry": "shaders/terrain.vsh",
+      "variant": "base",
+      "samplers": [
+        "u_SectionTimeInfo",
+        "u_LightTex"
+      ],
+      "uniforms": [
+        "SulkanWind",
+        "u_Globals"
+      ],
+      "inputs": [
+        "a_Position",
+        "a_LightAndData",
+        "a_SulkanMaterial",
+        "a_TexCoord",
+        "a_Color"
+      ],
+      "outputs": [
+        "auroraPosition",
+        "auroraUv",
+        "auroraTint",
+        "auroraLight",
+        "auroraFade",
+        "auroraMaterial"
+      ],
+      "bytes": 13976,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-3-water-1",
+      "entry": "shaders/terrain.fsh",
+      "variant": "opaque",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 87076,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-3-water-1",
+      "entry": "shaders/terrain.fsh",
+      "variant": "cutout-0.1",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 87240,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "shadow-3-water-1",
+      "entry": "shaders/terrain.fsh",
+      "variant": "cutout-0.5",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 87240,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "ao-disabled",
+      "entry": "shaders/compose.fsh",
+      "variant": "base",
+      "samplers": [
+        "Scene",
+        "Depth",
+        "HandDepth"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "sceneLinear"
+      ],
+      "bytes": 12596,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "ao-disabled",
+      "entry": "shaders/bloom-seed.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source",
+        "HandDepth"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 9040,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "ao-disabled",
+      "entry": "shaders/blur-x.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 7848,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "ao-disabled",
+      "entry": "shaders/blur-y.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 7848,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "ao-disabled",
+      "entry": "shaders/final.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source",
+        "HandDepth",
+        "Bloom"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 11108,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "ao-disabled",
+      "entry": "shaders/terrain.vsh",
+      "variant": "base",
+      "samplers": [
+        "u_SectionTimeInfo",
+        "u_LightTex"
+      ],
+      "uniforms": [
+        "SulkanWind",
+        "u_Globals"
+      ],
+      "inputs": [
+        "a_Position",
+        "a_LightAndData",
+        "a_SulkanMaterial",
+        "a_TexCoord",
+        "a_Color"
+      ],
+      "outputs": [
+        "auroraPosition",
+        "auroraUv",
+        "auroraTint",
+        "auroraLight",
+        "auroraFade",
+        "auroraMaterial"
+      ],
+      "bytes": 13972,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "ao-disabled",
+      "entry": "shaders/terrain.fsh",
+      "variant": "opaque",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 81784,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "ao-disabled",
+      "entry": "shaders/terrain.fsh",
+      "variant": "cutout-0.1",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 81948,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "ao-disabled",
+      "entry": "shaders/terrain.fsh",
+      "variant": "cutout-0.5",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 81948,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "ao-zero-strength",
+      "entry": "shaders/compose.fsh",
+      "variant": "base",
+      "samplers": [
+        "Scene",
+        "Depth",
+        "HandDepth"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "sceneLinear"
+      ],
+      "bytes": 12596,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "ao-zero-strength",
+      "entry": "shaders/bloom-seed.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source",
+        "HandDepth"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 9044,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "ao-zero-strength",
+      "entry": "shaders/blur-x.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 7848,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "ao-zero-strength",
+      "entry": "shaders/blur-y.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 7848,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "ao-zero-strength",
+      "entry": "shaders/final.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source",
+        "HandDepth",
+        "Bloom"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 11116,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "ao-zero-strength",
+      "entry": "shaders/terrain.vsh",
+      "variant": "base",
+      "samplers": [
+        "u_SectionTimeInfo",
+        "u_LightTex"
+      ],
+      "uniforms": [
+        "SulkanWind",
+        "u_Globals"
+      ],
+      "inputs": [
+        "a_Position",
+        "a_LightAndData",
+        "a_SulkanMaterial",
+        "a_TexCoord",
+        "a_Color"
+      ],
+      "outputs": [
+        "auroraPosition",
+        "auroraUv",
+        "auroraTint",
+        "auroraLight",
+        "auroraFade",
+        "auroraMaterial"
+      ],
+      "bytes": 13972,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "ao-zero-strength",
+      "entry": "shaders/terrain.fsh",
+      "variant": "opaque",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 81788,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "ao-zero-strength",
+      "entry": "shaders/terrain.fsh",
+      "variant": "cutout-0.1",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 81952,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "ao-zero-strength",
+      "entry": "shaders/terrain.fsh",
+      "variant": "cutout-0.5",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 81952,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "ao-eight-samples",
+      "entry": "shaders/ao.fsh",
+      "variant": "base",
+      "samplers": [
+        "Depth"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "occlusionAndDistance"
+      ],
+      "bytes": 16668,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "ao-eight-samples",
+      "entry": "shaders/compose.fsh",
+      "variant": "base",
+      "samplers": [
+        "Scene",
+        "Depth",
+        "HandDepth",
+        "Ambient"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "sceneLinear"
+      ],
+      "bytes": 14728,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "ao-eight-samples",
+      "entry": "shaders/bloom-seed.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source",
+        "HandDepth"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 9044,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "ao-eight-samples",
+      "entry": "shaders/blur-x.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 7852,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "ao-eight-samples",
+      "entry": "shaders/blur-y.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 7852,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "ao-eight-samples",
+      "entry": "shaders/final.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source",
+        "HandDepth",
+        "Bloom"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 11116,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "ao-eight-samples",
+      "entry": "shaders/terrain.vsh",
+      "variant": "base",
+      "samplers": [
+        "u_SectionTimeInfo",
+        "u_LightTex"
+      ],
+      "uniforms": [
+        "SulkanWind",
+        "u_Globals"
+      ],
+      "inputs": [
+        "a_Position",
+        "a_LightAndData",
+        "a_SulkanMaterial",
+        "a_TexCoord",
+        "a_Color"
+      ],
+      "outputs": [
+        "auroraPosition",
+        "auroraUv",
+        "auroraTint",
+        "auroraLight",
+        "auroraFade",
+        "auroraMaterial"
+      ],
+      "bytes": 13976,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "ao-eight-samples",
+      "entry": "shaders/terrain.fsh",
+      "variant": "opaque",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 81792,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "ao-eight-samples",
+      "entry": "shaders/terrain.fsh",
+      "variant": "cutout-0.1",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 81956,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "ao-eight-samples",
+      "entry": "shaders/terrain.fsh",
+      "variant": "cutout-0.5",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 81956,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "bloom-disabled",
+      "entry": "shaders/ao.fsh",
+      "variant": "base",
+      "samplers": [
+        "Depth"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "occlusionAndDistance"
+      ],
+      "bytes": 16680,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "bloom-disabled",
+      "entry": "shaders/compose.fsh",
+      "variant": "base",
+      "samplers": [
+        "Scene",
+        "Depth",
+        "HandDepth",
+        "Ambient"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "sceneLinear"
+      ],
+      "bytes": 14724,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "bloom-disabled",
+      "entry": "shaders/final.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 10696,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "bloom-disabled",
+      "entry": "shaders/terrain.vsh",
+      "variant": "base",
+      "samplers": [
+        "u_SectionTimeInfo",
+        "u_LightTex"
+      ],
+      "uniforms": [
+        "SulkanWind",
+        "u_Globals"
+      ],
+      "inputs": [
+        "a_Position",
+        "a_LightAndData",
+        "a_SulkanMaterial",
+        "a_TexCoord",
+        "a_Color"
+      ],
+      "outputs": [
+        "auroraPosition",
+        "auroraUv",
+        "auroraTint",
+        "auroraLight",
+        "auroraFade",
+        "auroraMaterial"
+      ],
+      "bytes": 13972,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "bloom-disabled",
+      "entry": "shaders/terrain.fsh",
+      "variant": "opaque",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 81784,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "bloom-disabled",
+      "entry": "shaders/terrain.fsh",
+      "variant": "cutout-0.1",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 81948,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "bloom-disabled",
+      "entry": "shaders/terrain.fsh",
+      "variant": "cutout-0.5",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 81948,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "edge-smoothing",
+      "entry": "shaders/ao.fsh",
+      "variant": "base",
+      "samplers": [
+        "Depth"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "occlusionAndDistance"
+      ],
+      "bytes": 16680,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "edge-smoothing",
+      "entry": "shaders/compose.fsh",
+      "variant": "base",
+      "samplers": [
+        "Scene",
+        "Depth",
+        "HandDepth",
+        "Ambient"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "sceneLinear"
+      ],
+      "bytes": 14728,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "edge-smoothing",
+      "entry": "shaders/bloom-seed.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source",
+        "HandDepth"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 9040,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "edge-smoothing",
+      "entry": "shaders/blur-x.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 7848,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "edge-smoothing",
+      "entry": "shaders/blur-y.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 7848,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "edge-smoothing",
+      "entry": "shaders/final.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source",
+        "HandDepth",
+        "Bloom"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 12408,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "edge-smoothing",
+      "entry": "shaders/terrain.vsh",
+      "variant": "base",
+      "samplers": [
+        "u_SectionTimeInfo",
+        "u_LightTex"
+      ],
+      "uniforms": [
+        "SulkanWind",
+        "u_Globals"
+      ],
+      "inputs": [
+        "a_Position",
+        "a_LightAndData",
+        "a_SulkanMaterial",
+        "a_TexCoord",
+        "a_Color"
+      ],
+      "outputs": [
+        "auroraPosition",
+        "auroraUv",
+        "auroraTint",
+        "auroraLight",
+        "auroraFade",
+        "auroraMaterial"
+      ],
+      "bytes": 13976,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "edge-smoothing",
+      "entry": "shaders/terrain.fsh",
+      "variant": "opaque",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 81788,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "edge-smoothing",
+      "entry": "shaders/terrain.fsh",
+      "variant": "cutout-0.1",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 81952,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "edge-smoothing",
+      "entry": "shaders/terrain.fsh",
+      "variant": "cutout-0.5",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 81952,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "bloom-off-edge-on",
+      "entry": "shaders/ao.fsh",
+      "variant": "base",
+      "samplers": [
+        "Depth"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "occlusionAndDistance"
+      ],
+      "bytes": 16684,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "bloom-off-edge-on",
+      "entry": "shaders/compose.fsh",
+      "variant": "base",
+      "samplers": [
+        "Scene",
+        "Depth",
+        "HandDepth",
+        "Ambient"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "sceneLinear"
+      ],
+      "bytes": 14724,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "bloom-off-edge-on",
+      "entry": "shaders/final.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source",
+        "HandDepth"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 12200,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "bloom-off-edge-on",
+      "entry": "shaders/terrain.vsh",
+      "variant": "base",
+      "samplers": [
+        "u_SectionTimeInfo",
+        "u_LightTex"
+      ],
+      "uniforms": [
+        "SulkanWind",
+        "u_Globals"
+      ],
+      "inputs": [
+        "a_Position",
+        "a_LightAndData",
+        "a_SulkanMaterial",
+        "a_TexCoord",
+        "a_Color"
+      ],
+      "outputs": [
+        "auroraPosition",
+        "auroraUv",
+        "auroraTint",
+        "auroraLight",
+        "auroraFade",
+        "auroraMaterial"
+      ],
+      "bytes": 13972,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "bloom-off-edge-on",
+      "entry": "shaders/terrain.fsh",
+      "variant": "opaque",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 81788,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "bloom-off-edge-on",
+      "entry": "shaders/terrain.fsh",
+      "variant": "cutout-0.1",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 81952,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "bloom-off-edge-on",
+      "entry": "shaders/terrain.fsh",
+      "variant": "cutout-0.5",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 81952,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "cave-visibility-off",
+      "entry": "shaders/ao.fsh",
+      "variant": "base",
+      "samplers": [
+        "Depth"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "occlusionAndDistance"
+      ],
+      "bytes": 16688,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "cave-visibility-off",
+      "entry": "shaders/compose.fsh",
+      "variant": "base",
+      "samplers": [
+        "Scene",
+        "Depth",
+        "HandDepth",
+        "Ambient"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "sceneLinear"
+      ],
+      "bytes": 14728,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "cave-visibility-off",
+      "entry": "shaders/bloom-seed.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source",
+        "HandDepth"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 9048,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "cave-visibility-off",
+      "entry": "shaders/blur-x.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 7852,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "cave-visibility-off",
+      "entry": "shaders/blur-y.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 7852,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "cave-visibility-off",
+      "entry": "shaders/final.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source",
+        "HandDepth",
+        "Bloom"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 11116,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "cave-visibility-off",
+      "entry": "shaders/terrain.vsh",
+      "variant": "base",
+      "samplers": [
+        "u_SectionTimeInfo",
+        "u_LightTex"
+      ],
+      "uniforms": [
+        "SulkanWind",
+        "u_Globals"
+      ],
+      "inputs": [
+        "a_Position",
+        "a_LightAndData",
+        "a_SulkanMaterial",
+        "a_TexCoord",
+        "a_Color"
+      ],
+      "outputs": [
+        "auroraPosition",
+        "auroraUv",
+        "auroraTint",
+        "auroraLight",
+        "auroraFade",
+        "auroraMaterial"
+      ],
+      "bytes": 13976,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "cave-visibility-off",
+      "entry": "shaders/terrain.fsh",
+      "variant": "opaque",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 81756,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "cave-visibility-off",
+      "entry": "shaders/terrain.fsh",
+      "variant": "cutout-0.1",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 81920,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "cave-visibility-off",
+      "entry": "shaders/terrain.fsh",
+      "variant": "cutout-0.5",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 81920,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "wet-surfaces-off",
+      "entry": "shaders/ao.fsh",
+      "variant": "base",
+      "samplers": [
+        "Depth"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "occlusionAndDistance"
+      ],
+      "bytes": 16684,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "wet-surfaces-off",
+      "entry": "shaders/compose.fsh",
+      "variant": "base",
+      "samplers": [
+        "Scene",
+        "Depth",
+        "HandDepth",
+        "Ambient"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "sceneLinear"
+      ],
+      "bytes": 14724,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "wet-surfaces-off",
+      "entry": "shaders/bloom-seed.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source",
+        "HandDepth"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 9044,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "wet-surfaces-off",
+      "entry": "shaders/blur-x.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 7848,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "wet-surfaces-off",
+      "entry": "shaders/blur-y.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 7848,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "wet-surfaces-off",
+      "entry": "shaders/final.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source",
+        "HandDepth",
+        "Bloom"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 11116,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "wet-surfaces-off",
+      "entry": "shaders/terrain.vsh",
+      "variant": "base",
+      "samplers": [
+        "u_SectionTimeInfo",
+        "u_LightTex"
+      ],
+      "uniforms": [
+        "SulkanWind",
+        "u_Globals"
+      ],
+      "inputs": [
+        "a_Position",
+        "a_LightAndData",
+        "a_SulkanMaterial",
+        "a_TexCoord",
+        "a_Color"
+      ],
+      "outputs": [
+        "auroraPosition",
+        "auroraUv",
+        "auroraTint",
+        "auroraLight",
+        "auroraFade",
+        "auroraMaterial"
+      ],
+      "bytes": 13972,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "wet-surfaces-off",
+      "entry": "shaders/terrain.fsh",
+      "variant": "opaque",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 80336,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "wet-surfaces-off",
+      "entry": "shaders/terrain.fsh",
+      "variant": "cutout-0.1",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 80500,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "wet-surfaces-off",
+      "entry": "shaders/terrain.fsh",
+      "variant": "cutout-0.5",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 80500,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "dithering-off",
+      "entry": "shaders/ao.fsh",
+      "variant": "base",
+      "samplers": [
+        "Depth"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "occlusionAndDistance"
+      ],
+      "bytes": 16680,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "dithering-off",
+      "entry": "shaders/compose.fsh",
+      "variant": "base",
+      "samplers": [
+        "Scene",
+        "Depth",
+        "HandDepth",
+        "Ambient"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "sceneLinear"
+      ],
+      "bytes": 14724,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "dithering-off",
+      "entry": "shaders/bloom-seed.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source",
+        "HandDepth"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 9040,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "dithering-off",
+      "entry": "shaders/blur-x.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 7848,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "dithering-off",
+      "entry": "shaders/blur-y.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 7848,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "dithering-off",
+      "entry": "shaders/final.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source",
+        "HandDepth",
+        "Bloom"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 10572,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "dithering-off",
+      "entry": "shaders/terrain.vsh",
+      "variant": "base",
+      "samplers": [
+        "u_SectionTimeInfo",
+        "u_LightTex"
+      ],
+      "uniforms": [
+        "SulkanWind",
+        "u_Globals"
+      ],
+      "inputs": [
+        "a_Position",
+        "a_LightAndData",
+        "a_SulkanMaterial",
+        "a_TexCoord",
+        "a_Color"
+      ],
+      "outputs": [
+        "auroraPosition",
+        "auroraUv",
+        "auroraTint",
+        "auroraLight",
+        "auroraFade",
+        "auroraMaterial"
+      ],
+      "bytes": 13972,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "dithering-off",
+      "entry": "shaders/terrain.fsh",
+      "variant": "opaque",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 81788,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "dithering-off",
+      "entry": "shaders/terrain.fsh",
+      "variant": "cutout-0.1",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 81952,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "dithering-off",
+      "entry": "shaders/terrain.fsh",
+      "variant": "cutout-0.5",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 81952,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "loader",
+      "entry": "fullscreen.vert",
+      "variant": "base",
+      "samplers": [],
+      "uniforms": [],
+      "inputs": [],
+      "outputs": [
+        "texCoord"
+      ],
+      "bytes": 1708,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    }
+  ]
+}
