@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "name": "UN Aurora Lite 0.1.2",
+  "name": "UN Aurora Lite 0.1.3",
   "budgetMiB": 448,
   "materials": {
     "minecraft:water": 1,
@@ -153,6 +153,21 @@
         0.5,
         1
       ]
+    },
+    "SUNSET_GLOW": {
+      "label": "Sunrise and sunset glow",
+      "default": 0.35,
+      "values": [0, 0.35, 0.65, 1]
+    },
+    "HEIGHT_FOG": {
+      "label": "Low-altitude morning and rain mist",
+      "default": 0.25,
+      "values": [0, 0.25, 0.5, 1]
+    },
+    "FOG_HEIGHT": {
+      "label": "Mist reference altitude (world Y)",
+      "default": 64,
+      "values": [32, 64, 96, 128]
     },
     "BLOOM_STRENGTH": {
       "label": "Soft bloom",

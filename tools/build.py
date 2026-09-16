@@ -6,7 +6,7 @@ import zipfile
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--output", type=Path, default=Path("UN_Aurora_Lite-0.1.2-Sulkan-0.4.2.zip"))
+    parser.add_argument("--output", type=Path, default=Path("UN_Aurora_Lite-0.1.3-Sulkan-0.4.2.zip"))
     args = parser.parse_args()
     root = Path(__file__).resolve().parents[1]
     output = args.output.resolve()

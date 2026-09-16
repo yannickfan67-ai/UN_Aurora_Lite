@@ -1,6 +1,6 @@
 # Provenance and license
 
-UN Aurora Lite 0.1.2 is licensed under **GPL-3.0-only**. See `LICENSE`.
+UN Aurora Lite 0.1.3 is licensed under **GPL-3.0-only**. See `LICENSE`.
 
 ## New work
 

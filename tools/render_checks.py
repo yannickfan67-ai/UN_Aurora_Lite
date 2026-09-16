@@ -72,14 +72,14 @@ def main():
     texture('far-depth', rgba(.1 / 200))
     jobs = []
 
-    def job(name, scenario, entry, textures, size=(width,height), unorm=True):
+    def job(name, scenario, entry, textures, size=(width,height), unorm=True, frame_file=frame_path):
         module = next(m for m in modules if m['case']==scenario and m['entry']==entry and m['variant']=='base')
         row = next(r for r in rows if r['case']==scenario and r['entry']==entry)
         # NativeCompileProbe.rebind assigns UBO 0 followed by sorted read names.
         # Its unused shadow bindings sort after these post-process sampler names.
         assert set(textures) == set(row['reads']), (name, textures, row['reads'])
         jobs.append(dict(name=name, width=size[0], height=size[1], unorm=unorm,
-                         frame=str(frame_path), vertex=str(Path(vertex).resolve()),
+                         frame=str(frame_file), vertex=str(Path(vertex).resolve()),
                          fragment=str(Path(module['spirv']).resolve()),
                          textures=[inputs[textures[n]] for n in sorted(textures)],
                          output=str(output/(name+('.rgba8' if unorm else '.f32')))))
@@ -94,6 +94,69 @@ def main():
     for name in ('flat','far'):
         job('ao-'+name, 'default', 'shaders/ao.fsh', dict(Depth=name+'-depth'), (64,64), False)
     job('ao-sky', 'default', 'shaders/ao.fsh', dict(Depth='black'), (64,64), False)
+
+    # Exercise the actual compose SPIR-V with independent sky/geometry fixtures.
+    # The off variant is an identity in linear space (legacy haze and AO are off).
+    atmosphere_scene = rgba()
+    atmosphere_scene[:,:,:3] = (.32, .38, .46)
+    texture('atmosphere-scene', atmosphere_scene)
+    texture('dark-interior', rgba(.015))
+    texture('mist-depth', rgba(.1 / 160))
+    texture('weather-depth', rgba(.1 / 72))
+    texture('near-depth', rgba(.1 / 4))
+
+    def atmosphere_frame(name, height=64, elevation=.05, rain=0, dimension=0, fog_type=0, away=False):
+        state = frame.copy()
+        state[432//4:448//4] = (0, rain, 0, dimension)
+        state[448//4:464//4] = (0, elevation, (1 if away else -1)*np.sqrt(max(0,1-elevation**2)), 1-rain)
+        state[480//4:496//4] = (0, height, 0, fog_type)
+        state[512//4:528//4] = (.7, .75, .8, 0)
+        path = output / ('frame-'+name+'.bin')
+        state.tofile(path)
+        return path
+
+    atmospheres = {}
+
+    def atmosphere_pair(name, depth='mist-depth', source='atmosphere-scene', **environment):
+        state = atmosphere_frame(name, **environment)
+        atmospheres[name] = state
+        for suffix in ('on','off'):
+            job(name+'-'+suffix, 'atmosphere-test-'+suffix, 'shaders/compose.fsh',
+                dict(Scene=source, Depth=depth, HandDepth='hand'), unorm=False, frame_file=state)
+
+    atmosphere_pair('sky-twilight', depth='black')
+    atmosphere_pair('sky-away', depth='black', away=True)
+    atmosphere_pair('sky-noon', depth='black', elevation=1)
+    atmosphere_pair('sky-night', depth='black', elevation=-1)
+    atmosphere_pair('sky-rain', depth='black', rain=1)
+    atmosphere_pair('mist-twilight')
+    # Keep the weather comparison below the far-fog opacity cap.
+    atmosphere_pair('mist-noon', depth='weather-depth', elevation=1)
+    atmosphere_pair('mist-rain', depth='weather-depth', elevation=1, rain=1)
+    atmosphere_pair('mist-near', depth='near-depth')
+    atmosphere_pair('mist-high', height=512)
+    atmosphere_pair('mist-underground', height=-512)
+    atmosphere_pair('mist-dark', source='dark-interior')
+    atmosphere_pair('mist-raised', height=128)
+    job('mist-raised-reference', 'atmosphere-test-raised', 'shaders/compose.fsh',
+        dict(Scene='atmosphere-scene', Depth='mist-depth', HandDepth='hand'),
+        unorm=False, frame_file=atmospheres['mist-raised'])
+    # Each fixture has sky on one half and geometry on the other half.
+    mixed_depth = rgba(.1 / 160)
+    mixed_depth[:height//2,:,0] = 0
+    texture('mixed-depth', mixed_depth)
+    neutral_ao = rgba()
+    neutral_ao[:,:,0] = 1
+    neutral_ao[:,:,1] = 160
+    texture('neutral-ao', neutral_ao)
+    for suffix, scenario in [('on','default'), ('off','atmosphere-off')]:
+        job('atmosphere-default-'+suffix, scenario, 'shaders/compose.fsh',
+            dict(Scene='atmosphere-scene', Depth='mixed-depth', HandDepth='hand', Ambient='neutral-ao'),
+            unorm=False, frame_file=atmospheres['mist-twilight'])
+    for name, environment in [('nether',dict(dimension=-1)), ('end',dict(dimension=1)),
+                              ('custom-dimension',dict(dimension=2)), ('water',dict(fog_type=1)),
+                              ('lava',dict(fog_type=2)), ('powder-snow',dict(fog_type=3))]:
+        atmosphere_pair(name, depth='mixed-depth', **environment)
     config = output / 'jobs.json'
     config.write_text(json.dumps({'jobs':jobs}, indent=2)+'\n')
     subprocess.run([args.java,'--enable-native-access=ALL-UNNAMED','-cp',args.classpath,
@@ -119,6 +182,43 @@ def main():
     checks = dict(finitePixels='PASS', stableDither='PASS', ditherAtMostOneCodeValue='PASS',
                   blackPreserved='PASS', heldItemOutputProtected='PASS', heldItemBloomSourceExcluded='PASS',
                   worldBloomStillVisible='PASS', flatFarSkyAo='PASS')
+    expected_linear = np.where(atmosphere_scene[:,:,:3] <= .04045,
+                               atmosphere_scene[:,:,:3] / 12.92,
+                               ((atmosphere_scene[:,:,:3]+.055)/1.055)**2.4)
+    assert np.allclose(rendered['mist-twilight-off'][:,:,:3], expected_linear, atol=1e-6), 'Disabled atmosphere is not identity'
+    for name in atmospheres:
+        assert np.array_equal(rendered[name+'-on'][hand_mask],rendered[name+'-off'][hand_mask]), name+' changed held items'
+
+    def delta(name):
+        return rendered[name+'-on'][:,:,:3] - rendered[name+'-off'][:,:,:3]
+
+    # Narrow horizon strip avoids comparing differing ray elevations; exclude hand.
+    horizon_mask = np.zeros((height,width), dtype=bool)
+    horizon_mask[60:68] = True
+    horizon_mask &= ~hand_mask
+    for name in ('sky-noon','sky-night','sky-away','mist-near','mist-high','mist-underground','mist-dark',
+                 'nether','end','custom-dimension','water','lava','powder-snow'):
+        assert np.max(np.abs(delta(name))) < 1e-6, 'Atmosphere exclusion failed: '+name
+    glow = delta('sky-twilight')[horizon_mask].mean(axis=0)
+    assert glow[0] > .01 and glow[0] > 2*glow[1] > 2*glow[2], 'Twilight sky glow is absent or not warm'
+    assert delta('sky-rain')[horizon_mask].mean() < delta('sky-twilight')[horizon_mask].mean()*.2, 'Rain should suppress sunset glow'
+    assert delta('mist-twilight')[horizon_mask].mean() > .015, 'Low-altitude mist is absent'
+    assert delta('mist-rain')[horizon_mask].mean() > delta('mist-noon')[horizon_mask].mean()*2, 'Rain should strengthen height mist'
+    raised_delta = rendered['mist-raised-reference'][:,:,:3] - rendered['mist-raised-off'][:,:,:3]
+    assert raised_delta[horizon_mask].mean() > delta('mist-raised')[horizon_mask].mean()*3, 'Reference altitude has no effect'
+    # Recover opacity using blue (glow contributes positively): it must stay below
+    # the combined 0.28 limit, preserving at least 72% of the source detail.
+    fog_linear = ((np.array([.7,.75,.8])+.055)/1.055)**2.4
+    assert np.max(delta('mist-twilight')[:,:,2]/(fog_linear[2]-expected_linear[:,:,2])) < .29, 'Mist obscures too much detail'
+    default_delta = delta('atmosphere-default')
+    assert np.max(np.abs(default_delta[hand_mask])) == 0, 'Default atmosphere changed held items'
+    assert np.max(default_delta[:64,:,0]) > .01, 'Default sunset setting has no observable effect'
+    assert .005 < default_delta[64:,:,2].max() < .08, 'Default mist is absent or excessive'
+    checks.update(atmosphereOffIdentity='PASS', atmosphereHeldItems='PASS',
+                  directionalWarmTwilight='PASS', sunsetRainAttenuation='PASS',
+                  heightMistWeatherResponse='PASS', adjustableMistAltitude='PASS',
+                  atmosphereEnvironmentExclusions='PASS', nearDarkHighUndergroundProtection='PASS',
+                  boundedAtmosphereOpacity='PASS', balancedAtmosphereDefaults='PASS')
     report = json.loads((output/'vulkan-render.json').read_text())
     report['checks'] = checks
     report['outputSha256'] = {j['name']:hashlib.sha256(Path(j['output']).read_bytes()).hexdigest() for j in jobs}

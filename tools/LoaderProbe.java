@@ -47,7 +47,7 @@ public class LoaderProbe {
         }
         LinkedHashMap<String, Map<String, Double>> cases = new LinkedHashMap<>();
         cases.put("default", Map.of());
-        cases.put("minimal", Map.of("SHADOW_QUALITY",0.0,"AO_QUALITY",0.0,"BLOOM_STRENGTH",0.0,"WATER_ENABLED",0.0,"VEGETATION_WIND",0.0));
+        cases.put("minimal", Map.of("SHADOW_QUALITY",0.0,"AO_QUALITY",0.0,"BLOOM_STRENGTH",0.0,"WATER_ENABLED",0.0,"VEGETATION_WIND",0.0,"SUNSET_GLOW",0.0,"HEIGHT_FOG",0.0));
         cases.put("enhanced", Map.of("SHADOW_QUALITY",2.0,"SHADOW_DISTANCE",96.0,"AO_QUALITY",2.0,"EDGE_SMOOTHING",1.0,"WATER_WAVES",1.0));
         cases.put("all-maximum", new LinkedHashMap<>());
         for (var entry : definitions.entrySet()) {
@@ -65,6 +65,13 @@ public class LoaderProbe {
         cases.put("cave-visibility-off", Map.of("CAVE_VISIBILITY",0.0));
         cases.put("wet-surfaces-off", Map.of("WET_SURFACES",0.0));
         cases.put("dithering-off", Map.of("DITHERING",0.0));
+        cases.put("sunset-glow-off", Map.of("SUNSET_GLOW",0.0));
+        cases.put("height-fog-off", Map.of("HEIGHT_FOG",0.0));
+        cases.put("atmosphere-off", Map.of("SUNSET_GLOW",0.0,"HEIGHT_FOG",0.0));
+        // Isolate the new atmospheric terms for pixel comparisons without AO or legacy haze.
+        cases.put("atmosphere-test-on", Map.of("AO_QUALITY",0.0,"FOG_STRENGTH",0.0,"SUNSET_GLOW",1.0,"HEIGHT_FOG",1.0));
+        cases.put("atmosphere-test-off", Map.of("AO_QUALITY",0.0,"FOG_STRENGTH",0.0,"SUNSET_GLOW",0.0,"HEIGHT_FOG",0.0));
+        cases.put("atmosphere-test-raised", Map.of("AO_QUALITY",0.0,"FOG_STRENGTH",0.0,"SUNSET_GLOW",1.0,"HEIGHT_FOG",1.0,"FOG_HEIGHT",128.0));
         List<Object> reportCases = new ArrayList<>();
         List<Object> shaders = new ArrayList<>();
         for (var test : cases.entrySet()) {

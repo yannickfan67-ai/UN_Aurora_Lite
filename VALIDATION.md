@@ -19,17 +19,18 @@ native shader compiler, SPIRV-Cross reflection and descriptor rebind implementat
 were executed directly from the unmodified release JARs. They were not replaced by
 Python approximations, patched class versions or mock frame/format definitions.
 
-## 0.1.2 gameplay and visual changes
+## 0.1.3 gameplay and visual changes
 
-The balanced defaults retain modest bloom, AO and water reflections, with readable
-nights/interiors. Sun and moon diffuse lobes now fade individually at the horizon.
-Rain adds an optional restrained sheen on exposed upward faces. Water waves use
-derivative filtering for distant pixels and periodic phases across camera wraps.
-Bloom extraction rejects the hand's complete bilinear footprint before blur.
-Static, sub-code-value dithering improves 8-bit gradients while preserving black.
-AO skips its neighborhood samples beyond the existing 96-block fade range.
-No render targets or post passes were added. The extra math and hand-depth gathers
-have not been benchmarked on hardware.
+The compose pass adds optional directional sunrise/sunset glow (default 0.35) and
+low-altitude mist (default 0.25, reference Y=64, adjustable to 32/64/96/128).
+Mist uses three arithmetic density evaluations along the reconstructed view ray,
+with no extra texture sampling, ray marching, temporal history, or graph resources.
+It increases at twilight/in rain, excludes the nearest 24 blocks, tapers away above
+and below the reference altitude, and combines with existing haze under a 0.28 cap.
+Brightness gating reduces dark-interior haze; this is an approximation and cannot
+identify every indoor/covered surface. The new effects exclude held items, other
+dimensions, and fluid/powder-snow camera fog. The original sun/moon/stars remain.
+Both effects compile out when disabled. Hardware frame times are unmeasured.
 
 ## Checks
 
@@ -38,36 +39,46 @@ have not been benchmarked on hardware.
 | ZIP integrity and one root `sulkan.json` | PASS |
 | Actual `ShaderPackScanner.scanDirectory` | PASS; archive is supported |
 | Actual `PackFiles.read` and `PackGraph.parse` | PASS |
-| Native options | 22 definitions, 83 permitted values accepted |
-| Test scenarios | 21 |
-| Expanded active shader entrypoints | 156 |
-| Native compiler + Minecraft reflection | 199 modules PASS |
-| Minecraft `IntermediaryShaderModule.rebind` | 199 modules PASS |
-| `spirv-val --target-env vulkan1.2` after rebinding | 199 modules PASS |
-| Vertex-to-fragment name/type/location/flat linkage | 177 pairs PASS |
+| Native options | 25 definitions, 95 permitted values accepted |
+| Test scenarios | 27 |
+| Expanded active shader entrypoints | 201 |
+| Native compiler + Minecraft reflection | 256 modules PASS |
+| Minecraft `IntermediaryShaderModule.rebind` | 256 modules PASS |
+| `spirv-val --target-env vulkan1.2` after rebinding | 256 modules PASS |
+| Vertex-to-fragment name/type/location/flat linkage | 228 pairs PASS |
 | Sodium five-attribute vertex ABI | PASS |
 | Shared UBO member offsets | PASS |
 | Sodium push constants | PASS: offsets 0, 12, 16 |
 | Graph schedules with bloom and AO disabled | PASS: 2 post passes remain |
 | Allocation accounting at 720p/1080p/1440p/4K | PASS within 448 MiB manifest limit |
-| Synthetic Vulkan draws with release-compiled post shaders | 9 draws PASS |
-| Pixel assertions: hand bloom, static dither, black level, flat/far/sky AO | 8 checks PASS |
+| Synthetic Vulkan draws with release-compiled post shaders | 50 draws PASS |
+| Pixel assertions: bloom/dither/AO plus atmosphere behavior and exclusions | 18 checks PASS |
 
 Scenarios cover defaults, minimal effects, enhanced settings, all numerical maxima,
 each shadow tier 0–3 with water both on and off, AO disabled, zero AO strength,
 eight-sample AO, bloom disabled, edge smoothing enabled, bloom disabled with edge smoothing enabled,
-cave visibility disabled, wet surfaces disabled and dithering disabled. Geometry fragments
+cave visibility disabled, wet surfaces disabled, dithering disabled, each atmosphere effect disabled,
+both disabled, isolated atmosphere on/off, and an elevated fog reference. Geometry fragments
 are compiled as opaque and with both `ALPHA_CUTOUT=0.1` and `ALPHA_CUTOUT=0.5`.
 The fullscreen vertex shader is the loader's actual embedded source.
 
 Binding tests construct descriptors from the known native contract and exercise
 Minecraft's real `rebind` routine. The SPIR-V checks validate the remapped modules.
 The separate `NativeRenderProbe` then creates a Vulkan device, descriptor pools,
-graphics pipelines and offscreen targets for five post-process module variants.
-It executes 9 draws using 128x128 synthetic source/depth fixtures, and reads pixels
+graphics pipelines and offscreen targets for ten post-process module variants.
+It executes 50 draws using 128x128 synthetic source/depth fixtures, and reads pixels
 back for assertions. Final color uses the pack's `RGBA8_UNORM` format. Diagnostic
-AO/bloom targets use `RGBA32_FLOAT` to inspect values; they do not replicate the
+AO/bloom/compose targets use `RGBA32_FLOAT` to inspect values; they do not replicate the
 pack's half-float allocation. No swapchain or Minecraft runtime is created.
+
+Atmosphere assertions compare the actual on/off compose modules using independently
+constructed frames and textures: warm forward-facing twilight, no glow at noon/night
+or behind the sun, rain attenuation of glow, rain strengthening of unsaturated mist,
+reference-altitude response, bounded opacity, and the balanced defaults. Sky and
+geometry are both exercised for Nether/End/custom dimensions and water/lava/powder
+snow. Near objects, dark interiors, high altitude, deep underground, and held items
+are checked against the disabled variant. These are synthetic correctness checks,
+not screenshots or measurements of real Minecraft environments.
 
 ## Allocation scope
 
@@ -127,7 +138,7 @@ After successful checks, collect the distributable report and rebuild the ZIP:
 
 ```bash
 python3 tools/collect_validation.py build/validation --archive build/aurora.zip --loader /path/to/sulkan-0.4.2-26.2.jar --client /path/to/minecraft-26.2-client.jar
-python3 tools/build.py --output UN_Aurora_Lite-0.1.2-Sulkan-0.4.2.zip
+python3 tools/build.py --output UN_Aurora_Lite-0.1.3-Sulkan-0.4.2.zip
 ```
 
 The collector rejects manifest/shader changes made after the tested ZIP was built.
@@ -144,4 +155,5 @@ still requires loading a world on the target installation. Use the five-minute
 checklist in `README.md`; retain the instance's `logs/latest.log` if it fails.
 
 Machine-readable results and manifest/shader hashes are in `validation/summary.json`,
-`validation/scenarios.json`, `validation/modules.json` and `validation/memory-budget.json`.
+`validation/scenarios.json`, `validation/modules.json`, `validation/memory-budget.json`
+and `validation/render-checks.json`.

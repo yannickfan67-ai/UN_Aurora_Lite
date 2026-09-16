@@ -16,7 +16,7 @@
       "outputs": [
         "occlusionAndDistance"
       ],
-      "bytes": 16676,
+      "bytes": 16860,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -39,7 +39,7 @@
       "outputs": [
         "sceneLinear"
       ],
-      "bytes": 14720,
+      "bytes": 23660,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -60,7 +60,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 9036,
+      "bytes": 9220,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -80,7 +80,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 7844,
+      "bytes": 8024,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -100,7 +100,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 7844,
+      "bytes": 8024,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -122,7 +122,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 11104,
+      "bytes": 11288,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -153,7 +153,7 @@
         "auroraFade",
         "auroraMaterial"
       ],
-      "bytes": 13968,
+      "bytes": 14152,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -189,7 +189,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 81780,
+      "bytes": 81960,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -225,7 +225,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 81944,
+      "bytes": 82128,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -261,7 +261,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 81944,
+      "bytes": 82128,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -283,7 +283,7 @@
       "outputs": [
         "sceneLinear"
       ],
-      "bytes": 12584,
+      "bytes": 15856,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -303,7 +303,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 10684,
+      "bytes": 10860,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -334,7 +334,7 @@
         "auroraFade",
         "auroraMaterial"
       ],
-      "bytes": 13964,
+      "bytes": 14140,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -363,7 +363,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 45996,
+      "bytes": 46176,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -392,7 +392,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 46164,
+      "bytes": 46340,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -421,7 +421,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 46164,
+      "bytes": 46340,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -441,7 +441,7 @@
       "outputs": [
         "occlusionAndDistance"
       ],
-      "bytes": 16660,
+      "bytes": 16844,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -464,7 +464,7 @@
       "outputs": [
         "sceneLinear"
       ],
-      "bytes": 14716,
+      "bytes": 23660,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -485,7 +485,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 9036,
+      "bytes": 9220,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -505,7 +505,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 7840,
+      "bytes": 8024,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -525,7 +525,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 7840,
+      "bytes": 8024,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -547,7 +547,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 12404,
+      "bytes": 12588,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -578,7 +578,7 @@
         "auroraFade",
         "auroraMaterial"
       ],
-      "bytes": 13968,
+      "bytes": 14148,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -614,7 +614,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 87908,
+      "bytes": 88092,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -650,7 +650,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 88072,
+      "bytes": 88256,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -686,7 +686,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 88072,
+      "bytes": 88256,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -706,7 +706,7 @@
       "outputs": [
         "occlusionAndDistance"
       ],
-      "bytes": 16636,
+      "bytes": 16816,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -729,7 +729,7 @@
       "outputs": [
         "sceneLinear"
       ],
-      "bytes": 14676,
+      "bytes": 23556,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -750,7 +750,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 9012,
+      "bytes": 9192,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -770,7 +770,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 7820,
+      "bytes": 7996,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -790,7 +790,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 7820,
+      "bytes": 7996,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -812,7 +812,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 12392,
+      "bytes": 12572,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -843,7 +843,7 @@
         "auroraFade",
         "auroraMaterial"
       ],
-      "bytes": 13944,
+      "bytes": 14124,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -879,7 +879,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 86960,
+      "bytes": 87136,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -915,7 +915,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 87124,
+      "bytes": 87300,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -951,7 +951,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 87124,
+      "bytes": 87300,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -971,7 +971,7 @@
       "outputs": [
         "occlusionAndDistance"
       ],
-      "bytes": 16684,
+      "bytes": 16868,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -994,7 +994,7 @@
       "outputs": [
         "sceneLinear"
       ],
-      "bytes": 14728,
+      "bytes": 23668,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -1015,7 +1015,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 9044,
+      "bytes": 9228,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -1035,7 +1035,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 7852,
+      "bytes": 8032,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -1055,7 +1055,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 7852,
+      "bytes": 8032,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -1077,7 +1077,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 11116,
+      "bytes": 11300,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -1108,7 +1108,7 @@
         "auroraFade",
         "auroraMaterial"
       ],
-      "bytes": 13976,
+      "bytes": 14160,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -1137,7 +1137,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 46016,
+      "bytes": 46196,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -1166,7 +1166,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 46180,
+      "bytes": 46364,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -1195,7 +1195,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 46180,
+      "bytes": 46364,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -1215,7 +1215,7 @@
       "outputs": [
         "occlusionAndDistance"
       ],
-      "bytes": 16684,
+      "bytes": 16868,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -1238,7 +1238,7 @@
       "outputs": [
         "sceneLinear"
       ],
-      "bytes": 14728,
+      "bytes": 23668,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -1259,7 +1259,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 9044,
+      "bytes": 9228,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -1279,7 +1279,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 7852,
+      "bytes": 8032,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -1299,7 +1299,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 7852,
+      "bytes": 8032,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -1321,7 +1321,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 11116,
+      "bytes": 11300,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -1352,7 +1352,7 @@
         "auroraFade",
         "auroraMaterial"
       ],
-      "bytes": 13976,
+      "bytes": 14160,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -1381,7 +1381,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 54684,
+      "bytes": 54864,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -1410,7 +1410,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 54848,
+      "bytes": 55032,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -1439,7 +1439,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 54848,
+      "bytes": 55032,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -1459,7 +1459,7 @@
       "outputs": [
         "occlusionAndDistance"
       ],
-      "bytes": 16684,
+      "bytes": 16868,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -1482,7 +1482,7 @@
       "outputs": [
         "sceneLinear"
       ],
-      "bytes": 14728,
+      "bytes": 23668,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -1503,7 +1503,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 9044,
+      "bytes": 9228,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -1523,7 +1523,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 7852,
+      "bytes": 8032,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -1543,7 +1543,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 7852,
+      "bytes": 8032,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -1565,7 +1565,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 11116,
+      "bytes": 11300,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -1596,7 +1596,7 @@
         "auroraFade",
         "auroraMaterial"
       ],
-      "bytes": 13976,
+      "bytes": 14160,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -1632,7 +1632,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 73188,
+      "bytes": 73368,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -1668,7 +1668,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 73352,
+      "bytes": 73536,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -1704,7 +1704,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 73352,
+      "bytes": 73536,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -1724,7 +1724,7 @@
       "outputs": [
         "occlusionAndDistance"
       ],
-      "bytes": 16684,
+      "bytes": 16868,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -1747,7 +1747,7 @@
       "outputs": [
         "sceneLinear"
       ],
-      "bytes": 14728,
+      "bytes": 23668,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -1768,7 +1768,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 9044,
+      "bytes": 9228,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -1788,7 +1788,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 7852,
+      "bytes": 8032,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -1808,7 +1808,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 7852,
+      "bytes": 8032,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -1830,7 +1830,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 11116,
+      "bytes": 11300,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -1861,7 +1861,7 @@
         "auroraFade",
         "auroraMaterial"
       ],
-      "bytes": 13976,
+      "bytes": 14160,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -1897,7 +1897,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 81792,
+      "bytes": 81972,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -1933,7 +1933,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 81956,
+      "bytes": 82140,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -1969,7 +1969,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 81956,
+      "bytes": 82140,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -1989,7 +1989,7 @@
       "outputs": [
         "occlusionAndDistance"
       ],
-      "bytes": 16684,
+      "bytes": 16868,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -2012,7 +2012,7 @@
       "outputs": [
         "sceneLinear"
       ],
-      "bytes": 14728,
+      "bytes": 23668,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -2033,7 +2033,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 9044,
+      "bytes": 9228,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -2053,7 +2053,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 7852,
+      "bytes": 8032,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -2073,7 +2073,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 7852,
+      "bytes": 8032,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -2095,7 +2095,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 11116,
+      "bytes": 11300,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -2126,7 +2126,7 @@
         "auroraFade",
         "auroraMaterial"
       ],
-      "bytes": 13976,
+      "bytes": 14160,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -2162,7 +2162,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 79332,
+      "bytes": 79512,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -2198,7 +2198,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 79496,
+      "bytes": 79680,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -2234,7 +2234,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 79496,
+      "bytes": 79680,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -2254,7 +2254,7 @@
       "outputs": [
         "occlusionAndDistance"
       ],
-      "bytes": 16684,
+      "bytes": 16868,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -2277,7 +2277,7 @@
       "outputs": [
         "sceneLinear"
       ],
-      "bytes": 14728,
+      "bytes": 23668,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -2298,7 +2298,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 9044,
+      "bytes": 9228,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -2318,7 +2318,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 7852,
+      "bytes": 8032,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -2338,7 +2338,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 7852,
+      "bytes": 8032,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -2360,7 +2360,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 11116,
+      "bytes": 11300,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -2391,7 +2391,7 @@
         "auroraFade",
         "auroraMaterial"
       ],
-      "bytes": 13976,
+      "bytes": 14160,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -2427,7 +2427,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 87936,
+      "bytes": 88116,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -2463,7 +2463,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 88100,
+      "bytes": 88284,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -2499,7 +2499,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 88100,
+      "bytes": 88284,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -2519,7 +2519,7 @@
       "outputs": [
         "occlusionAndDistance"
       ],
-      "bytes": 16684,
+      "bytes": 16868,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -2542,7 +2542,7 @@
       "outputs": [
         "sceneLinear"
       ],
-      "bytes": 14728,
+      "bytes": 23668,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -2563,7 +2563,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 9044,
+      "bytes": 9228,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -2583,7 +2583,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 7852,
+      "bytes": 8032,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -2603,7 +2603,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 7852,
+      "bytes": 8032,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -2625,7 +2625,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 11116,
+      "bytes": 11300,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -2656,7 +2656,7 @@
         "auroraFade",
         "auroraMaterial"
       ],
-      "bytes": 13976,
+      "bytes": 14160,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -2692,7 +2692,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 78472,
+      "bytes": 78652,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -2728,7 +2728,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 78636,
+      "bytes": 78820,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -2764,7 +2764,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 78636,
+      "bytes": 78820,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -2784,7 +2784,7 @@
       "outputs": [
         "occlusionAndDistance"
       ],
-      "bytes": 16684,
+      "bytes": 16868,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -2807,7 +2807,7 @@
       "outputs": [
         "sceneLinear"
       ],
-      "bytes": 14728,
+      "bytes": 23668,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -2828,7 +2828,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 9044,
+      "bytes": 9228,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -2848,7 +2848,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 7852,
+      "bytes": 8032,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -2868,7 +2868,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 7852,
+      "bytes": 8032,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -2890,7 +2890,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 11116,
+      "bytes": 11300,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -2921,7 +2921,7 @@
         "auroraFade",
         "auroraMaterial"
       ],
-      "bytes": 13976,
+      "bytes": 14160,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -2957,7 +2957,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 87076,
+      "bytes": 87256,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -2993,7 +2993,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 87240,
+      "bytes": 87424,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -3029,7 +3029,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 87240,
+      "bytes": 87424,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -3051,7 +3051,7 @@
       "outputs": [
         "sceneLinear"
       ],
-      "bytes": 12596,
+      "bytes": 21552,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -3072,7 +3072,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 9040,
+      "bytes": 9224,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -3092,7 +3092,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 7848,
+      "bytes": 8028,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -3112,7 +3112,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 7848,
+      "bytes": 8028,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -3134,7 +3134,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 11108,
+      "bytes": 11292,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -3165,7 +3165,7 @@
         "auroraFade",
         "auroraMaterial"
       ],
-      "bytes": 13972,
+      "bytes": 14156,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -3201,7 +3201,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 81784,
+      "bytes": 81964,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -3237,7 +3237,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 81948,
+      "bytes": 82132,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -3273,7 +3273,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 81948,
+      "bytes": 82132,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -3295,7 +3295,7 @@
       "outputs": [
         "sceneLinear"
       ],
-      "bytes": 12596,
+      "bytes": 21556,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -3316,7 +3316,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 9044,
+      "bytes": 9224,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -3336,7 +3336,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 7848,
+      "bytes": 8032,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -3356,7 +3356,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 7848,
+      "bytes": 8032,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -3378,7 +3378,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 11116,
+      "bytes": 11296,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -3409,7 +3409,7 @@
         "auroraFade",
         "auroraMaterial"
       ],
-      "bytes": 13972,
+      "bytes": 14156,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -3445,7 +3445,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 81788,
+      "bytes": 81972,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -3481,7 +3481,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 81952,
+      "bytes": 82136,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -3517,7 +3517,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 81952,
+      "bytes": 82136,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -3537,7 +3537,7 @@
       "outputs": [
         "occlusionAndDistance"
       ],
-      "bytes": 16668,
+      "bytes": 16852,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -3560,7 +3560,7 @@
       "outputs": [
         "sceneLinear"
       ],
-      "bytes": 14728,
+      "bytes": 23668,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -3581,7 +3581,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 9044,
+      "bytes": 9228,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -3601,7 +3601,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 7852,
+      "bytes": 8032,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -3621,7 +3621,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 7852,
+      "bytes": 8032,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -3643,7 +3643,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 11116,
+      "bytes": 11300,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -3674,7 +3674,7 @@
         "auroraFade",
         "auroraMaterial"
       ],
-      "bytes": 13976,
+      "bytes": 14160,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -3710,7 +3710,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 81792,
+      "bytes": 81972,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -3746,7 +3746,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 81956,
+      "bytes": 82140,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -3782,7 +3782,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 81956,
+      "bytes": 82140,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -3802,7 +3802,7 @@
       "outputs": [
         "occlusionAndDistance"
       ],
-      "bytes": 16680,
+      "bytes": 16860,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -3825,7 +3825,7 @@
       "outputs": [
         "sceneLinear"
       ],
-      "bytes": 14724,
+      "bytes": 23668,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -3845,7 +3845,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 10696,
+      "bytes": 10876,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -3876,7 +3876,7 @@
         "auroraFade",
         "auroraMaterial"
       ],
-      "bytes": 13972,
+      "bytes": 14156,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -3912,7 +3912,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 81784,
+      "bytes": 81968,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -3948,7 +3948,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 81948,
+      "bytes": 82132,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -3984,7 +3984,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 81948,
+      "bytes": 82132,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -4004,7 +4004,7 @@
       "outputs": [
         "occlusionAndDistance"
       ],
-      "bytes": 16680,
+      "bytes": 16864,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -4027,7 +4027,7 @@
       "outputs": [
         "sceneLinear"
       ],
-      "bytes": 14728,
+      "bytes": 23668,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -4048,7 +4048,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 9040,
+      "bytes": 9224,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -4068,7 +4068,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 7848,
+      "bytes": 8028,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -4088,7 +4088,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 7848,
+      "bytes": 8028,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -4110,7 +4110,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 12408,
+      "bytes": 12592,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -4141,7 +4141,7 @@
         "auroraFade",
         "auroraMaterial"
       ],
-      "bytes": 13976,
+      "bytes": 14160,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -4177,7 +4177,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 81788,
+      "bytes": 81968,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -4213,7 +4213,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 81952,
+      "bytes": 82136,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -4249,7 +4249,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 81952,
+      "bytes": 82136,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -4269,7 +4269,7 @@
       "outputs": [
         "occlusionAndDistance"
       ],
-      "bytes": 16684,
+      "bytes": 16864,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -4292,7 +4292,7 @@
       "outputs": [
         "sceneLinear"
       ],
-      "bytes": 14724,
+      "bytes": 23668,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -4313,7 +4313,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 12200,
+      "bytes": 12380,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -4344,7 +4344,7 @@
         "auroraFade",
         "auroraMaterial"
       ],
-      "bytes": 13972,
+      "bytes": 14156,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -4380,7 +4380,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 81788,
+      "bytes": 81972,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -4416,7 +4416,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 81952,
+      "bytes": 82136,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -4452,7 +4452,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 81952,
+      "bytes": 82136,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -4472,7 +4472,7 @@
       "outputs": [
         "occlusionAndDistance"
       ],
-      "bytes": 16688,
+      "bytes": 16868,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -4495,7 +4495,7 @@
       "outputs": [
         "sceneLinear"
       ],
-      "bytes": 14728,
+      "bytes": 23672,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -4516,7 +4516,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 9048,
+      "bytes": 9228,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -4536,7 +4536,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 7852,
+      "bytes": 8036,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -4556,7 +4556,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 7852,
+      "bytes": 8036,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -4578,7 +4578,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 11116,
+      "bytes": 11296,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -4609,7 +4609,7 @@
         "auroraFade",
         "auroraMaterial"
       ],
-      "bytes": 13976,
+      "bytes": 14160,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -4645,7 +4645,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 81756,
+      "bytes": 81940,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -4681,7 +4681,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 81920,
+      "bytes": 82104,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -4717,7 +4717,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 81920,
+      "bytes": 82104,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -4737,7 +4737,7 @@
       "outputs": [
         "occlusionAndDistance"
       ],
-      "bytes": 16684,
+      "bytes": 16864,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -4760,7 +4760,7 @@
       "outputs": [
         "sceneLinear"
       ],
-      "bytes": 14724,
+      "bytes": 23668,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -4781,7 +4781,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 9044,
+      "bytes": 9224,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -4801,7 +4801,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 7848,
+      "bytes": 8032,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -4821,7 +4821,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 7848,
+      "bytes": 8032,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -4843,7 +4843,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 11116,
+      "bytes": 11296,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -4874,7 +4874,7 @@
         "auroraFade",
         "auroraMaterial"
       ],
-      "bytes": 13972,
+      "bytes": 14156,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -4910,7 +4910,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 80336,
+      "bytes": 80520,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -4946,7 +4946,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 80500,
+      "bytes": 80684,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -4982,7 +4982,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 80500,
+      "bytes": 80684,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -5002,7 +5002,7 @@
       "outputs": [
         "occlusionAndDistance"
       ],
-      "bytes": 16680,
+      "bytes": 16864,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -5025,7 +5025,7 @@
       "outputs": [
         "sceneLinear"
       ],
-      "bytes": 14724,
+      "bytes": 23664,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -5046,7 +5046,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 9040,
+      "bytes": 9224,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -5066,7 +5066,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 7848,
+      "bytes": 8028,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -5086,7 +5086,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 7848,
+      "bytes": 8028,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -5108,7 +5108,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 10572,
+      "bytes": 10756,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -5139,7 +5139,7 @@
         "auroraFade",
         "auroraMaterial"
       ],
-      "bytes": 13972,
+      "bytes": 14156,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -5175,7 +5175,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 81788,
+      "bytes": 81968,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -5211,7 +5211,7 @@
       "outputs": [
         "color"
       ],
-      "bytes": 81952,
+      "bytes": 82136,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
@@ -5247,7 +5247,1534 @@
       "outputs": [
         "color"
       ],
-      "bytes": 81952,
+      "bytes": 82136,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "sunset-glow-off",
+      "entry": "shaders/ao.fsh",
+      "variant": "base",
+      "samplers": [
+        "Depth"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "occlusionAndDistance"
+      ],
+      "bytes": 16864,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "sunset-glow-off",
+      "entry": "shaders/compose.fsh",
+      "variant": "base",
+      "samplers": [
+        "Scene",
+        "Depth",
+        "HandDepth",
+        "Ambient"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "sceneLinear"
+      ],
+      "bytes": 20056,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "sunset-glow-off",
+      "entry": "shaders/bloom-seed.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source",
+        "HandDepth"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 9224,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "sunset-glow-off",
+      "entry": "shaders/blur-x.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 8032,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "sunset-glow-off",
+      "entry": "shaders/blur-y.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 8032,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "sunset-glow-off",
+      "entry": "shaders/final.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source",
+        "HandDepth",
+        "Bloom"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 11292,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "sunset-glow-off",
+      "entry": "shaders/terrain.vsh",
+      "variant": "base",
+      "samplers": [
+        "u_SectionTimeInfo",
+        "u_LightTex"
+      ],
+      "uniforms": [
+        "SulkanWind",
+        "u_Globals"
+      ],
+      "inputs": [
+        "a_Position",
+        "a_LightAndData",
+        "a_SulkanMaterial",
+        "a_TexCoord",
+        "a_Color"
+      ],
+      "outputs": [
+        "auroraPosition",
+        "auroraUv",
+        "auroraTint",
+        "auroraLight",
+        "auroraFade",
+        "auroraMaterial"
+      ],
+      "bytes": 14156,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "sunset-glow-off",
+      "entry": "shaders/terrain.fsh",
+      "variant": "opaque",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 81968,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "sunset-glow-off",
+      "entry": "shaders/terrain.fsh",
+      "variant": "cutout-0.1",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 82132,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "sunset-glow-off",
+      "entry": "shaders/terrain.fsh",
+      "variant": "cutout-0.5",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 82132,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "height-fog-off",
+      "entry": "shaders/ao.fsh",
+      "variant": "base",
+      "samplers": [
+        "Depth"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "occlusionAndDistance"
+      ],
+      "bytes": 16860,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "height-fog-off",
+      "entry": "shaders/compose.fsh",
+      "variant": "base",
+      "samplers": [
+        "Scene",
+        "Depth",
+        "HandDepth",
+        "Ambient"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "sceneLinear"
+      ],
+      "bytes": 21660,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "height-fog-off",
+      "entry": "shaders/bloom-seed.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source",
+        "HandDepth"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 9220,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "height-fog-off",
+      "entry": "shaders/blur-x.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 8028,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "height-fog-off",
+      "entry": "shaders/blur-y.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 8028,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "height-fog-off",
+      "entry": "shaders/final.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source",
+        "HandDepth",
+        "Bloom"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 11292,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "height-fog-off",
+      "entry": "shaders/terrain.vsh",
+      "variant": "base",
+      "samplers": [
+        "u_SectionTimeInfo",
+        "u_LightTex"
+      ],
+      "uniforms": [
+        "SulkanWind",
+        "u_Globals"
+      ],
+      "inputs": [
+        "a_Position",
+        "a_LightAndData",
+        "a_SulkanMaterial",
+        "a_TexCoord",
+        "a_Color"
+      ],
+      "outputs": [
+        "auroraPosition",
+        "auroraUv",
+        "auroraTint",
+        "auroraLight",
+        "auroraFade",
+        "auroraMaterial"
+      ],
+      "bytes": 14156,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "height-fog-off",
+      "entry": "shaders/terrain.fsh",
+      "variant": "opaque",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 81968,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "height-fog-off",
+      "entry": "shaders/terrain.fsh",
+      "variant": "cutout-0.1",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 82132,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "height-fog-off",
+      "entry": "shaders/terrain.fsh",
+      "variant": "cutout-0.5",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 82132,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "atmosphere-off",
+      "entry": "shaders/ao.fsh",
+      "variant": "base",
+      "samplers": [
+        "Depth"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "occlusionAndDistance"
+      ],
+      "bytes": 16860,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "atmosphere-off",
+      "entry": "shaders/compose.fsh",
+      "variant": "base",
+      "samplers": [
+        "Scene",
+        "Depth",
+        "HandDepth",
+        "Ambient"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "sceneLinear"
+      ],
+      "bytes": 17980,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "atmosphere-off",
+      "entry": "shaders/bloom-seed.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source",
+        "HandDepth"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 9220,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "atmosphere-off",
+      "entry": "shaders/blur-x.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 8024,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "atmosphere-off",
+      "entry": "shaders/blur-y.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 8024,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "atmosphere-off",
+      "entry": "shaders/final.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source",
+        "HandDepth",
+        "Bloom"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 11292,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "atmosphere-off",
+      "entry": "shaders/terrain.vsh",
+      "variant": "base",
+      "samplers": [
+        "u_SectionTimeInfo",
+        "u_LightTex"
+      ],
+      "uniforms": [
+        "SulkanWind",
+        "u_Globals"
+      ],
+      "inputs": [
+        "a_Position",
+        "a_LightAndData",
+        "a_SulkanMaterial",
+        "a_TexCoord",
+        "a_Color"
+      ],
+      "outputs": [
+        "auroraPosition",
+        "auroraUv",
+        "auroraTint",
+        "auroraLight",
+        "auroraFade",
+        "auroraMaterial"
+      ],
+      "bytes": 14152,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "atmosphere-off",
+      "entry": "shaders/terrain.fsh",
+      "variant": "opaque",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 81964,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "atmosphere-off",
+      "entry": "shaders/terrain.fsh",
+      "variant": "cutout-0.1",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 82128,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "atmosphere-off",
+      "entry": "shaders/terrain.fsh",
+      "variant": "cutout-0.5",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 82128,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "atmosphere-test-on",
+      "entry": "shaders/compose.fsh",
+      "variant": "base",
+      "samplers": [
+        "Scene",
+        "Depth",
+        "HandDepth"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "sceneLinear"
+      ],
+      "bytes": 21032,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "atmosphere-test-on",
+      "entry": "shaders/bloom-seed.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source",
+        "HandDepth"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 9220,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "atmosphere-test-on",
+      "entry": "shaders/blur-x.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 8024,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "atmosphere-test-on",
+      "entry": "shaders/blur-y.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 8024,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "atmosphere-test-on",
+      "entry": "shaders/final.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source",
+        "HandDepth",
+        "Bloom"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 11292,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "atmosphere-test-on",
+      "entry": "shaders/terrain.vsh",
+      "variant": "base",
+      "samplers": [
+        "u_SectionTimeInfo",
+        "u_LightTex"
+      ],
+      "uniforms": [
+        "SulkanWind",
+        "u_Globals"
+      ],
+      "inputs": [
+        "a_Position",
+        "a_LightAndData",
+        "a_SulkanMaterial",
+        "a_TexCoord",
+        "a_Color"
+      ],
+      "outputs": [
+        "auroraPosition",
+        "auroraUv",
+        "auroraTint",
+        "auroraLight",
+        "auroraFade",
+        "auroraMaterial"
+      ],
+      "bytes": 14156,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "atmosphere-test-on",
+      "entry": "shaders/terrain.fsh",
+      "variant": "opaque",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 81964,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "atmosphere-test-on",
+      "entry": "shaders/terrain.fsh",
+      "variant": "cutout-0.1",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 82132,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "atmosphere-test-on",
+      "entry": "shaders/terrain.fsh",
+      "variant": "cutout-0.5",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 82132,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "atmosphere-test-off",
+      "entry": "shaders/compose.fsh",
+      "variant": "base",
+      "samplers": [
+        "Scene",
+        "Depth",
+        "HandDepth"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "sceneLinear"
+      ],
+      "bytes": 12820,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "atmosphere-test-off",
+      "entry": "shaders/bloom-seed.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source",
+        "HandDepth"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 9224,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "atmosphere-test-off",
+      "entry": "shaders/blur-x.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 8028,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "atmosphere-test-off",
+      "entry": "shaders/blur-y.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 8028,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "atmosphere-test-off",
+      "entry": "shaders/final.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source",
+        "HandDepth",
+        "Bloom"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 11292,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "atmosphere-test-off",
+      "entry": "shaders/terrain.vsh",
+      "variant": "base",
+      "samplers": [
+        "u_SectionTimeInfo",
+        "u_LightTex"
+      ],
+      "uniforms": [
+        "SulkanWind",
+        "u_Globals"
+      ],
+      "inputs": [
+        "a_Position",
+        "a_LightAndData",
+        "a_SulkanMaterial",
+        "a_TexCoord",
+        "a_Color"
+      ],
+      "outputs": [
+        "auroraPosition",
+        "auroraUv",
+        "auroraTint",
+        "auroraLight",
+        "auroraFade",
+        "auroraMaterial"
+      ],
+      "bytes": 14156,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "atmosphere-test-off",
+      "entry": "shaders/terrain.fsh",
+      "variant": "opaque",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 81964,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "atmosphere-test-off",
+      "entry": "shaders/terrain.fsh",
+      "variant": "cutout-0.1",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 82132,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "atmosphere-test-off",
+      "entry": "shaders/terrain.fsh",
+      "variant": "cutout-0.5",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 82132,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "atmosphere-test-raised",
+      "entry": "shaders/compose.fsh",
+      "variant": "base",
+      "samplers": [
+        "Scene",
+        "Depth",
+        "HandDepth"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "sceneLinear"
+      ],
+      "bytes": 21040,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "atmosphere-test-raised",
+      "entry": "shaders/bloom-seed.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source",
+        "HandDepth"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 9224,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "atmosphere-test-raised",
+      "entry": "shaders/blur-x.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 8032,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "atmosphere-test-raised",
+      "entry": "shaders/blur-y.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 8032,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "atmosphere-test-raised",
+      "entry": "shaders/final.fsh",
+      "variant": "base",
+      "samplers": [
+        "Source",
+        "HandDepth",
+        "Bloom"
+      ],
+      "uniforms": [
+        "SulkanFrame"
+      ],
+      "inputs": [
+        "texCoord"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 11296,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "atmosphere-test-raised",
+      "entry": "shaders/terrain.vsh",
+      "variant": "base",
+      "samplers": [
+        "u_SectionTimeInfo",
+        "u_LightTex"
+      ],
+      "uniforms": [
+        "SulkanWind",
+        "u_Globals"
+      ],
+      "inputs": [
+        "a_Position",
+        "a_LightAndData",
+        "a_SulkanMaterial",
+        "a_TexCoord",
+        "a_Color"
+      ],
+      "outputs": [
+        "auroraPosition",
+        "auroraUv",
+        "auroraTint",
+        "auroraLight",
+        "auroraFade",
+        "auroraMaterial"
+      ],
+      "bytes": 14160,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "atmosphere-test-raised",
+      "entry": "shaders/terrain.fsh",
+      "variant": "opaque",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 81972,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "atmosphere-test-raised",
+      "entry": "shaders/terrain.fsh",
+      "variant": "cutout-0.1",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 82136,
+      "status": "PASS",
+      "minecraftRebind": "PASS"
+    },
+    {
+      "case": "atmosphere-test-raised",
+      "entry": "shaders/terrain.fsh",
+      "variant": "cutout-0.5",
+      "samplers": [
+        "SulkanShadowMap0",
+        "SulkanShadowMap1",
+        "SulkanShadowMap2",
+        "SulkanShadowMap3",
+        "SulkanEntityShadowMap0",
+        "SulkanEntityShadowMap1",
+        "u_BlockTex",
+        "u_LightTex",
+        "OpaqueDepth",
+        "Opaque"
+      ],
+      "uniforms": [
+        "SulkanFrame",
+        "SulkanShadowData",
+        "u_Globals"
+      ],
+      "inputs": [
+        "auroraUv",
+        "auroraTint",
+        "auroraPosition",
+        "auroraLight",
+        "auroraMaterial",
+        "auroraFade"
+      ],
+      "outputs": [
+        "color"
+      ],
+      "bytes": 82136,
       "status": "PASS",
       "minecraftRebind": "PASS"
     },
