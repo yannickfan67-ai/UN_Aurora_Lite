@@ -72,6 +72,12 @@ public class LoaderProbe {
         cases.put("atmosphere-test-on", Map.of("AO_QUALITY",0.0,"FOG_STRENGTH",0.0,"SUNSET_GLOW",1.0,"HEIGHT_FOG",1.0));
         cases.put("atmosphere-test-off", Map.of("AO_QUALITY",0.0,"FOG_STRENGTH",0.0,"SUNSET_GLOW",0.0,"HEIGHT_FOG",0.0));
         cases.put("atmosphere-test-raised", Map.of("AO_QUALITY",0.0,"FOG_STRENGTH",0.0,"SUNSET_GLOW",1.0,"HEIGHT_FOG",1.0,"FOG_HEIGHT",128.0));
+        cases.put("shadow-native", Map.of("SHADOW_FILTER",0.0));
+        cases.put("shadow-smooth", Map.of("SHADOW_FILTER",2.0));
+        cases.put("shadow-crisp", Map.of("SHADOW_SOFTNESS",0.0));
+        cases.put("shadow-softest", Map.of("SHADOW_FILTER",2.0,"SHADOW_SOFTNESS",1.5));
+        cases.put("shadow-strength-zero", Map.of("SHADOW_STRENGTH",0.0));
+        cases.put("shadow-strength-half", Map.of("SHADOW_STRENGTH",0.5));
         List<Object> reportCases = new ArrayList<>();
         List<Object> shaders = new ArrayList<>();
         for (var test : cases.entrySet()) {
@@ -92,6 +98,15 @@ public class LoaderProbe {
                 entries.put((String)field(program,"fragment"),field(program,"textures"));
             }
             Path caseDir=output.resolve(test.getKey());Files.createDirectories(caseDir);
+            // The test entrypoint calls the same shadow helper as terrain. It is
+            // not a graph pass and is tracked separately in compilation reports.
+            if (test.getKey().equals("default") || test.getKey().startsWith("shadow-")) {
+                String diagnostic="tools/shadow-probe.fsh";
+                Path target=caseDir.resolve("shadow-probe.fsh");
+                Files.writeString(target,(String)call(files,"shader",new Class<?>[]{String.class,Map.class},diagnostic,options));
+                shaders.add(Map.of("case",test.getKey(),"entry",diagnostic,"source",target.toString(),
+                    "reads",Map.of("ProbePosition","fixture","ProbeNormal","fixture"),"diagnostic",true));
+            }
             for(var entry:entries.entrySet()) {
                 String source=(String)call(files,"shader",new Class<?>[]{String.class,Map.class},entry.getKey(),options);
                 String filename=entry.getKey().replace('/','_');
@@ -114,6 +129,8 @@ public class LoaderProbe {
         report.put("packFilesRead","PASS");report.put("packGraphParse","PASS");
         report.put("shaderPackScanner","PASS");
         report.put("optionChoiceCount",validChoices);report.put("cases",reportCases);report.put("shaders",shaders);
+        report.put("productionEntrypoints",shaders.stream().filter(r->!Boolean.TRUE.equals(((Map<?,?>)r).get("diagnostic"))).count());
+        report.put("diagnosticEntrypoints",shaders.stream().filter(r->Boolean.TRUE.equals(((Map<?,?>)r).get("diagnostic"))).count());
         report.put("inGameTested",false);
         Gson gson=new GsonBuilder().setPrettyPrinting().create();
         Files.writeString(output.resolve("loader-probe.json"),gson.toJson(report)+"\n");

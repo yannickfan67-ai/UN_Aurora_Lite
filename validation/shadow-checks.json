@@ -1,0 +1,73 @@
+{
+  "device": "llvmpipe (LLVM 20.1.2, 256 bits)",
+  "deviceType": 4,
+  "vulkanDeviceCreated": true,
+  "draws": 24,
+  "input": "Synthetic textures; release-compiled shaders and production-helper diagnostics",
+  "inGameTested": false,
+  "fpsMeasured": false,
+  "checks": {
+    "terrainOcclusion": "PASS",
+    "entityOcclusion": "PASS",
+    "overlapNoDoubleDarkening": "PASS",
+    "stableFilterPattern": "PASS",
+    "softnessResponse": "PASS",
+    "reducedEdgeSteps": "PASS",
+    "strengthControl": "PASS",
+    "disabledAndDimensionBypass": "PASS",
+    "mapAndDepthBounds": "PASS",
+    "slopedReceiverNoAcne": "PASS",
+    "smoothDistanceFade": "PASS",
+    "smoothCascadeHandoff": "PASS",
+    "inactiveCascadeSkip": "PASS"
+  },
+  "outputSha256": {
+    "native": "440c0d520f3df9a0cf7f39522f3987ec469f9a72b737658881d8e04d1466dcbd",
+    "balanced": "aedb4e72ff51e86123681c198706f7d6a8e01fcaeecbd71275b1bdc957a1c673",
+    "smooth": "e40fcbc868d9444dfbab2e208a254287d412cda838b87dc961ea481b3c9df15d",
+    "softest": "790e499611e67a585bc28e3572796ed11d1d347ca9738681b1526dbc7133f1cb",
+    "crisp": "440c0d520f3df9a0cf7f39522f3987ec469f9a72b737658881d8e04d1466dcbd",
+    "strength-zero": "17faa485f5409354c6aed458c8cc8dfad1922c98532b3e0349c26f9349388261",
+    "strength-half": "48a59ac58fb2d917714ed525f2bee1667b83e1734775e339cf8338a047b9f154",
+    "quality-zero": "17faa485f5409354c6aed458c8cc8dfad1922c98532b3e0349c26f9349388261",
+    "quality-medium": "aedb4e72ff51e86123681c198706f7d6a8e01fcaeecbd71275b1bdc957a1c673",
+    "quality-high": "aedb4e72ff51e86123681c198706f7d6a8e01fcaeecbd71275b1bdc957a1c673",
+    "repeat": "aedb4e72ff51e86123681c198706f7d6a8e01fcaeecbd71275b1bdc957a1c673",
+    "entity-only": "aedb4e72ff51e86123681c198706f7d6a8e01fcaeecbd71275b1bdc957a1c673",
+    "both-maps": "aedb4e72ff51e86123681c198706f7d6a8e01fcaeecbd71275b1bdc957a1c673",
+    "no-occluder": "17faa485f5409354c6aed458c8cc8dfad1922c98532b3e0349c26f9349388261",
+    "disabled-frame": "17faa485f5409354c6aed458c8cc8dfad1922c98532b3e0349c26f9349388261",
+    "nether": "17faa485f5409354c6aed458c8cc8dfad1922c98532b3e0349c26f9349388261",
+    "end": "17faa485f5409354c6aed458c8cc8dfad1922c98532b3e0349c26f9349388261",
+    "outside-map": "17faa485f5409354c6aed458c8cc8dfad1922c98532b3e0349c26f9349388261",
+    "outside-depth": "17faa485f5409354c6aed458c8cc8dfad1922c98532b3e0349c26f9349388261",
+    "slope-balanced": "17faa485f5409354c6aed458c8cc8dfad1922c98532b3e0349c26f9349388261",
+    "slope-softest": "17faa485f5409354c6aed458c8cc8dfad1922c98532b3e0349c26f9349388261",
+    "distance-fade": "64d967902afc175c343480670664fe4ae0984753d77de3680a84ee8303394d26",
+    "cascade-handoff": "8989f0298d450fd30163938648b90f36c5dd0eac2e7f4d92dc8fe41143df3f57",
+    "inactive-cascade": "8989f0298d450fd30163938648b90f36c5dd0eac2e7f4d92dc8fe41143df3f57"
+  },
+  "testedSpirvSha256": {
+    "shadow-native__tools_shadow-probe.fsh__base.spv": "e87bdf0a1c7670172d5c3439e94f641b386fbaffc4ded31b8d958800d3771f46",
+    "default__tools_shadow-probe.fsh__base.spv": "4afdf93acc57ec61098493599f2439ab5dd8275b13db9a87e91b6fc94cd8a76d",
+    "shadow-smooth__tools_shadow-probe.fsh__base.spv": "352b2a1bc178c10e2e86092ebe4ed4783d774733bba2b8e41e5f1d3c805b3965",
+    "shadow-softest__tools_shadow-probe.fsh__base.spv": "8ba72d46d59ec50f6ebad20d117ec6b6f911e178e59467337cb87c226f7311ec",
+    "shadow-crisp__tools_shadow-probe.fsh__base.spv": "328b0a755baee2548e6ed35ce031915e5998a57caa4575f1546fe00c572b2ff5",
+    "shadow-strength-zero__tools_shadow-probe.fsh__base.spv": "5a98e4809b18d09a8bc9544529bf5376c9697ec5cd738348ffdddc7b5f43cbee",
+    "shadow-strength-half__tools_shadow-probe.fsh__base.spv": "3160075a4ba6b595cba14b90f91c19b2c0936a1a04444d9a48533bf70a6b7a4a",
+    "shadow-0-water-0__tools_shadow-probe.fsh__base.spv": "7530218769928ebd58cb405f42f0206ec2a8f369773302963d7a3a7b87476fc6",
+    "shadow-2-water-0__tools_shadow-probe.fsh__base.spv": "835a95d66982b41bd05f22e5cd12890d042631afe678a1f31700525b22cf2b63",
+    "shadow-3-water-0__tools_shadow-probe.fsh__base.spv": "9835e0b9b51e226afa1bc392c38c24ee8790f32b4f6031f30f725a93bced0344"
+  },
+  "metrics": {
+    "nativeTransitionPixels": 462,
+    "balancedTransitionPixels": 1367,
+    "softestTransitionPixels": 1745,
+    "maximumDistanceFadeStep": 0.02565145492553711,
+    "maximumCascadeHandoffStep": 0.0216447114944458
+  },
+  "limitations": [
+    "Synthetic 64x64 shadow maps and 128x128 receivers; production helper executed through a diagnostic shader.",
+    "Does not test Minecraft shadow-map production, Sodium terrain draws, real scene quality, or hardware frame times."
+  ]
+}

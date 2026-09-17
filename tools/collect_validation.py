@@ -23,18 +23,24 @@ def main():
     root = Path(__file__).resolve().parents[1]
     manifest = json.loads((root/'sulkan.json').read_text())
     with zipfile.ZipFile(args.archive) as tested:
-        for p in [root/'sulkan.json', *sorted((root/'shaders').glob('*'))]:
+        for p in [root/'sulkan.json',root/'tools/shadow-probe.fsh', *sorted((root/'shaders').glob('*'))]:
             if p.is_file():
                 assert p.read_bytes() == tested.read(p.relative_to(root).as_posix()), f'Untested changes: {p}'
     loader = json.loads((args.folder/'loader-probe.json').read_text())
     native = json.loads((args.folder/'native-compile.json').read_text())
     spirv = json.loads((args.folder/'spirv-validation.json').read_text())
     pixels = json.loads((args.folder/'render-checks.json').read_text())
+    shadow_pixels = json.loads((args.folder/'shadow-checks.json').read_text())
     assert all(loader[k] == 'PASS' for k in ('packFilesRead','packGraphParse','shaderPackScanner'))
     assert all(m['status'] == m['minecraftRebind'] == 'PASS' for m in native['modules'])
     assert spirv['spirvValidation'] == spirv['stageInterfaces'] == 'PASS'
     assert all(v == 'PASS' for v in pixels['checks'].values())
+    assert all(v == 'PASS' for v in shadow_pixels['checks'].values())
     assert native['moduleCount'] == spirv['modules']
+    tested_modules = {Path(m['spirv']).name:Path(m['spirv']) for m in native['modules']}
+    for record in (pixels,shadow_pixels):
+        for name,expected in record['testedSpirvSha256'].items():
+            assert digest(tested_modules[name]) == expected, f'Stale pixel results: {name}'
     # Pinned Sulkan 0.4.2 budget formula, not physical VRAM measurements.
     # Target sizes: 4 terrain cascades and 2 entity cascades, 5 bytes/texel + 560.
     shadow_sizes = {0: (), 1: (1536,1,1,1,768,1),
@@ -56,28 +62,31 @@ def main():
                    scanner=loader['shaderPackScanner'], archiveRead=loader['packFilesRead'], manifestParse=loader['packGraphParse'],
                    optionCount=len(manifest['options']), legalOptionChoices=loader['optionChoiceCount'],
                    scenarioCount=len(loader['cases']), compiledModules=native['moduleCount'],
+                   productionModules=native['productionModuleCount'], diagnosticModules=native['diagnosticModuleCount'],
+                   productionEntrypoints=loader['productionEntrypoints'], diagnosticEntrypoints=loader['diagnosticEntrypoints'],
                    compiler=native['compiler'], target='Vulkan 1.2', nativeReflection='PASS', minecraftRebind='PASS',
-                   spirvChecks=spirv, softwareVulkanChecks=pixels, memoryBudgetMiB=manifest['budgetMiB'],
+                   spirvChecks=spirv, softwareVulkanChecks=pixels, shadowVulkanChecks=shadow_pixels,
+                   totalVulkanDraws=pixels['draws']+shadow_pixels['draws'], memoryBudgetMiB=manifest['budgetMiB'],
                    vulkanDeviceCreated=True, softwareVulkanRenderingTested=True,
                    hardwareGpuRenderingTested=False, inGameTested=False, fpsMeasured=False,
                    notes=['Original release parser/compiler/reflection were used, without stubs.',
-                          'Software Vulkan draws used synthetic post-process inputs; no Minecraft world or terrain pipeline was run.',
+                          'Software Vulkan draws used synthetic post-process inputs and a diagnostic entrypoint calling the production shadow helper; no Minecraft world or Sodium terrain draw was run.',
                           'Static SPIR-V check metadata describes that check alone; the separate pixel probe creates a Vulkan device.',
                           'Budget estimates follow loader accounting, not measured total VRAM.'],
-                   changes=['Optional directional sunrise/sunset glow; default 0.35',
-                            'Optional low-altitude twilight/rain mist; default 0.25 with adjustable world-Y reference',
-                            'Atmosphere excludes held items, non-Overworld dimensions, and fluid/powder-snow fog',
-                            'Near-field, dark-interior, high-altitude, and total-opacity limits preserve visibility',
-                            'New effects reuse the compose pass without additional texture samples or graph resources',
-                            'Software Vulkan atmosphere regression checks; hardware frame times unmeasured'])
+                   changes=['Native/balanced/smooth shadow sampling; deterministic 4/9-tap PCF using loader comparison helpers',
+                            'Adjustable shadow softness and strength, applied to direct light without darkening ambient/torch light',
+                            'Wider valid cascade overlap blend and smooth shadow distance fade',
+                            'Shared sky glow now contributes to analytic water and wet-surface reflections',
+                            'Shadow UBO ABI checked; synthetic terrain/entity maps, slope bias, bounds, overlap and cascade tests',
+                            'No new graph textures or passes; additional shadow samples have unmeasured hardware cost'])
     records = {'summary.json':summary, 'scenarios.json':{'cases':loader['cases']},
                'modules.json':{'modules':[{k:v for k,v in m.items() if k!='spirv'} for m in native['modules']]},
                'memory-budget.json':{'description':'Release graph allocations plus Sulkan 0.4.2 shadow budget formula and conservative scene captures (20 bytes/pixel). Not measured VRAM.',
                                      'budgetMiB':manifest['budgetMiB'],'cases':cases},
-               'render-checks.json':pixels}
+               'render-checks.json':pixels, 'shadow-checks.json':shadow_pixels}
     for name, record in records.items():
         (root/'validation'/name).write_text(json.dumps(record,indent=2)+'\n')
-    print(f"Collected {len(records)} records: {len(cases)} scenarios, {native['moduleCount']} modules, {pixels['draws']} Vulkan draws")
+    print(f"Collected {len(records)} records: {len(cases)} scenarios, {native['moduleCount']} modules, {pixels['draws']+shadow_pixels['draws']} Vulkan draws")
 
 
 if __name__ == '__main__':

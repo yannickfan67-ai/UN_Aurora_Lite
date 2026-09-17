@@ -1,16 +1,16 @@
-# UN Aurora Lite 0.1.3
+# UN Aurora Lite 0.1.4
 
 為 **Sulkan 0.4.2 / Minecraft Java 26.2 / Sodium 0.9.1** 製作的輕量原生光影包，預設以日常遊玩的清晰度與自然觀感為目標。
-已通過發布版載入器檢查，以及軟體 Vulkan 的後製像素測試；**尚未在 Minecraft 世界中實測畫面或 FPS**。
+已通過發布版載入器檢查，以及軟體 Vulkan 的後製與陰影取樣測試；**尚未在 Minecraft 世界中實測畫面或 FPS**。
 
 ## 安裝
 
 1. 使用 Minecraft 26.2、Java 25、Fabric Loader 0.18.4 以上、對應 26.2 的 Fabric API 0.155.0 以上、Sodium 0.9.1 以上和 **Sulkan 0.4.2**。
 2. 確認遊戲正在使用 Vulkan。開啟遊戲的 **Video Settings → Shaders → Open Shader Pack Folder**。
-3. 把 `UN_Aurora_Lite-0.1.3-Sulkan-0.4.2.zip` **原封不動**放入該資料夾。一般路徑是遊戲實例的 `.minecraft/shaders/`。
+3. 把 `UN_Aurora_Lite-0.1.4-Sulkan-0.4.2.zip` **原封不動**放入該資料夾。一般路徑是遊戲實例的 `.minecraft/shaders/`。
 4. 在 Shaders 畫面選取這個 ZIP、開啟光影。點 **Pack Settings** 調整效果。
 
-已使用 0.1.0～0.1.2 的話，將新版 ZIP 放入同一個資料夾，再選取名稱含 0.1.3 的包；舊版的包內設定不會自動套到新版。
+已使用 0.1.0～0.1.3 的話，將新版 ZIP 放入同一個資料夾，再選取名稱含 0.1.4 的包；舊版的包內設定不會自動套到新版。
 
 這是 Sulkan native graph ZIP；安裝位置是 `shaders/`。Iris 的 `shaderpacks/` 不會載入它。
 啟動器若開了版本隔離，以遊戲內開啟的資料夾為準。
@@ -20,8 +20,10 @@
 - 暖色陽光與火把、冷色環境光、少量背光樹葉透光。日夜交界平滑淡入淡出，夜晚預設稍亮，洞穴有可調的局部補光。
 - 亮處使用柔和高光壓縮，暗部對比保留接近黑色的差異；曝光與對比不會把純黑整體抬灰。
 - 使用 Sulkan 的動態地形與附近實體投影，預設 Low、64 格。
+- **0.1.4：**新增平衡／柔和陰影過濾、柔邊與深淺控制；採樣圖樣不隨時間變動，遠近陰影級聯與最遠距離平滑過渡。陰影保留環境光與火把亮度，地形和實體投影重疊時不重複壓暗。
 - 植物擺動與陰影投影共用載入器的風場，降低兩者錯位的風險。
 - 水面保留生態域水色、深度吸收與微弱波紋；降低反射遮擋水底的程度，雨天反射跟隨陰天色調。遠處的細水波會淡出，以降低閃爍。
+- **0.1.4：**水面與濕地的天空近似反射共用晨昏暖光，朝夕陽的反射方向會帶上暖色。
 - 雨天增加少量濕潤反光，只作用於露天、朝上的表面，預設強度 0.35；可單獨關閉。
 - 半解析度接觸陰影，深度加權放大以減少輪廓黑邊；暗部會減弱遮蔽，避免坑洞與台階變成黑塊。
 - 四分之一解析度柔和光暈、曝光與色調調整、可選輕量邊緣平滑；手持物排除光暈和平滑，也不會向旁邊的世界畫面產生光暈。
@@ -44,6 +46,9 @@
 | --- | --- | --- |
 | Shadow quality | 1：Low | 2：Medium |
 | Shadow distance | 64 | 96 |
+| Shadow filter | 1：Balanced | 2：Smooth |
+| Shadow edge softness | 1 | 1～1.5 |
+| Cast shadow strength | 0.85 | 0.85 |
 | Contact shadows | 1：4 samples | 2：8 samples |
 | Contact shadow strength | 0.45 | 0.6 |
 | Soft bloom | 0.06 | 0.08 |
@@ -61,8 +66,13 @@
 | Light edge smoothing | 0 | 1 |
 
 1 GB 顯卡建議先以 1280×720 或 1920×1080、6～8 區塊測試。
-若幀時間不穩，先關接觸陰影和邊緣平滑，再降低陰影。尚無實機效能數字。
-0.1.3 的兩個大氣效果沿用現有 compose 步驟，沒有新增貼圖取樣、渲染步驟或中間貼圖；增加的數學運算尚未做硬體幀時間測量。
+若幀時間不穩，先關接觸陰影和邊緣平滑，將 Shadow filter 設為 0，再降低陰影品質或距離。尚無實機效能數字。
+Shadow quality 控制載入器的陰影解析度與級聯數；Shadow filter 控制本包如何取樣，兩者可分別調整。
+Balanced／Smooth 對每張取樣到的陰影貼圖使用 4／9 次雙線性比較；附近實體和級聯交界可能增加取樣張數。
+本輪沒有新增渲染步驟或中間貼圖，但較柔和的過濾會增加 GPU 工作量，硬體幀時間尚未測量。
+Shadow filter=0 使用載入器原有的取樣方式；本包的光照與深淺控制仍生效，並不還原舊版全部畫面。
+Shadow edge softness=0 在 Balanced／Smooth 下保留單次雙線性比較，邊緣較銳利；此選項不影響原生過濾。
+Cast shadow strength=0 只關閉投影對光照的影響；要停止產生陰影貼圖並釋放其預算，需將 Shadow quality 設為 0。
 追求最低負擔時，將 `SUNSET_GLOW` 和 `HEIGHT_FOG` 都設為 0，對應程式會在編譯時排除。
 96 格外的接觸陰影會略過周圍深度取樣，雨天濕潤效果可用 `WET_SURFACES=0` 完全移除。
 
@@ -78,14 +88,15 @@ manifest 的 `budgetMiB: 448` 是檢查上限，不是啟動時固定配置 448 
 
 - 發布版 `ShaderPackScanner` 接受 ZIP。
 - 發布版 `PackFiles.read`、`PackGraph.parse` 接受格式、檔案路徑和渲染流程。
-- 全部 25 個選項、95 個允許值通過原版選項驗證。
-- 27 組設定包含陰影 0～3、水面開關、AO 開關／品質、光暈開關、邊緣平滑、濕潤效果、抖色與新增大氣開關及海拔。
-- 256 個模組由原版 `NativeShaderCompiler` 編譯成 Vulkan 1.2 SPIR-V，並經 Minecraft 的 SPIRV-Cross 反射與 `rebind` 檢查。
+- 全部 28 個選項、107 個允許值通過原版選項驗證。
+- 33 組設定包含陰影 0～3、三種陰影過濾、柔邊與深淺邊界，以及水面、AO、光暈、邊緣平滑、濕潤效果、抖色與大氣選項。
+- 331 個模組（316 個正式流程模組、15 個陰影診斷模組）由原版 `NativeShaderCompiler` 編譯成 Vulkan 1.2 SPIR-V，並經 Minecraft 的 SPIRV-Cross 反射與 `rebind` 檢查。
 - `spirv-val`、跨階段介面、Sodium 頂點格式、UBO 與 push constant 位移檢查。
 - 720p、1080p、1440p、4K 的 graph 資源預算檢查；所有選項最高值也在 manifest 預算內。
 - Mesa 25.2.8 lavapipe 軟體 Vulkan 完成 50 次合成紋理繪製、18 組像素檢查：涵蓋既有光暈、抖色、AO，以及暮光方向、雨天響應、霧高度、預設強度、手部及維度排除。
+- 另完成 24 次陰影診斷繪製、13 組檢查：使用本包實際陰影函式測試地形／實體遮擋、柔邊、強度、重疊、斜面偏移、範圍邊界、最遠距離漸淡與級聯交界；合計 74 次繪製、31 組檢查。
 
-這些合成紋理測試不包含 Minecraft 世界；Fabric/Sodium mixin 套用、地形 pipeline、世界繪製、畫質、FPS、硬體驅動相容性和其他模組共存仍待實機確認。
+這些合成紋理測試不包含 Minecraft 世界或遊戲產生陰影貼圖的過程；Fabric/Sodium mixin 套用、地形 pipeline、世界繪製、畫質、FPS、硬體驅動相容性和其他模組共存仍待實機確認。
 編譯成功不等於已通過完整遊戲載入與繪製。詳細結果見 `VALIDATION.md` 與 `validation/summary.json`。
 
 ## 五分鐘實機檢查
@@ -93,7 +104,7 @@ manifest 的 `budgetMiB: 448` 是檢查上限，不是啟動時固定配置 448 
 1. 先記下 Sulkan 內建包能否正常運作，再切到本包。確認沒有自動退回內建包。
 2. 白天看樹影、草地與水岸；手持方塊轉動視角，檢查黑塊、閃爍及手部黑邊。
 3. 看日出日落、低地／高山、火把房間、夜晚、下雨、潛水；再切換地獄與終界。分別關閉 Sunrise and sunset glow／Low-altitude morning and rain mist 比較。
-4. 把 Shadow quality 依序設 0、1，Water refraction 設 0、1；確認關閉光暈和接觸陰影後畫面仍正常。
+4. 把 Shadow quality 依序設 0、1、2，Shadow filter 設 0、1、2；移動檢查近處斜面、實體投影和遠處過渡。比較柔邊 0／1.5、深淺 0／0.85，確認火把房間仍清楚；再確認水面、光暈與接觸陰影開關正常。
 5. 退出重進一次，確認選擇仍保留。若報錯，提供該實例 `logs/latest.log` 中 Sulkan、shader、pipeline 相關段落及截圖。
 
 ## 編輯與重新打包
@@ -102,7 +113,7 @@ manifest 的 `budgetMiB: 448` 是檢查上限，不是啟動時固定配置 448 
 新的 `default` 必須同時出現在該選項的 `values` 裡。native 格式版本是整數 `1`。
 
 ```bash
-python3 tools/build.py --output UN_Aurora_Lite-0.1.3-Sulkan-0.4.2.zip
+python3 tools/build.py --output UN_Aurora_Lite-0.1.4-Sulkan-0.4.2.zip
 ```
 
 ZIP 根目錄必須直接包含 `sulkan.json` 和 `shaders/`。

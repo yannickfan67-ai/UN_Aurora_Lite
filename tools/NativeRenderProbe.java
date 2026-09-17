@@ -156,8 +156,15 @@ public class NativeRenderProbe implements AutoCloseable {
         int format = unorm ? VK_FORMAT_R8G8B8A8_UNORM : VK_FORMAT_R32G32B32A32_SFLOAT;
         List<Image> inputs = new ArrayList<>(); List<Buffer> staging = new ArrayList<>();
         List<Long> samplers = new ArrayList<>();
-        Buffer frame = buffer(656, VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT);
-        upload(frame, Files.readAllBytes(Path.of(job.get("frame").getAsString())));
+        List<Buffer> uniforms = new ArrayList<>();
+        JsonArray uniformPaths = job.has("uniforms") ? job.getAsJsonArray("uniforms") : new JsonArray();
+        if (!job.has("uniforms")) uniformPaths.add(job.get("frame").getAsString());
+        for (JsonElement path : uniformPaths) {
+            byte[] bytes = Files.readAllBytes(Path.of(path.getAsString()));
+            Buffer uniform = buffer(bytes.length, VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT);
+            upload(uniform, bytes); uniforms.add(uniform);
+        }
+        int uniformCount = uniforms.size();
         Image output = image(width, height, format, VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT | VK_IMAGE_USAGE_TRANSFER_SRC_BIT);
         Buffer download = buffer((long)width * height * (unorm ? 4 : 16), VK_BUFFER_USAGE_TRANSFER_DST_BIT);
         try (MemoryStack s = MemoryStack.stackPush()) {
@@ -177,26 +184,30 @@ public class NativeRenderProbe implements AutoCloseable {
                     .addressModeW(VK_SAMPLER_ADDRESS_MODE_CLAMP_TO_EDGE).maxLod(0), null, out));
                 samplers.add(out.get(0));
             }
-            VkDescriptorSetLayoutBinding.Buffer bindings = VkDescriptorSetLayoutBinding.calloc(1+inputs.size(), s);
-            bindings.get(0).binding(0).descriptorType(VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER).descriptorCount(1).stageFlags(VK_SHADER_STAGE_FRAGMENT_BIT);
-            for (int i=0; i<inputs.size(); i++) bindings.get(i+1).binding(i+1)
+            VkDescriptorSetLayoutBinding.Buffer bindings = VkDescriptorSetLayoutBinding.calloc(uniformCount+inputs.size(), s);
+            for (int i=0; i<uniformCount; i++) bindings.get(i).binding(i)
+                .descriptorType(VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER).descriptorCount(1).stageFlags(VK_SHADER_STAGE_FRAGMENT_BIT);
+            for (int i=0; i<inputs.size(); i++) bindings.get(i+uniformCount).binding(i+uniformCount)
                 .descriptorType(VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER).descriptorCount(1).stageFlags(VK_SHADER_STAGE_FRAGMENT_BIT);
             check(vkCreateDescriptorSetLayout(device, VkDescriptorSetLayoutCreateInfo.calloc(s).sType$Default().pBindings(bindings), null, out));
             long setLayout = out.get(0);
             check(vkCreatePipelineLayout(device, VkPipelineLayoutCreateInfo.calloc(s).sType$Default().pSetLayouts(s.longs(setLayout)), null, out));
             long pipelineLayout = out.get(0);
             VkDescriptorPoolSize.Buffer sizes = VkDescriptorPoolSize.calloc(2, s);
-            sizes.get(0).type(VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER).descriptorCount(1);
+            sizes.get(0).type(VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER).descriptorCount(uniformCount);
             sizes.get(1).type(VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER).descriptorCount(inputs.size());
             check(vkCreateDescriptorPool(device, VkDescriptorPoolCreateInfo.calloc(s).sType$Default().maxSets(1).pPoolSizes(sizes), null, out));
             long descriptorPool = out.get(0);
             check(vkAllocateDescriptorSets(device, VkDescriptorSetAllocateInfo.calloc(s).sType$Default()
                 .descriptorPool(descriptorPool).pSetLayouts(s.longs(setLayout)), out));
             long descriptorSet = out.get(0);
-            VkWriteDescriptorSet.Buffer writes = VkWriteDescriptorSet.calloc(1+inputs.size(), s);
-            writes.get(0).sType$Default().dstSet(descriptorSet).dstBinding(0).descriptorType(VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER)
-                .descriptorCount(1).pBufferInfo(VkDescriptorBufferInfo.calloc(1,s).buffer(frame.handle).offset(0).range(frame.size));
-            for (int i=0; i<inputs.size(); i++) writes.get(i+1).sType$Default().dstSet(descriptorSet).dstBinding(i+1)
+            VkWriteDescriptorSet.Buffer writes = VkWriteDescriptorSet.calloc(uniformCount+inputs.size(), s);
+            for (int i=0; i<uniformCount; i++) {
+                Buffer uniform = uniforms.get(i);
+                writes.get(i).sType$Default().dstSet(descriptorSet).dstBinding(i).descriptorType(VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER)
+                    .descriptorCount(1).pBufferInfo(VkDescriptorBufferInfo.calloc(1,s).buffer(uniform.handle).offset(0).range(uniform.size));
+            }
+            for (int i=0; i<inputs.size(); i++) writes.get(i+uniformCount).sType$Default().dstSet(descriptorSet).dstBinding(i+uniformCount)
                 .descriptorType(VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER).descriptorCount(1)
                 .pImageInfo(VkDescriptorImageInfo.calloc(1,s).sampler(samplers.get(i)).imageView(inputs.get(i).view)
                     .imageLayout(VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL));
@@ -282,7 +293,7 @@ public class NativeRenderProbe implements AutoCloseable {
         }
         for(long sampler:samplers)vkDestroySampler(device,sampler,null);
         for(Image i:inputs)destroy(i);for(Buffer b:staging)destroy(b);
-        destroy(output);destroy(download);destroy(frame);
+        destroy(output);destroy(download);for(Buffer uniform:uniforms)destroy(uniform);
         System.out.println("DRAW PASS: "+job.get("name").getAsString());
     }
 
@@ -299,7 +310,7 @@ public class NativeRenderProbe implements AutoCloseable {
             Map<String,Object> report=new LinkedHashMap<>();
             report.put("device",probe.deviceName);report.put("deviceType",probe.deviceType);
             report.put("vulkanDeviceCreated",true);report.put("draws",jobs.getAsJsonArray("jobs").size());
-            report.put("input","Synthetic textures; release-compiled post-processing modules");
+            report.put("input","Synthetic textures; release-compiled shaders and production-helper diagnostics");
             report.put("inGameTested",false);report.put("fpsMeasured",false);
             Files.writeString(config.resolveSibling("vulkan-render.json"),new GsonBuilder().setPrettyPrinting().create().toJson(report)+"\n");
         }

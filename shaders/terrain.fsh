@@ -2,7 +2,8 @@
 // SPDX-License-Identifier: GPL-3.0-only
 #include "shaders/common.glsl"
 #include "shaders/sodium-abi.glsl"
-#include "sulkan/shadows.glsl"
+#include "shaders/shadows.glsl"
+#include "shaders/atmosphere.glsl"
 uniform sampler2D u_BlockTex;
 uniform sampler2D u_LightTex;
 uniform sampler2D Opaque;
@@ -21,7 +22,11 @@ vec3 auroraWaterSky(vec3 direction) {
     vec3 zenith = mix(vec3(0.006, 0.012, 0.035), vec3(0.10, 0.24, 0.46), auroraDay());
     vec3 skyColor = mix(horizon, zenith, smoothstep(0.0, 0.85, direction.y));
     vec3 overcast = max(auroraLinear(FogColorAndStart.rgb), vec3(0.005));
-    return mix(skyColor, overcast, clamp(WorldTimeWeatherDimension.y, 0.0, 1.0) * 0.65);
+    skyColor = mix(skyColor, overcast, clamp(WorldTimeWeatherDimension.y, 0.0, 1.0) * 0.65);
+#if _SULKAN_ENABLED_SUNSET_GLOW
+    skyColor += auroraSunsetScatter(direction);
+#endif
+    return skyColor;
 }
 
 void main() {
@@ -52,7 +57,7 @@ void main() {
     float sunWeight = day * smoothstep(0.0, 0.12, sunDirection.y);
     float moonWeight = (1.0 - day) * smoothstep(0.0, 0.12, moonDirection.y);
     vec3 lightDirection = sunDirection.y >= moonDirection.y ? sunDirection : moonDirection;
-    float visibility = sulkanTerrainShadow(auroraPosition, normal);
+    float visibility = auroraShadowVisibility(auroraPosition, normal);
     float sky = auroraLight.y * auroraLight.y;
     float block = pow(auroraLight.x, 2.2);
     float sunset = (1.0 - smoothstep(0.05, 0.55, SunDirectionAndRainBrightness.y)) * day;
@@ -66,7 +71,7 @@ void main() {
     ambientColor = mix(ambientColor, vec3(dot(ambientColor, AURORA_LUMA)), rain * 0.5);
     vec3 lampColor = mix(vec3(1.0), vec3(1.28, 0.80, 0.46), float(LIGHT_WARMTH));
     vec3 illumination = vec3(0.025) + sky * ambientColor * (0.72 + 0.28 * max(normal.y, 0.0));
-    illumination += sky * (0.15 * directColor + 0.85 * diffuseLight) * visibility * (1.0 - rain * 0.7);
+    illumination += sky * (0.10 * directColor + 0.90 * diffuseLight * visibility) * (1.0 - rain * 0.7);
     illumination += lampColor * block * 1.1;
     // Lift only unlit interiors, before multiplying by the block texture. Black
     // texels stay black; daylight and nearby torch light retain their contrast.

@@ -72,6 +72,7 @@ def main():
             assert reflection['offsets']['PC'] == [0,12,16]
         if 'u_Globals' in reflection['offsets']: assert reflection['offsets']['u_Globals'] == globals_offsets
         if 'SulkanFrame' in reflection['offsets']: assert reflection['offsets']['SulkanFrame'] == frame_offsets
+        if 'SulkanShadowData' in reflection['offsets']: assert reflection['offsets']['SulkanShadowData'] == [0,256,320,336]
         if m['entry'].endswith('.fsh'):
             previous = vertex[m['case']] if m['entry'] == 'shaders/terrain.fsh' else fullscreen
             for name, value in reflection['inputs'].items():
@@ -79,7 +80,7 @@ def main():
             pairs += 1
     summary = {'target': 'vulkan1.2', 'modules': len(reflected), 'spirvValidation': 'PASS',
                'stagePairs': pairs, 'stageInterfaces': 'PASS', 'sodiumVertexAbi': 'PASS',
-               'globalsOffsets': 'PASS', 'frameOffsets': 'PASS', 'pushConstantOffsets': 'PASS',
+               'globalsOffsets': 'PASS', 'frameOffsets': 'PASS', 'shadowOffsets': 'PASS', 'pushConstantOffsets': 'PASS',
                'vulkanDeviceCreated': False, 'inGameTested': False}
     (args.folder / 'spirv-validation.json').write_text(json.dumps(summary, indent=2) + '\n')
     print(json.dumps(summary))

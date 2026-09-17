@@ -1,8 +1,8 @@
-# Validation report — 2026-09-16
+# Validation report — 2026-09-17
 
 **Result: native pack discovery, parsing, shader compilation, reflection, binding,
 SPIR-V validity, static interfaces and synthetic software Vulkan post-processing
-pixel checks PASS. In-game rendering is NOT tested.**
+and shadow-receiver pixel checks PASS. In-game rendering is NOT tested.**
 
 ## Reference inputs
 
@@ -19,18 +19,31 @@ native shader compiler, SPIRV-Cross reflection and descriptor rebind implementat
 were executed directly from the unmodified release JARs. They were not replaced by
 Python approximations, patched class versions or mock frame/format definitions.
 
-## 0.1.3 gameplay and visual changes
+## 0.1.4 gameplay and visual changes
 
-The compose pass adds optional directional sunrise/sunset glow (default 0.35) and
-low-altitude mist (default 0.25, reference Y=64, adjustable to 32/64/96/128).
-Mist uses three arithmetic density evaluations along the reconstructed view ray,
-with no extra texture sampling, ray marching, temporal history, or graph resources.
-It increases at twilight/in rain, excludes the nearest 24 blocks, tapers away above
-and below the reference altitude, and combines with existing haze under a 0.28 cap.
-Brightness gating reduces dark-interior haze; this is an approximation and cannot
-identify every indoor/covered surface. The new effects exclude held items, other
-dimensions, and fluid/powder-snow camera fog. The original sun/moon/stars remain.
-Both effects compile out when disabled. Hardware frame times are unmeasured.
+The terrain shader adds native/balanced/smooth shadow filtering, adjustable softness
+and cast-shadow strength. Defaults are balanced (4 bilinear comparison gathers per
+sampled map), softness 1 and strength 0.85. Smooth uses 9 weighted gathers; softness
+0 uses one bilinear comparison. Native mode calls the release's original sampler
+and ignores the softness option. It still uses this pack's strength/lighting model.
+Sampling is deterministic, without temporal noise or history. The existing loader
+coordinate, slope-gradient and normal-offset helpers and precision bias are retained.
+
+Terrain and entity visibility combine with `min`, avoiding double attenuation when
+their shadows overlap. Cast visibility attenuates direct illumination and leaf
+transmission/specular, while ambient fill and block light remain visible. Strength
+0 bypasses receiver attenuation but does not stop shadow-map rendering; quality 0
+is required to disable the loader's shadow producer and its allocation.
+
+Cascade blending begins within the release renderer's fitted overlap (the next
+cascade starts at 0.82 times the previous split; blending starts no earlier than
+0.84 times it). The final cascade fades over its last 18 percent. PCF footprint
+bounds are checked before texture gathering. Analytic water/wet-surface sky
+reflections also include the existing directional sunrise/sunset glow.
+
+There are no new graph passes, targets or shadow-map allocations. Extra filtering
+increases sampling work, including entity maps and a second cascade at transitions.
+Hardware frame times and real scene quality are unmeasured.
 
 ## Checks
 
@@ -39,33 +52,36 @@ Both effects compile out when disabled. Hardware frame times are unmeasured.
 | ZIP integrity and one root `sulkan.json` | PASS |
 | Actual `ShaderPackScanner.scanDirectory` | PASS; archive is supported |
 | Actual `PackFiles.read` and `PackGraph.parse` | PASS |
-| Native options | 25 definitions, 95 permitted values accepted |
-| Test scenarios | 27 |
-| Expanded active shader entrypoints | 201 |
-| Native compiler + Minecraft reflection | 256 modules PASS |
-| Minecraft `IntermediaryShaderModule.rebind` | 256 modules PASS |
-| `spirv-val --target-env vulkan1.2` after rebinding | 256 modules PASS |
-| Vertex-to-fragment name/type/location/flat linkage | 228 pairs PASS |
+| Native options | 28 definitions, 107 permitted values accepted |
+| Test scenarios | 33 |
+| Expanded shader entrypoints | 249 production + 15 diagnostic |
+| Native compiler + Minecraft reflection | 316 production + 15 diagnostic modules PASS |
+| Minecraft `IntermediaryShaderModule.rebind` | 331 modules PASS |
+| `spirv-val --target-env vulkan1.2` after rebinding | 331 modules PASS |
+| Vertex-to-fragment name/type/location/flat linkage | 297 pairs PASS |
 | Sodium five-attribute vertex ABI | PASS |
-| Shared UBO member offsets | PASS |
+| Shared UBO member offsets, including SulkanShadowData | PASS |
 | Sodium push constants | PASS: offsets 0, 12, 16 |
 | Graph schedules with bloom and AO disabled | PASS: 2 post passes remain |
 | Allocation accounting at 720p/1080p/1440p/4K | PASS within 448 MiB manifest limit |
 | Synthetic Vulkan draws with release-compiled post shaders | 50 draws PASS |
 | Pixel assertions: bloom/dither/AO plus atmosphere behavior and exclusions | 18 checks PASS |
+| Synthetic Vulkan draws using production shadow helper | 24 draws PASS |
+| Shadow assertions: filtering, occlusion, bias, bounds and transitions | 13 checks PASS |
 
 Scenarios cover defaults, minimal effects, enhanced settings, all numerical maxima,
 each shadow tier 0–3 with water both on and off, AO disabled, zero AO strength,
 eight-sample AO, bloom disabled, edge smoothing enabled, bloom disabled with edge smoothing enabled,
 cave visibility disabled, wet surfaces disabled, dithering disabled, each atmosphere effect disabled,
-both disabled, isolated atmosphere on/off, and an elevated fog reference. Geometry fragments
+both disabled, isolated atmosphere on/off, an elevated fog reference, and six explicit
+shadow-filter/softness/strength cases. Geometry fragments
 are compiled as opaque and with both `ALPHA_CUTOUT=0.1` and `ALPHA_CUTOUT=0.5`.
 The fullscreen vertex shader is the loader's actual embedded source.
 
 Binding tests construct descriptors from the known native contract and exercise
 Minecraft's real `rebind` routine. The SPIR-V checks validate the remapped modules.
 The separate `NativeRenderProbe` then creates a Vulkan device, descriptor pools,
-graphics pipelines and offscreen targets for ten post-process module variants.
+graphics pipelines and offscreen targets for post-process and shadow diagnostic variants.
 It executes 50 draws using 128x128 synthetic source/depth fixtures, and reads pixels
 back for assertions. Final color uses the pack's `RGBA8_UNORM` format. Diagnostic
 AO/bloom/compose targets use `RGBA32_FLOAT` to inspect values; they do not replicate the
@@ -79,6 +95,20 @@ geometry are both exercised for Nether/End/custom dimensions and water/lava/powd
 snow. Near objects, dark interiors, high altitude, deep underground, and held items
 are checked against the disabled variant. These are synthetic correctness checks,
 not screenshots or measurements of real Minecraft environments.
+
+The shadow suite adds 24 draws with independently constructed 64x64 terrain/entity
+depth maps and 128x128 receiver positions/normals. `tools/shadow-probe.fsh` is a
+diagnostic entrypoint that calls the production `auroraShadowVisibility` helper;
+the graph never schedules it. It uses the release include expander/compiler and
+the actual `SulkanShadowData` member layout (offsets 0/256/320/336, with a 416-byte
+buffer matching the release upload). Two UBOs and eight samplers are rebound and
+rendered by the Vulkan probe. The suite checks both map types, overlapping maps,
+time-stable output, softer edges, strength changes, quality/strength/dimension
+bypasses, out-of-map/depth receivers, a coplanar sloped receiver, distance fade,
+cascade handoff, and skipped inactive cascades. Terrain production shaders are
+compiled and linked, but their Sodium draw path and game-generated occluder maps
+are not exercised by these fixtures. Passing the synthetic slope check does not
+establish that all real-world shadow acne or light leakage is eliminated.
 
 ## Allocation scope
 
@@ -127,25 +157,27 @@ or lavapipe). Add LWJGL Vulkan to the classpath, then run:
 ```bash
 javac -cp "$AURORA_TEST_CP" -d build/probe tools/NativeRenderProbe.java
 python3 tools/render_checks.py build/validation --java java --classpath "build/probe:$AURORA_TEST_CP"
+python3 tools/shadow_checks.py build/validation --java java --classpath "build/probe:$AURORA_TEST_CP"
 ```
 
 The test fails if there is no Vulkan device. For a locally extracted lavapipe,
 set `VK_DRIVER_FILES` to its ICD JSON and make its library directory discoverable
-by the dynamic loader. `render-checks.json` records the selected device, assertions
-and pixel/SPIR-V hashes. Synthetic fixture files stay under `build/validation`.
+by the dynamic loader. `render-checks.json` and `shadow-checks.json` record the selected
+device, assertions and pixel/SPIR-V hashes. Synthetic fixtures stay under `build/validation`.
 
 After successful checks, collect the distributable report and rebuild the ZIP:
 
 ```bash
 python3 tools/collect_validation.py build/validation --archive build/aurora.zip --loader /path/to/sulkan-0.4.2-26.2.jar --client /path/to/minecraft-26.2-client.jar
-python3 tools/build.py --output UN_Aurora_Lite-0.1.3-Sulkan-0.4.2.zip
+python3 tools/build.py --output UN_Aurora_Lite-0.1.4-Sulkan-0.4.2.zip
 ```
 
-The collector rejects manifest/shader changes made after the tested ZIP was built.
+The collector rejects manifest/shader/diagnostic-entrypoint changes made after the
+tested ZIP was built, and verifies pixel reports against the compiled module hashes.
 
 ## Remaining runtime checks
 
-A software Vulkan device was used for isolated post-process draws. Fabric/Sodium
+A software Vulkan device was used for isolated post-process and shadow-receiver draws. Fabric/Sodium
 mixin installation, Minecraft terrain pipeline creation, world rendering, reload
 stability, physical AMD/Intel/NVIDIA drivers, frame times and game screenshots
 remain unverified. Software pixel checks are not hardware performance evidence.
@@ -155,5 +187,5 @@ still requires loading a world on the target installation. Use the five-minute
 checklist in `README.md`; retain the instance's `logs/latest.log` if it fails.
 
 Machine-readable results and manifest/shader hashes are in `validation/summary.json`,
-`validation/scenarios.json`, `validation/modules.json`, `validation/memory-budget.json`
-and `validation/render-checks.json`.
+`validation/scenarios.json`, `validation/modules.json`, `validation/memory-budget.json`,
+`validation/render-checks.json` and `validation/shadow-checks.json`.

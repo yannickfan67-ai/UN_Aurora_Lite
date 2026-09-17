@@ -45,6 +45,7 @@ public class NativeCompileProbe {
                 String source=Files.readString(Path.of(row.get("source").getAsString()));
                 boolean vertex=entry.endsWith(".vsh")||entry.endsWith(".vert");
                 boolean geometry=entry.contains("terrain.");
+                boolean diagnostic=row.has("diagnostic")&&row.get("diagnostic").getAsBoolean();
                 String[] variants=entry.endsWith("terrain.fsh")?new String[]{"opaque","cutout-0.1","cutout-0.5"}:new String[]{"base"};
                 for(String variant:variants) {
                     String expanded=source;
@@ -66,7 +67,8 @@ public class NativeCompileProbe {
                         for(int i=0;i<2;i++)allowed.add("SulkanEntityShadowMap"+i);
                         for(String sampler:samplers)if(!allowed.contains(sampler))
                             throw new AssertionError("Unbound sampler "+sampler+" in "+label);
-                        Set<String> allowedBlocks=geometry?Set.of("SulkanFrame","SulkanWind","u_Globals","SulkanShadowData"):Set.of("SulkanFrame");
+                        Set<String> allowedBlocks=geometry?Set.of("SulkanFrame","SulkanWind","u_Globals","SulkanShadowData"):
+                            diagnostic?Set.of("SulkanFrame","SulkanShadowData"):Set.of("SulkanFrame");
                         for(String block:uniforms)if(!allowedBlocks.contains(block))
                             throw new AssertionError("Unbound uniform "+block+" in "+label);
                         List<Object> bindings=new ArrayList<>();
@@ -92,6 +94,7 @@ public class NativeCompileProbe {
                         Path path=spirvFolder.resolve(label+".spv");Files.write(path,binary);
                         Map<String,Object> record=new LinkedHashMap<>();
                         record.put("case",scenario);record.put("entry",entry);record.put("variant",variant);
+                        record.put("diagnostic",diagnostic);
                         record.put("samplers",samplers);record.put("uniforms",uniforms);
                         record.put("inputs",names(module,"inputs"));record.put("outputs",names(module,"outputs"));
                         record.put("spirv",path.toString());record.put("bytes",binary.length);record.put("status","PASS");
@@ -104,6 +107,8 @@ public class NativeCompileProbe {
         Map<String,Object> report=new LinkedHashMap<>();
         report.put("compiler","Unmodified Sulkan 0.4.2 NativeShaderCompiler + Minecraft 26.2 SPIRV-Cross reflection");
         report.put("target","Vulkan 1.2");report.put("moduleCount",results.size());report.put("modules",results);
+        report.put("productionModuleCount",results.stream().filter(m->!Boolean.TRUE.equals(m.get("diagnostic"))).count());
+        report.put("diagnosticModuleCount",results.stream().filter(m->Boolean.TRUE.equals(m.get("diagnostic"))).count());
         report.put("vulkanDeviceCreated",false);report.put("inGameTested",false);
         Files.writeString(folder.resolve("native-compile.json"),new GsonBuilder().setPrettyPrinting().create().toJson(report)+"\n");
         System.out.println("PASS: "+results.size()+" shader modules compiled and reflected by the release compiler; all samplers/uniforms bound.");

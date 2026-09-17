@@ -3,7 +3,7 @@
   "deviceType": 4,
   "vulkanDeviceCreated": true,
   "draws": 50,
-  "input": "Synthetic textures; release-compiled post-processing modules",
+  "input": "Synthetic textures; release-compiled shaders and production-helper diagnostics",
   "inGameTested": false,
   "fpsMeasured": false,
   "checks": {
@@ -79,16 +79,16 @@
     "powder-snow-off": "cea972438966391a5c07cf0e944c8173e5be65d65181461e515c5c7cbd36e22b"
   },
   "testedSpirvSha256": {
-    "default__shaders_final.fsh__base.spv": "9a620596519cfd5078c4a97a8b4ee35b4b093a5acc32a11d1d0197f2fe742df8",
-    "dithering-off__shaders_final.fsh__base.spv": "abf6f9a767f4d6881d6ce8e5581a7c470a6cd81385aef3d6c857ecfbb9e80686",
-    "bloom-disabled__shaders_final.fsh__base.spv": "82583bb46a864e99dbf690cf4d13350a5275cc176a1b44615cc60c0db67bcde4",
-    "default__shaders_bloom-seed.fsh__base.spv": "7bb9381fa6d49973422817b01686bc19b06402c795ae764437b3e1b094f40821",
-    "default__shaders_ao.fsh__base.spv": "60e0edbb26abe055fe03cd488196e5bbcc8c0fe89f6aa5a403bda08be84df0fd",
-    "atmosphere-test-on__shaders_compose.fsh__base.spv": "5d2d8fd343982a2da984077645d355b5566b05a22695f7866af5864f1ec900cd",
-    "atmosphere-test-off__shaders_compose.fsh__base.spv": "7be6c44ecc45717f1654e87a4ff64fa6a12500694c283083c95603c714766123",
-    "atmosphere-test-raised__shaders_compose.fsh__base.spv": "35a9a23336f2bf2d84ea8ad6be7c44089c16450615dde0ffcc8236c9d60c83ea",
-    "default__shaders_compose.fsh__base.spv": "d01d44f84eaeaa566aab9f69fb3c52c9ad2a520194daa7299d2bf2e213b551c9",
-    "atmosphere-off__shaders_compose.fsh__base.spv": "6ce1313cad5d7377d4b3573f3a0e04e93ea7e771df3adab2da3a83025c068a9d"
+    "default__shaders_final.fsh__base.spv": "9ddcda2ecd109da7578a6a45745f2030477734134a98b60b100c55c2e6434304",
+    "dithering-off__shaders_final.fsh__base.spv": "3583db295a65377cdfe02b51d84c372d6e1de033972ffa524612c1272703eaeb",
+    "bloom-disabled__shaders_final.fsh__base.spv": "b621b8cb79e9bfabbc73cfe6e1168b407d7e074516999dab33f84a2c844c95b8",
+    "default__shaders_bloom-seed.fsh__base.spv": "ab657ff48ef50c4539b2984bd98c8971945dbd729f6196b3a1a9d14c8f66360c",
+    "default__shaders_ao.fsh__base.spv": "700356ec47d293cc939d931ddb05396a01be84c79a0da2467610559dfdfe2f83",
+    "atmosphere-test-on__shaders_compose.fsh__base.spv": "1e41a24e9ac769cecaa46c77a1f99cb80d1ed77ed717e86cbb113c90cdb59464",
+    "atmosphere-test-off__shaders_compose.fsh__base.spv": "836331780a530f81b392bc4e201355b82c668843050329d0cfbdbac8a7b58cbe",
+    "atmosphere-test-raised__shaders_compose.fsh__base.spv": "c0471d0b077e9e2e40c0a56d869589d562f5f5ba8086b69de7d3064da5c66104",
+    "default__shaders_compose.fsh__base.spv": "92afdf7f3cd8dc519cdaa6a7f3c542de89ca3b5973b1f7161467ea17ae95d0fe",
+    "atmosphere-off__shaders_compose.fsh__base.spv": "177eb5c51ed9f4851442234ea2c8d238d87105e4abdcb3088b1a06c93221bed9"
   },
   "fixtureResolution": [
     128,

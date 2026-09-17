@@ -4,108 +4,41 @@
   "cases": [
     {
       "overrides": {},
-      "passes": [
-        "contact-shadows",
-        "compose",
-        "bloom-seed",
-        "bloom-x",
-        "bloom-y",
-        "final"
-      ],
-      "name": "default",
       "allocations": [
         {
           "height": 720,
-          "graphTargetBytes": 12902400,
           "width": 1280,
+          "graphTargetBytes": 12902400,
           "shadowBudgetBytes": 14746180,
           "sceneCaptureBytes": 18432000,
           "releaseBudgetAccountedBytes": 46080580
         },
         {
           "height": 1080,
-          "graphTargetBytes": 29030400,
           "width": 1920,
+          "graphTargetBytes": 29030400,
           "shadowBudgetBytes": 14746180,
           "sceneCaptureBytes": 41472000,
           "releaseBudgetAccountedBytes": 85248580
         },
         {
           "height": 1440,
-          "graphTargetBytes": 51609600,
           "width": 2560,
+          "graphTargetBytes": 51609600,
           "shadowBudgetBytes": 14746180,
           "sceneCaptureBytes": 73728000,
           "releaseBudgetAccountedBytes": 140083780
         },
         {
           "height": 2160,
-          "graphTargetBytes": 116121600,
           "width": 3840,
+          "graphTargetBytes": 116121600,
           "shadowBudgetBytes": 14746180,
           "sceneCaptureBytes": 165888000,
           "releaseBudgetAccountedBytes": 296755780
         }
-      ]
-    },
-    {
-      "overrides": {
-        "SHADOW_QUALITY": 0.0,
-        "WATER_ENABLED": 0.0,
-        "SUNSET_GLOW": 0.0,
-        "VEGETATION_WIND": 0.0,
-        "AO_QUALITY": 0.0,
-        "BLOOM_STRENGTH": 0.0,
-        "HEIGHT_FOG": 0.0
-      },
-      "passes": [
-        "compose",
-        "final"
       ],
-      "name": "minimal",
-      "allocations": [
-        {
-          "height": 720,
-          "graphTargetBytes": 11059200,
-          "width": 1280,
-          "shadowBudgetBytes": 0,
-          "sceneCaptureBytes": 18432000,
-          "releaseBudgetAccountedBytes": 29491200
-        },
-        {
-          "height": 1080,
-          "graphTargetBytes": 24883200,
-          "width": 1920,
-          "shadowBudgetBytes": 0,
-          "sceneCaptureBytes": 41472000,
-          "releaseBudgetAccountedBytes": 66355200
-        },
-        {
-          "height": 1440,
-          "graphTargetBytes": 44236800,
-          "width": 2560,
-          "shadowBudgetBytes": 0,
-          "sceneCaptureBytes": 73728000,
-          "releaseBudgetAccountedBytes": 117964800
-        },
-        {
-          "height": 2160,
-          "graphTargetBytes": 99532800,
-          "width": 3840,
-          "shadowBudgetBytes": 0,
-          "sceneCaptureBytes": 165888000,
-          "releaseBudgetAccountedBytes": 265420800
-        }
-      ]
-    },
-    {
-      "overrides": {
-        "EDGE_SMOOTHING": 1.0,
-        "SHADOW_QUALITY": 2.0,
-        "AO_QUALITY": 2.0,
-        "WATER_WAVES": 1.0,
-        "SHADOW_DISTANCE": 96.0
-      },
+      "name": "default",
       "passes": [
         "contact-shadows",
         "compose",
@@ -113,47 +46,117 @@
         "bloom-x",
         "bloom-y",
         "final"
-      ],
-      "name": "enhanced",
+      ]
+    },
+    {
+      "overrides": {
+        "HEIGHT_FOG": 0.0,
+        "BLOOM_STRENGTH": 0.0,
+        "AO_QUALITY": 0.0,
+        "VEGETATION_WIND": 0.0,
+        "SUNSET_GLOW": 0.0,
+        "WATER_ENABLED": 0.0,
+        "SHADOW_QUALITY": 0.0
+      },
       "allocations": [
         {
           "height": 720,
-          "graphTargetBytes": 12902400,
           "width": 1280,
+          "graphTargetBytes": 11059200,
+          "shadowBudgetBytes": 0,
+          "sceneCaptureBytes": 18432000,
+          "releaseBudgetAccountedBytes": 29491200
+        },
+        {
+          "height": 1080,
+          "width": 1920,
+          "graphTargetBytes": 24883200,
+          "shadowBudgetBytes": 0,
+          "sceneCaptureBytes": 41472000,
+          "releaseBudgetAccountedBytes": 66355200
+        },
+        {
+          "height": 1440,
+          "width": 2560,
+          "graphTargetBytes": 44236800,
+          "shadowBudgetBytes": 0,
+          "sceneCaptureBytes": 73728000,
+          "releaseBudgetAccountedBytes": 117964800
+        },
+        {
+          "height": 2160,
+          "width": 3840,
+          "graphTargetBytes": 99532800,
+          "shadowBudgetBytes": 0,
+          "sceneCaptureBytes": 165888000,
+          "releaseBudgetAccountedBytes": 265420800
+        }
+      ],
+      "name": "minimal",
+      "passes": [
+        "compose",
+        "final"
+      ]
+    },
+    {
+      "overrides": {
+        "SHADOW_DISTANCE": 96.0,
+        "WATER_WAVES": 1.0,
+        "AO_QUALITY": 2.0,
+        "SHADOW_QUALITY": 2.0,
+        "EDGE_SMOOTHING": 1.0
+      },
+      "allocations": [
+        {
+          "height": 720,
+          "width": 1280,
+          "graphTargetBytes": 12902400,
           "shadowBudgetBytes": 52757045,
           "sceneCaptureBytes": 18432000,
           "releaseBudgetAccountedBytes": 84091445
         },
         {
           "height": 1080,
-          "graphTargetBytes": 29030400,
           "width": 1920,
+          "graphTargetBytes": 29030400,
           "shadowBudgetBytes": 52757045,
           "sceneCaptureBytes": 41472000,
           "releaseBudgetAccountedBytes": 123259445
         },
         {
           "height": 1440,
-          "graphTargetBytes": 51609600,
           "width": 2560,
+          "graphTargetBytes": 51609600,
           "shadowBudgetBytes": 52757045,
           "sceneCaptureBytes": 73728000,
           "releaseBudgetAccountedBytes": 178094645
         },
         {
           "height": 2160,
-          "graphTargetBytes": 116121600,
           "width": 3840,
+          "graphTargetBytes": 116121600,
           "shadowBudgetBytes": 52757045,
           "sceneCaptureBytes": 165888000,
           "releaseBudgetAccountedBytes": 334766645
         }
+      ],
+      "name": "enhanced",
+      "passes": [
+        "contact-shadows",
+        "compose",
+        "bloom-seed",
+        "bloom-x",
+        "bloom-y",
+        "final"
       ]
     },
     {
       "overrides": {
         "SHADOW_QUALITY": 3.0,
         "SHADOW_DISTANCE": 128.0,
+        "SHADOW_FILTER": 2.0,
+        "SHADOW_SOFTNESS": 1.5,
+        "SHADOW_STRENGTH": 1.0,
         "VEGETATION_WIND": 1.0,
         "LIGHT_WARMTH": 1.0,
         "NIGHT_BRIGHTNESS": 1.5,
@@ -178,55 +181,41 @@
         "DITHERING": 1.0,
         "CAVE_VISIBILITY": 1.0
       },
-      "passes": [
-        "contact-shadows",
-        "compose",
-        "bloom-seed",
-        "bloom-x",
-        "bloom-y",
-        "final"
+      "allocations": [
+        {
+          "height": 720,
+          "width": 1280,
+          "graphTargetBytes": 12902400,
+          "shadowBudgetBytes": 137626160,
+          "sceneCaptureBytes": 18432000,
+          "releaseBudgetAccountedBytes": 168960560
+        },
+        {
+          "height": 1080,
+          "width": 1920,
+          "graphTargetBytes": 29030400,
+          "shadowBudgetBytes": 137626160,
+          "sceneCaptureBytes": 41472000,
+          "releaseBudgetAccountedBytes": 208128560
+        },
+        {
+          "height": 1440,
+          "width": 2560,
+          "graphTargetBytes": 51609600,
+          "shadowBudgetBytes": 137626160,
+          "sceneCaptureBytes": 73728000,
+          "releaseBudgetAccountedBytes": 262963760
+        },
+        {
+          "height": 2160,
+          "width": 3840,
+          "graphTargetBytes": 116121600,
+          "shadowBudgetBytes": 137626160,
+          "sceneCaptureBytes": 165888000,
+          "releaseBudgetAccountedBytes": 419635760
+        }
       ],
       "name": "all-maximum",
-      "allocations": [
-        {
-          "height": 720,
-          "graphTargetBytes": 12902400,
-          "width": 1280,
-          "shadowBudgetBytes": 137626160,
-          "sceneCaptureBytes": 18432000,
-          "releaseBudgetAccountedBytes": 168960560
-        },
-        {
-          "height": 1080,
-          "graphTargetBytes": 29030400,
-          "width": 1920,
-          "shadowBudgetBytes": 137626160,
-          "sceneCaptureBytes": 41472000,
-          "releaseBudgetAccountedBytes": 208128560
-        },
-        {
-          "height": 1440,
-          "graphTargetBytes": 51609600,
-          "width": 2560,
-          "shadowBudgetBytes": 137626160,
-          "sceneCaptureBytes": 73728000,
-          "releaseBudgetAccountedBytes": 262963760
-        },
-        {
-          "height": 2160,
-          "graphTargetBytes": 116121600,
-          "width": 3840,
-          "shadowBudgetBytes": 137626160,
-          "sceneCaptureBytes": 165888000,
-          "releaseBudgetAccountedBytes": 419635760
-        }
-      ]
-    },
-    {
-      "overrides": {
-        "SHADOW_QUALITY": 0.0,
-        "WATER_ENABLED": 0.0
-      },
       "passes": [
         "contact-shadows",
         "compose",
@@ -234,48 +223,48 @@
         "bloom-x",
         "bloom-y",
         "final"
+      ]
+    },
+    {
+      "overrides": {
+        "WATER_ENABLED": 0.0,
+        "SHADOW_QUALITY": 0.0
+      },
+      "allocations": [
+        {
+          "height": 720,
+          "width": 1280,
+          "graphTargetBytes": 12902400,
+          "shadowBudgetBytes": 0,
+          "sceneCaptureBytes": 18432000,
+          "releaseBudgetAccountedBytes": 31334400
+        },
+        {
+          "height": 1080,
+          "width": 1920,
+          "graphTargetBytes": 29030400,
+          "shadowBudgetBytes": 0,
+          "sceneCaptureBytes": 41472000,
+          "releaseBudgetAccountedBytes": 70502400
+        },
+        {
+          "height": 1440,
+          "width": 2560,
+          "graphTargetBytes": 51609600,
+          "shadowBudgetBytes": 0,
+          "sceneCaptureBytes": 73728000,
+          "releaseBudgetAccountedBytes": 125337600
+        },
+        {
+          "height": 2160,
+          "width": 3840,
+          "graphTargetBytes": 116121600,
+          "shadowBudgetBytes": 0,
+          "sceneCaptureBytes": 165888000,
+          "releaseBudgetAccountedBytes": 282009600
+        }
       ],
       "name": "shadow-0-water-0",
-      "allocations": [
-        {
-          "height": 720,
-          "graphTargetBytes": 12902400,
-          "width": 1280,
-          "shadowBudgetBytes": 0,
-          "sceneCaptureBytes": 18432000,
-          "releaseBudgetAccountedBytes": 31334400
-        },
-        {
-          "height": 1080,
-          "graphTargetBytes": 29030400,
-          "width": 1920,
-          "shadowBudgetBytes": 0,
-          "sceneCaptureBytes": 41472000,
-          "releaseBudgetAccountedBytes": 70502400
-        },
-        {
-          "height": 1440,
-          "graphTargetBytes": 51609600,
-          "width": 2560,
-          "shadowBudgetBytes": 0,
-          "sceneCaptureBytes": 73728000,
-          "releaseBudgetAccountedBytes": 125337600
-        },
-        {
-          "height": 2160,
-          "graphTargetBytes": 116121600,
-          "width": 3840,
-          "shadowBudgetBytes": 0,
-          "sceneCaptureBytes": 165888000,
-          "releaseBudgetAccountedBytes": 282009600
-        }
-      ]
-    },
-    {
-      "overrides": {
-        "SHADOW_QUALITY": 0.0,
-        "WATER_ENABLED": 1.0
-      },
       "passes": [
         "contact-shadows",
         "compose",
@@ -283,48 +272,48 @@
         "bloom-x",
         "bloom-y",
         "final"
+      ]
+    },
+    {
+      "overrides": {
+        "WATER_ENABLED": 1.0,
+        "SHADOW_QUALITY": 0.0
+      },
+      "allocations": [
+        {
+          "height": 720,
+          "width": 1280,
+          "graphTargetBytes": 12902400,
+          "shadowBudgetBytes": 0,
+          "sceneCaptureBytes": 18432000,
+          "releaseBudgetAccountedBytes": 31334400
+        },
+        {
+          "height": 1080,
+          "width": 1920,
+          "graphTargetBytes": 29030400,
+          "shadowBudgetBytes": 0,
+          "sceneCaptureBytes": 41472000,
+          "releaseBudgetAccountedBytes": 70502400
+        },
+        {
+          "height": 1440,
+          "width": 2560,
+          "graphTargetBytes": 51609600,
+          "shadowBudgetBytes": 0,
+          "sceneCaptureBytes": 73728000,
+          "releaseBudgetAccountedBytes": 125337600
+        },
+        {
+          "height": 2160,
+          "width": 3840,
+          "graphTargetBytes": 116121600,
+          "shadowBudgetBytes": 0,
+          "sceneCaptureBytes": 165888000,
+          "releaseBudgetAccountedBytes": 282009600
+        }
       ],
       "name": "shadow-0-water-1",
-      "allocations": [
-        {
-          "height": 720,
-          "graphTargetBytes": 12902400,
-          "width": 1280,
-          "shadowBudgetBytes": 0,
-          "sceneCaptureBytes": 18432000,
-          "releaseBudgetAccountedBytes": 31334400
-        },
-        {
-          "height": 1080,
-          "graphTargetBytes": 29030400,
-          "width": 1920,
-          "shadowBudgetBytes": 0,
-          "sceneCaptureBytes": 41472000,
-          "releaseBudgetAccountedBytes": 70502400
-        },
-        {
-          "height": 1440,
-          "graphTargetBytes": 51609600,
-          "width": 2560,
-          "shadowBudgetBytes": 0,
-          "sceneCaptureBytes": 73728000,
-          "releaseBudgetAccountedBytes": 125337600
-        },
-        {
-          "height": 2160,
-          "graphTargetBytes": 116121600,
-          "width": 3840,
-          "shadowBudgetBytes": 0,
-          "sceneCaptureBytes": 165888000,
-          "releaseBudgetAccountedBytes": 282009600
-        }
-      ]
-    },
-    {
-      "overrides": {
-        "SHADOW_QUALITY": 1.0,
-        "WATER_ENABLED": 0.0
-      },
       "passes": [
         "contact-shadows",
         "compose",
@@ -332,48 +321,48 @@
         "bloom-x",
         "bloom-y",
         "final"
+      ]
+    },
+    {
+      "overrides": {
+        "WATER_ENABLED": 0.0,
+        "SHADOW_QUALITY": 1.0
+      },
+      "allocations": [
+        {
+          "height": 720,
+          "width": 1280,
+          "graphTargetBytes": 12902400,
+          "shadowBudgetBytes": 14746180,
+          "sceneCaptureBytes": 18432000,
+          "releaseBudgetAccountedBytes": 46080580
+        },
+        {
+          "height": 1080,
+          "width": 1920,
+          "graphTargetBytes": 29030400,
+          "shadowBudgetBytes": 14746180,
+          "sceneCaptureBytes": 41472000,
+          "releaseBudgetAccountedBytes": 85248580
+        },
+        {
+          "height": 1440,
+          "width": 2560,
+          "graphTargetBytes": 51609600,
+          "shadowBudgetBytes": 14746180,
+          "sceneCaptureBytes": 73728000,
+          "releaseBudgetAccountedBytes": 140083780
+        },
+        {
+          "height": 2160,
+          "width": 3840,
+          "graphTargetBytes": 116121600,
+          "shadowBudgetBytes": 14746180,
+          "sceneCaptureBytes": 165888000,
+          "releaseBudgetAccountedBytes": 296755780
+        }
       ],
       "name": "shadow-1-water-0",
-      "allocations": [
-        {
-          "height": 720,
-          "graphTargetBytes": 12902400,
-          "width": 1280,
-          "shadowBudgetBytes": 14746180,
-          "sceneCaptureBytes": 18432000,
-          "releaseBudgetAccountedBytes": 46080580
-        },
-        {
-          "height": 1080,
-          "graphTargetBytes": 29030400,
-          "width": 1920,
-          "shadowBudgetBytes": 14746180,
-          "sceneCaptureBytes": 41472000,
-          "releaseBudgetAccountedBytes": 85248580
-        },
-        {
-          "height": 1440,
-          "graphTargetBytes": 51609600,
-          "width": 2560,
-          "shadowBudgetBytes": 14746180,
-          "sceneCaptureBytes": 73728000,
-          "releaseBudgetAccountedBytes": 140083780
-        },
-        {
-          "height": 2160,
-          "graphTargetBytes": 116121600,
-          "width": 3840,
-          "shadowBudgetBytes": 14746180,
-          "sceneCaptureBytes": 165888000,
-          "releaseBudgetAccountedBytes": 296755780
-        }
-      ]
-    },
-    {
-      "overrides": {
-        "SHADOW_QUALITY": 1.0,
-        "WATER_ENABLED": 1.0
-      },
       "passes": [
         "contact-shadows",
         "compose",
@@ -381,48 +370,48 @@
         "bloom-x",
         "bloom-y",
         "final"
+      ]
+    },
+    {
+      "overrides": {
+        "WATER_ENABLED": 1.0,
+        "SHADOW_QUALITY": 1.0
+      },
+      "allocations": [
+        {
+          "height": 720,
+          "width": 1280,
+          "graphTargetBytes": 12902400,
+          "shadowBudgetBytes": 14746180,
+          "sceneCaptureBytes": 18432000,
+          "releaseBudgetAccountedBytes": 46080580
+        },
+        {
+          "height": 1080,
+          "width": 1920,
+          "graphTargetBytes": 29030400,
+          "shadowBudgetBytes": 14746180,
+          "sceneCaptureBytes": 41472000,
+          "releaseBudgetAccountedBytes": 85248580
+        },
+        {
+          "height": 1440,
+          "width": 2560,
+          "graphTargetBytes": 51609600,
+          "shadowBudgetBytes": 14746180,
+          "sceneCaptureBytes": 73728000,
+          "releaseBudgetAccountedBytes": 140083780
+        },
+        {
+          "height": 2160,
+          "width": 3840,
+          "graphTargetBytes": 116121600,
+          "shadowBudgetBytes": 14746180,
+          "sceneCaptureBytes": 165888000,
+          "releaseBudgetAccountedBytes": 296755780
+        }
       ],
       "name": "shadow-1-water-1",
-      "allocations": [
-        {
-          "height": 720,
-          "graphTargetBytes": 12902400,
-          "width": 1280,
-          "shadowBudgetBytes": 14746180,
-          "sceneCaptureBytes": 18432000,
-          "releaseBudgetAccountedBytes": 46080580
-        },
-        {
-          "height": 1080,
-          "graphTargetBytes": 29030400,
-          "width": 1920,
-          "shadowBudgetBytes": 14746180,
-          "sceneCaptureBytes": 41472000,
-          "releaseBudgetAccountedBytes": 85248580
-        },
-        {
-          "height": 1440,
-          "graphTargetBytes": 51609600,
-          "width": 2560,
-          "shadowBudgetBytes": 14746180,
-          "sceneCaptureBytes": 73728000,
-          "releaseBudgetAccountedBytes": 140083780
-        },
-        {
-          "height": 2160,
-          "graphTargetBytes": 116121600,
-          "width": 3840,
-          "shadowBudgetBytes": 14746180,
-          "sceneCaptureBytes": 165888000,
-          "releaseBudgetAccountedBytes": 296755780
-        }
-      ]
-    },
-    {
-      "overrides": {
-        "SHADOW_QUALITY": 2.0,
-        "WATER_ENABLED": 0.0
-      },
       "passes": [
         "contact-shadows",
         "compose",
@@ -430,48 +419,48 @@
         "bloom-x",
         "bloom-y",
         "final"
+      ]
+    },
+    {
+      "overrides": {
+        "WATER_ENABLED": 0.0,
+        "SHADOW_QUALITY": 2.0
+      },
+      "allocations": [
+        {
+          "height": 720,
+          "width": 1280,
+          "graphTargetBytes": 12902400,
+          "shadowBudgetBytes": 52757045,
+          "sceneCaptureBytes": 18432000,
+          "releaseBudgetAccountedBytes": 84091445
+        },
+        {
+          "height": 1080,
+          "width": 1920,
+          "graphTargetBytes": 29030400,
+          "shadowBudgetBytes": 52757045,
+          "sceneCaptureBytes": 41472000,
+          "releaseBudgetAccountedBytes": 123259445
+        },
+        {
+          "height": 1440,
+          "width": 2560,
+          "graphTargetBytes": 51609600,
+          "shadowBudgetBytes": 52757045,
+          "sceneCaptureBytes": 73728000,
+          "releaseBudgetAccountedBytes": 178094645
+        },
+        {
+          "height": 2160,
+          "width": 3840,
+          "graphTargetBytes": 116121600,
+          "shadowBudgetBytes": 52757045,
+          "sceneCaptureBytes": 165888000,
+          "releaseBudgetAccountedBytes": 334766645
+        }
       ],
       "name": "shadow-2-water-0",
-      "allocations": [
-        {
-          "height": 720,
-          "graphTargetBytes": 12902400,
-          "width": 1280,
-          "shadowBudgetBytes": 52757045,
-          "sceneCaptureBytes": 18432000,
-          "releaseBudgetAccountedBytes": 84091445
-        },
-        {
-          "height": 1080,
-          "graphTargetBytes": 29030400,
-          "width": 1920,
-          "shadowBudgetBytes": 52757045,
-          "sceneCaptureBytes": 41472000,
-          "releaseBudgetAccountedBytes": 123259445
-        },
-        {
-          "height": 1440,
-          "graphTargetBytes": 51609600,
-          "width": 2560,
-          "shadowBudgetBytes": 52757045,
-          "sceneCaptureBytes": 73728000,
-          "releaseBudgetAccountedBytes": 178094645
-        },
-        {
-          "height": 2160,
-          "graphTargetBytes": 116121600,
-          "width": 3840,
-          "shadowBudgetBytes": 52757045,
-          "sceneCaptureBytes": 165888000,
-          "releaseBudgetAccountedBytes": 334766645
-        }
-      ]
-    },
-    {
-      "overrides": {
-        "SHADOW_QUALITY": 2.0,
-        "WATER_ENABLED": 1.0
-      },
       "passes": [
         "contact-shadows",
         "compose",
@@ -479,48 +468,48 @@
         "bloom-x",
         "bloom-y",
         "final"
+      ]
+    },
+    {
+      "overrides": {
+        "WATER_ENABLED": 1.0,
+        "SHADOW_QUALITY": 2.0
+      },
+      "allocations": [
+        {
+          "height": 720,
+          "width": 1280,
+          "graphTargetBytes": 12902400,
+          "shadowBudgetBytes": 52757045,
+          "sceneCaptureBytes": 18432000,
+          "releaseBudgetAccountedBytes": 84091445
+        },
+        {
+          "height": 1080,
+          "width": 1920,
+          "graphTargetBytes": 29030400,
+          "shadowBudgetBytes": 52757045,
+          "sceneCaptureBytes": 41472000,
+          "releaseBudgetAccountedBytes": 123259445
+        },
+        {
+          "height": 1440,
+          "width": 2560,
+          "graphTargetBytes": 51609600,
+          "shadowBudgetBytes": 52757045,
+          "sceneCaptureBytes": 73728000,
+          "releaseBudgetAccountedBytes": 178094645
+        },
+        {
+          "height": 2160,
+          "width": 3840,
+          "graphTargetBytes": 116121600,
+          "shadowBudgetBytes": 52757045,
+          "sceneCaptureBytes": 165888000,
+          "releaseBudgetAccountedBytes": 334766645
+        }
       ],
       "name": "shadow-2-water-1",
-      "allocations": [
-        {
-          "height": 720,
-          "graphTargetBytes": 12902400,
-          "width": 1280,
-          "shadowBudgetBytes": 52757045,
-          "sceneCaptureBytes": 18432000,
-          "releaseBudgetAccountedBytes": 84091445
-        },
-        {
-          "height": 1080,
-          "graphTargetBytes": 29030400,
-          "width": 1920,
-          "shadowBudgetBytes": 52757045,
-          "sceneCaptureBytes": 41472000,
-          "releaseBudgetAccountedBytes": 123259445
-        },
-        {
-          "height": 1440,
-          "graphTargetBytes": 51609600,
-          "width": 2560,
-          "shadowBudgetBytes": 52757045,
-          "sceneCaptureBytes": 73728000,
-          "releaseBudgetAccountedBytes": 178094645
-        },
-        {
-          "height": 2160,
-          "graphTargetBytes": 116121600,
-          "width": 3840,
-          "shadowBudgetBytes": 52757045,
-          "sceneCaptureBytes": 165888000,
-          "releaseBudgetAccountedBytes": 334766645
-        }
-      ]
-    },
-    {
-      "overrides": {
-        "SHADOW_QUALITY": 3.0,
-        "WATER_ENABLED": 0.0
-      },
       "passes": [
         "contact-shadows",
         "compose",
@@ -528,48 +517,48 @@
         "bloom-x",
         "bloom-y",
         "final"
+      ]
+    },
+    {
+      "overrides": {
+        "WATER_ENABLED": 0.0,
+        "SHADOW_QUALITY": 3.0
+      },
+      "allocations": [
+        {
+          "height": 720,
+          "width": 1280,
+          "graphTargetBytes": 12902400,
+          "shadowBudgetBytes": 137626160,
+          "sceneCaptureBytes": 18432000,
+          "releaseBudgetAccountedBytes": 168960560
+        },
+        {
+          "height": 1080,
+          "width": 1920,
+          "graphTargetBytes": 29030400,
+          "shadowBudgetBytes": 137626160,
+          "sceneCaptureBytes": 41472000,
+          "releaseBudgetAccountedBytes": 208128560
+        },
+        {
+          "height": 1440,
+          "width": 2560,
+          "graphTargetBytes": 51609600,
+          "shadowBudgetBytes": 137626160,
+          "sceneCaptureBytes": 73728000,
+          "releaseBudgetAccountedBytes": 262963760
+        },
+        {
+          "height": 2160,
+          "width": 3840,
+          "graphTargetBytes": 116121600,
+          "shadowBudgetBytes": 137626160,
+          "sceneCaptureBytes": 165888000,
+          "releaseBudgetAccountedBytes": 419635760
+        }
       ],
       "name": "shadow-3-water-0",
-      "allocations": [
-        {
-          "height": 720,
-          "graphTargetBytes": 12902400,
-          "width": 1280,
-          "shadowBudgetBytes": 137626160,
-          "sceneCaptureBytes": 18432000,
-          "releaseBudgetAccountedBytes": 168960560
-        },
-        {
-          "height": 1080,
-          "graphTargetBytes": 29030400,
-          "width": 1920,
-          "shadowBudgetBytes": 137626160,
-          "sceneCaptureBytes": 41472000,
-          "releaseBudgetAccountedBytes": 208128560
-        },
-        {
-          "height": 1440,
-          "graphTargetBytes": 51609600,
-          "width": 2560,
-          "shadowBudgetBytes": 137626160,
-          "sceneCaptureBytes": 73728000,
-          "releaseBudgetAccountedBytes": 262963760
-        },
-        {
-          "height": 2160,
-          "graphTargetBytes": 116121600,
-          "width": 3840,
-          "shadowBudgetBytes": 137626160,
-          "sceneCaptureBytes": 165888000,
-          "releaseBudgetAccountedBytes": 419635760
-        }
-      ]
-    },
-    {
-      "overrides": {
-        "SHADOW_QUALITY": 3.0,
-        "WATER_ENABLED": 1.0
-      },
       "passes": [
         "contact-shadows",
         "compose",
@@ -577,142 +566,191 @@
         "bloom-x",
         "bloom-y",
         "final"
-      ],
-      "name": "shadow-3-water-1",
+      ]
+    },
+    {
+      "overrides": {
+        "WATER_ENABLED": 1.0,
+        "SHADOW_QUALITY": 3.0
+      },
       "allocations": [
         {
           "height": 720,
-          "graphTargetBytes": 12902400,
           "width": 1280,
+          "graphTargetBytes": 12902400,
           "shadowBudgetBytes": 137626160,
           "sceneCaptureBytes": 18432000,
           "releaseBudgetAccountedBytes": 168960560
         },
         {
           "height": 1080,
-          "graphTargetBytes": 29030400,
           "width": 1920,
+          "graphTargetBytes": 29030400,
           "shadowBudgetBytes": 137626160,
           "sceneCaptureBytes": 41472000,
           "releaseBudgetAccountedBytes": 208128560
         },
         {
           "height": 1440,
-          "graphTargetBytes": 51609600,
           "width": 2560,
+          "graphTargetBytes": 51609600,
           "shadowBudgetBytes": 137626160,
           "sceneCaptureBytes": 73728000,
           "releaseBudgetAccountedBytes": 262963760
         },
         {
           "height": 2160,
-          "graphTargetBytes": 116121600,
           "width": 3840,
+          "graphTargetBytes": 116121600,
           "shadowBudgetBytes": 137626160,
           "sceneCaptureBytes": 165888000,
           "releaseBudgetAccountedBytes": 419635760
         }
+      ],
+      "name": "shadow-3-water-1",
+      "passes": [
+        "contact-shadows",
+        "compose",
+        "bloom-seed",
+        "bloom-x",
+        "bloom-y",
+        "final"
       ]
     },
     {
       "overrides": {
         "AO_QUALITY": 0.0
       },
-      "passes": [
-        "compose",
-        "bloom-seed",
-        "bloom-x",
-        "bloom-y",
-        "final"
-      ],
-      "name": "ao-disabled",
       "allocations": [
         {
           "height": 720,
-          "graphTargetBytes": 11980800,
           "width": 1280,
+          "graphTargetBytes": 11980800,
           "shadowBudgetBytes": 14746180,
           "sceneCaptureBytes": 18432000,
           "releaseBudgetAccountedBytes": 45158980
         },
         {
           "height": 1080,
-          "graphTargetBytes": 26956800,
           "width": 1920,
+          "graphTargetBytes": 26956800,
           "shadowBudgetBytes": 14746180,
           "sceneCaptureBytes": 41472000,
           "releaseBudgetAccountedBytes": 83174980
         },
         {
           "height": 1440,
-          "graphTargetBytes": 47923200,
           "width": 2560,
+          "graphTargetBytes": 47923200,
           "shadowBudgetBytes": 14746180,
           "sceneCaptureBytes": 73728000,
           "releaseBudgetAccountedBytes": 136397380
         },
         {
           "height": 2160,
-          "graphTargetBytes": 107827200,
           "width": 3840,
+          "graphTargetBytes": 107827200,
           "shadowBudgetBytes": 14746180,
           "sceneCaptureBytes": 165888000,
           "releaseBudgetAccountedBytes": 288461380
         }
+      ],
+      "name": "ao-disabled",
+      "passes": [
+        "compose",
+        "bloom-seed",
+        "bloom-x",
+        "bloom-y",
+        "final"
       ]
     },
     {
       "overrides": {
-        "AO_QUALITY": 2.0,
-        "AO_STRENGTH": 0.0
+        "AO_STRENGTH": 0.0,
+        "AO_QUALITY": 2.0
       },
-      "passes": [
-        "compose",
-        "bloom-seed",
-        "bloom-x",
-        "bloom-y",
-        "final"
-      ],
-      "name": "ao-zero-strength",
       "allocations": [
         {
           "height": 720,
-          "graphTargetBytes": 11980800,
           "width": 1280,
+          "graphTargetBytes": 11980800,
           "shadowBudgetBytes": 14746180,
           "sceneCaptureBytes": 18432000,
           "releaseBudgetAccountedBytes": 45158980
         },
         {
           "height": 1080,
-          "graphTargetBytes": 26956800,
           "width": 1920,
+          "graphTargetBytes": 26956800,
           "shadowBudgetBytes": 14746180,
           "sceneCaptureBytes": 41472000,
           "releaseBudgetAccountedBytes": 83174980
         },
         {
           "height": 1440,
-          "graphTargetBytes": 47923200,
           "width": 2560,
+          "graphTargetBytes": 47923200,
           "shadowBudgetBytes": 14746180,
           "sceneCaptureBytes": 73728000,
           "releaseBudgetAccountedBytes": 136397380
         },
         {
           "height": 2160,
-          "graphTargetBytes": 107827200,
           "width": 3840,
+          "graphTargetBytes": 107827200,
           "shadowBudgetBytes": 14746180,
           "sceneCaptureBytes": 165888000,
           "releaseBudgetAccountedBytes": 288461380
         }
+      ],
+      "name": "ao-zero-strength",
+      "passes": [
+        "compose",
+        "bloom-seed",
+        "bloom-x",
+        "bloom-y",
+        "final"
       ]
     },
     {
       "overrides": {
         "AO_QUALITY": 2.0
       },
+      "allocations": [
+        {
+          "height": 720,
+          "width": 1280,
+          "graphTargetBytes": 12902400,
+          "shadowBudgetBytes": 14746180,
+          "sceneCaptureBytes": 18432000,
+          "releaseBudgetAccountedBytes": 46080580
+        },
+        {
+          "height": 1080,
+          "width": 1920,
+          "graphTargetBytes": 29030400,
+          "shadowBudgetBytes": 14746180,
+          "sceneCaptureBytes": 41472000,
+          "releaseBudgetAccountedBytes": 85248580
+        },
+        {
+          "height": 1440,
+          "width": 2560,
+          "graphTargetBytes": 51609600,
+          "shadowBudgetBytes": 14746180,
+          "sceneCaptureBytes": 73728000,
+          "releaseBudgetAccountedBytes": 140083780
+        },
+        {
+          "height": 2160,
+          "width": 3840,
+          "graphTargetBytes": 116121600,
+          "shadowBudgetBytes": 14746180,
+          "sceneCaptureBytes": 165888000,
+          "releaseBudgetAccountedBytes": 296755780
+        }
+      ],
+      "name": "ao-eight-samples",
       "passes": [
         "contact-shadows",
         "compose",
@@ -720,92 +758,92 @@
         "bloom-x",
         "bloom-y",
         "final"
-      ],
-      "name": "ao-eight-samples",
-      "allocations": [
-        {
-          "height": 720,
-          "graphTargetBytes": 12902400,
-          "width": 1280,
-          "shadowBudgetBytes": 14746180,
-          "sceneCaptureBytes": 18432000,
-          "releaseBudgetAccountedBytes": 46080580
-        },
-        {
-          "height": 1080,
-          "graphTargetBytes": 29030400,
-          "width": 1920,
-          "shadowBudgetBytes": 14746180,
-          "sceneCaptureBytes": 41472000,
-          "releaseBudgetAccountedBytes": 85248580
-        },
-        {
-          "height": 1440,
-          "graphTargetBytes": 51609600,
-          "width": 2560,
-          "shadowBudgetBytes": 14746180,
-          "sceneCaptureBytes": 73728000,
-          "releaseBudgetAccountedBytes": 140083780
-        },
-        {
-          "height": 2160,
-          "graphTargetBytes": 116121600,
-          "width": 3840,
-          "shadowBudgetBytes": 14746180,
-          "sceneCaptureBytes": 165888000,
-          "releaseBudgetAccountedBytes": 296755780
-        }
       ]
     },
     {
       "overrides": {
         "BLOOM_STRENGTH": 0.0
       },
-      "passes": [
-        "contact-shadows",
-        "compose",
-        "final"
-      ],
-      "name": "bloom-disabled",
       "allocations": [
         {
           "height": 720,
-          "graphTargetBytes": 11980800,
           "width": 1280,
+          "graphTargetBytes": 11980800,
           "shadowBudgetBytes": 14746180,
           "sceneCaptureBytes": 18432000,
           "releaseBudgetAccountedBytes": 45158980
         },
         {
           "height": 1080,
-          "graphTargetBytes": 26956800,
           "width": 1920,
+          "graphTargetBytes": 26956800,
           "shadowBudgetBytes": 14746180,
           "sceneCaptureBytes": 41472000,
           "releaseBudgetAccountedBytes": 83174980
         },
         {
           "height": 1440,
-          "graphTargetBytes": 47923200,
           "width": 2560,
+          "graphTargetBytes": 47923200,
           "shadowBudgetBytes": 14746180,
           "sceneCaptureBytes": 73728000,
           "releaseBudgetAccountedBytes": 136397380
         },
         {
           "height": 2160,
-          "graphTargetBytes": 107827200,
           "width": 3840,
+          "graphTargetBytes": 107827200,
           "shadowBudgetBytes": 14746180,
           "sceneCaptureBytes": 165888000,
           "releaseBudgetAccountedBytes": 288461380
         }
+      ],
+      "name": "bloom-disabled",
+      "passes": [
+        "contact-shadows",
+        "compose",
+        "final"
       ]
     },
     {
       "overrides": {
         "EDGE_SMOOTHING": 1.0
       },
+      "allocations": [
+        {
+          "height": 720,
+          "width": 1280,
+          "graphTargetBytes": 12902400,
+          "shadowBudgetBytes": 14746180,
+          "sceneCaptureBytes": 18432000,
+          "releaseBudgetAccountedBytes": 46080580
+        },
+        {
+          "height": 1080,
+          "width": 1920,
+          "graphTargetBytes": 29030400,
+          "shadowBudgetBytes": 14746180,
+          "sceneCaptureBytes": 41472000,
+          "releaseBudgetAccountedBytes": 85248580
+        },
+        {
+          "height": 1440,
+          "width": 2560,
+          "graphTargetBytes": 51609600,
+          "shadowBudgetBytes": 14746180,
+          "sceneCaptureBytes": 73728000,
+          "releaseBudgetAccountedBytes": 140083780
+        },
+        {
+          "height": 2160,
+          "width": 3840,
+          "graphTargetBytes": 116121600,
+          "shadowBudgetBytes": 14746180,
+          "sceneCaptureBytes": 165888000,
+          "releaseBudgetAccountedBytes": 296755780
+        }
+      ],
+      "name": "edge-smoothing",
       "passes": [
         "contact-shadows",
         "compose",
@@ -813,93 +851,93 @@
         "bloom-x",
         "bloom-y",
         "final"
-      ],
-      "name": "edge-smoothing",
-      "allocations": [
-        {
-          "height": 720,
-          "graphTargetBytes": 12902400,
-          "width": 1280,
-          "shadowBudgetBytes": 14746180,
-          "sceneCaptureBytes": 18432000,
-          "releaseBudgetAccountedBytes": 46080580
-        },
-        {
-          "height": 1080,
-          "graphTargetBytes": 29030400,
-          "width": 1920,
-          "shadowBudgetBytes": 14746180,
-          "sceneCaptureBytes": 41472000,
-          "releaseBudgetAccountedBytes": 85248580
-        },
-        {
-          "height": 1440,
-          "graphTargetBytes": 51609600,
-          "width": 2560,
-          "shadowBudgetBytes": 14746180,
-          "sceneCaptureBytes": 73728000,
-          "releaseBudgetAccountedBytes": 140083780
-        },
-        {
-          "height": 2160,
-          "graphTargetBytes": 116121600,
-          "width": 3840,
-          "shadowBudgetBytes": 14746180,
-          "sceneCaptureBytes": 165888000,
-          "releaseBudgetAccountedBytes": 296755780
-        }
       ]
     },
     {
       "overrides": {
-        "BLOOM_STRENGTH": 0.0,
-        "EDGE_SMOOTHING": 1.0
+        "EDGE_SMOOTHING": 1.0,
+        "BLOOM_STRENGTH": 0.0
       },
-      "passes": [
-        "contact-shadows",
-        "compose",
-        "final"
-      ],
-      "name": "bloom-off-edge-on",
       "allocations": [
         {
           "height": 720,
-          "graphTargetBytes": 11980800,
           "width": 1280,
+          "graphTargetBytes": 11980800,
           "shadowBudgetBytes": 14746180,
           "sceneCaptureBytes": 18432000,
           "releaseBudgetAccountedBytes": 45158980
         },
         {
           "height": 1080,
-          "graphTargetBytes": 26956800,
           "width": 1920,
+          "graphTargetBytes": 26956800,
           "shadowBudgetBytes": 14746180,
           "sceneCaptureBytes": 41472000,
           "releaseBudgetAccountedBytes": 83174980
         },
         {
           "height": 1440,
-          "graphTargetBytes": 47923200,
           "width": 2560,
+          "graphTargetBytes": 47923200,
           "shadowBudgetBytes": 14746180,
           "sceneCaptureBytes": 73728000,
           "releaseBudgetAccountedBytes": 136397380
         },
         {
           "height": 2160,
-          "graphTargetBytes": 107827200,
           "width": 3840,
+          "graphTargetBytes": 107827200,
           "shadowBudgetBytes": 14746180,
           "sceneCaptureBytes": 165888000,
           "releaseBudgetAccountedBytes": 288461380
         }
+      ],
+      "name": "bloom-off-edge-on",
+      "passes": [
+        "contact-shadows",
+        "compose",
+        "final"
       ]
     },
     {
       "overrides": {
         "CAVE_VISIBILITY": 0.0
       },
+      "allocations": [
+        {
+          "height": 720,
+          "width": 1280,
+          "graphTargetBytes": 12902400,
+          "shadowBudgetBytes": 14746180,
+          "sceneCaptureBytes": 18432000,
+          "releaseBudgetAccountedBytes": 46080580
+        },
+        {
+          "height": 1080,
+          "width": 1920,
+          "graphTargetBytes": 29030400,
+          "shadowBudgetBytes": 14746180,
+          "sceneCaptureBytes": 41472000,
+          "releaseBudgetAccountedBytes": 85248580
+        },
+        {
+          "height": 1440,
+          "width": 2560,
+          "graphTargetBytes": 51609600,
+          "shadowBudgetBytes": 14746180,
+          "sceneCaptureBytes": 73728000,
+          "releaseBudgetAccountedBytes": 140083780
+        },
+        {
+          "height": 2160,
+          "width": 3840,
+          "graphTargetBytes": 116121600,
+          "shadowBudgetBytes": 14746180,
+          "sceneCaptureBytes": 165888000,
+          "releaseBudgetAccountedBytes": 296755780
+        }
+      ],
+      "name": "cave-visibility-off",
       "passes": [
         "contact-shadows",
         "compose",
@@ -907,47 +945,47 @@
         "bloom-x",
         "bloom-y",
         "final"
-      ],
-      "name": "cave-visibility-off",
-      "allocations": [
-        {
-          "height": 720,
-          "graphTargetBytes": 12902400,
-          "width": 1280,
-          "shadowBudgetBytes": 14746180,
-          "sceneCaptureBytes": 18432000,
-          "releaseBudgetAccountedBytes": 46080580
-        },
-        {
-          "height": 1080,
-          "graphTargetBytes": 29030400,
-          "width": 1920,
-          "shadowBudgetBytes": 14746180,
-          "sceneCaptureBytes": 41472000,
-          "releaseBudgetAccountedBytes": 85248580
-        },
-        {
-          "height": 1440,
-          "graphTargetBytes": 51609600,
-          "width": 2560,
-          "shadowBudgetBytes": 14746180,
-          "sceneCaptureBytes": 73728000,
-          "releaseBudgetAccountedBytes": 140083780
-        },
-        {
-          "height": 2160,
-          "graphTargetBytes": 116121600,
-          "width": 3840,
-          "shadowBudgetBytes": 14746180,
-          "sceneCaptureBytes": 165888000,
-          "releaseBudgetAccountedBytes": 296755780
-        }
       ]
     },
     {
       "overrides": {
         "WET_SURFACES": 0.0
       },
+      "allocations": [
+        {
+          "height": 720,
+          "width": 1280,
+          "graphTargetBytes": 12902400,
+          "shadowBudgetBytes": 14746180,
+          "sceneCaptureBytes": 18432000,
+          "releaseBudgetAccountedBytes": 46080580
+        },
+        {
+          "height": 1080,
+          "width": 1920,
+          "graphTargetBytes": 29030400,
+          "shadowBudgetBytes": 14746180,
+          "sceneCaptureBytes": 41472000,
+          "releaseBudgetAccountedBytes": 85248580
+        },
+        {
+          "height": 1440,
+          "width": 2560,
+          "graphTargetBytes": 51609600,
+          "shadowBudgetBytes": 14746180,
+          "sceneCaptureBytes": 73728000,
+          "releaseBudgetAccountedBytes": 140083780
+        },
+        {
+          "height": 2160,
+          "width": 3840,
+          "graphTargetBytes": 116121600,
+          "shadowBudgetBytes": 14746180,
+          "sceneCaptureBytes": 165888000,
+          "releaseBudgetAccountedBytes": 296755780
+        }
+      ],
+      "name": "wet-surfaces-off",
       "passes": [
         "contact-shadows",
         "compose",
@@ -955,47 +993,47 @@
         "bloom-x",
         "bloom-y",
         "final"
-      ],
-      "name": "wet-surfaces-off",
-      "allocations": [
-        {
-          "height": 720,
-          "graphTargetBytes": 12902400,
-          "width": 1280,
-          "shadowBudgetBytes": 14746180,
-          "sceneCaptureBytes": 18432000,
-          "releaseBudgetAccountedBytes": 46080580
-        },
-        {
-          "height": 1080,
-          "graphTargetBytes": 29030400,
-          "width": 1920,
-          "shadowBudgetBytes": 14746180,
-          "sceneCaptureBytes": 41472000,
-          "releaseBudgetAccountedBytes": 85248580
-        },
-        {
-          "height": 1440,
-          "graphTargetBytes": 51609600,
-          "width": 2560,
-          "shadowBudgetBytes": 14746180,
-          "sceneCaptureBytes": 73728000,
-          "releaseBudgetAccountedBytes": 140083780
-        },
-        {
-          "height": 2160,
-          "graphTargetBytes": 116121600,
-          "width": 3840,
-          "shadowBudgetBytes": 14746180,
-          "sceneCaptureBytes": 165888000,
-          "releaseBudgetAccountedBytes": 296755780
-        }
       ]
     },
     {
       "overrides": {
         "DITHERING": 0.0
       },
+      "allocations": [
+        {
+          "height": 720,
+          "width": 1280,
+          "graphTargetBytes": 12902400,
+          "shadowBudgetBytes": 14746180,
+          "sceneCaptureBytes": 18432000,
+          "releaseBudgetAccountedBytes": 46080580
+        },
+        {
+          "height": 1080,
+          "width": 1920,
+          "graphTargetBytes": 29030400,
+          "shadowBudgetBytes": 14746180,
+          "sceneCaptureBytes": 41472000,
+          "releaseBudgetAccountedBytes": 85248580
+        },
+        {
+          "height": 1440,
+          "width": 2560,
+          "graphTargetBytes": 51609600,
+          "shadowBudgetBytes": 14746180,
+          "sceneCaptureBytes": 73728000,
+          "releaseBudgetAccountedBytes": 140083780
+        },
+        {
+          "height": 2160,
+          "width": 3840,
+          "graphTargetBytes": 116121600,
+          "shadowBudgetBytes": 14746180,
+          "sceneCaptureBytes": 165888000,
+          "releaseBudgetAccountedBytes": 296755780
+        }
+      ],
+      "name": "dithering-off",
       "passes": [
         "contact-shadows",
         "compose",
@@ -1003,95 +1041,47 @@
         "bloom-x",
         "bloom-y",
         "final"
-      ],
-      "name": "dithering-off",
-      "allocations": [
-        {
-          "height": 720,
-          "graphTargetBytes": 12902400,
-          "width": 1280,
-          "shadowBudgetBytes": 14746180,
-          "sceneCaptureBytes": 18432000,
-          "releaseBudgetAccountedBytes": 46080580
-        },
-        {
-          "height": 1080,
-          "graphTargetBytes": 29030400,
-          "width": 1920,
-          "shadowBudgetBytes": 14746180,
-          "sceneCaptureBytes": 41472000,
-          "releaseBudgetAccountedBytes": 85248580
-        },
-        {
-          "height": 1440,
-          "graphTargetBytes": 51609600,
-          "width": 2560,
-          "shadowBudgetBytes": 14746180,
-          "sceneCaptureBytes": 73728000,
-          "releaseBudgetAccountedBytes": 140083780
-        },
-        {
-          "height": 2160,
-          "graphTargetBytes": 116121600,
-          "width": 3840,
-          "shadowBudgetBytes": 14746180,
-          "sceneCaptureBytes": 165888000,
-          "releaseBudgetAccountedBytes": 296755780
-        }
       ]
     },
     {
       "overrides": {
         "SUNSET_GLOW": 0.0
       },
-      "passes": [
-        "contact-shadows",
-        "compose",
-        "bloom-seed",
-        "bloom-x",
-        "bloom-y",
-        "final"
+      "allocations": [
+        {
+          "height": 720,
+          "width": 1280,
+          "graphTargetBytes": 12902400,
+          "shadowBudgetBytes": 14746180,
+          "sceneCaptureBytes": 18432000,
+          "releaseBudgetAccountedBytes": 46080580
+        },
+        {
+          "height": 1080,
+          "width": 1920,
+          "graphTargetBytes": 29030400,
+          "shadowBudgetBytes": 14746180,
+          "sceneCaptureBytes": 41472000,
+          "releaseBudgetAccountedBytes": 85248580
+        },
+        {
+          "height": 1440,
+          "width": 2560,
+          "graphTargetBytes": 51609600,
+          "shadowBudgetBytes": 14746180,
+          "sceneCaptureBytes": 73728000,
+          "releaseBudgetAccountedBytes": 140083780
+        },
+        {
+          "height": 2160,
+          "width": 3840,
+          "graphTargetBytes": 116121600,
+          "shadowBudgetBytes": 14746180,
+          "sceneCaptureBytes": 165888000,
+          "releaseBudgetAccountedBytes": 296755780
+        }
       ],
       "name": "sunset-glow-off",
-      "allocations": [
-        {
-          "height": 720,
-          "graphTargetBytes": 12902400,
-          "width": 1280,
-          "shadowBudgetBytes": 14746180,
-          "sceneCaptureBytes": 18432000,
-          "releaseBudgetAccountedBytes": 46080580
-        },
-        {
-          "height": 1080,
-          "graphTargetBytes": 29030400,
-          "width": 1920,
-          "shadowBudgetBytes": 14746180,
-          "sceneCaptureBytes": 41472000,
-          "releaseBudgetAccountedBytes": 85248580
-        },
-        {
-          "height": 1440,
-          "graphTargetBytes": 51609600,
-          "width": 2560,
-          "shadowBudgetBytes": 14746180,
-          "sceneCaptureBytes": 73728000,
-          "releaseBudgetAccountedBytes": 140083780
-        },
-        {
-          "height": 2160,
-          "graphTargetBytes": 116121600,
-          "width": 3840,
-          "shadowBudgetBytes": 14746180,
-          "sceneCaptureBytes": 165888000,
-          "releaseBudgetAccountedBytes": 296755780
-        }
-      ]
-    },
-    {
-      "overrides": {
-        "HEIGHT_FOG": 0.0
-      },
       "passes": [
         "contact-shadows",
         "compose",
@@ -1099,48 +1089,47 @@
         "bloom-x",
         "bloom-y",
         "final"
+      ]
+    },
+    {
+      "overrides": {
+        "HEIGHT_FOG": 0.0
+      },
+      "allocations": [
+        {
+          "height": 720,
+          "width": 1280,
+          "graphTargetBytes": 12902400,
+          "shadowBudgetBytes": 14746180,
+          "sceneCaptureBytes": 18432000,
+          "releaseBudgetAccountedBytes": 46080580
+        },
+        {
+          "height": 1080,
+          "width": 1920,
+          "graphTargetBytes": 29030400,
+          "shadowBudgetBytes": 14746180,
+          "sceneCaptureBytes": 41472000,
+          "releaseBudgetAccountedBytes": 85248580
+        },
+        {
+          "height": 1440,
+          "width": 2560,
+          "graphTargetBytes": 51609600,
+          "shadowBudgetBytes": 14746180,
+          "sceneCaptureBytes": 73728000,
+          "releaseBudgetAccountedBytes": 140083780
+        },
+        {
+          "height": 2160,
+          "width": 3840,
+          "graphTargetBytes": 116121600,
+          "shadowBudgetBytes": 14746180,
+          "sceneCaptureBytes": 165888000,
+          "releaseBudgetAccountedBytes": 296755780
+        }
       ],
       "name": "height-fog-off",
-      "allocations": [
-        {
-          "height": 720,
-          "graphTargetBytes": 12902400,
-          "width": 1280,
-          "shadowBudgetBytes": 14746180,
-          "sceneCaptureBytes": 18432000,
-          "releaseBudgetAccountedBytes": 46080580
-        },
-        {
-          "height": 1080,
-          "graphTargetBytes": 29030400,
-          "width": 1920,
-          "shadowBudgetBytes": 14746180,
-          "sceneCaptureBytes": 41472000,
-          "releaseBudgetAccountedBytes": 85248580
-        },
-        {
-          "height": 1440,
-          "graphTargetBytes": 51609600,
-          "width": 2560,
-          "shadowBudgetBytes": 14746180,
-          "sceneCaptureBytes": 73728000,
-          "releaseBudgetAccountedBytes": 140083780
-        },
-        {
-          "height": 2160,
-          "graphTargetBytes": 116121600,
-          "width": 3840,
-          "shadowBudgetBytes": 14746180,
-          "sceneCaptureBytes": 165888000,
-          "releaseBudgetAccountedBytes": 296755780
-        }
-      ]
-    },
-    {
-      "overrides": {
-        "SUNSET_GLOW": 0.0,
-        "HEIGHT_FOG": 0.0
-      },
       "passes": [
         "contact-shadows",
         "compose",
@@ -1148,192 +1137,495 @@
         "bloom-x",
         "bloom-y",
         "final"
-      ],
-      "name": "atmosphere-off",
+      ]
+    },
+    {
+      "overrides": {
+        "HEIGHT_FOG": 0.0,
+        "SUNSET_GLOW": 0.0
+      },
       "allocations": [
         {
           "height": 720,
-          "graphTargetBytes": 12902400,
           "width": 1280,
+          "graphTargetBytes": 12902400,
           "shadowBudgetBytes": 14746180,
           "sceneCaptureBytes": 18432000,
           "releaseBudgetAccountedBytes": 46080580
         },
         {
           "height": 1080,
-          "graphTargetBytes": 29030400,
           "width": 1920,
+          "graphTargetBytes": 29030400,
           "shadowBudgetBytes": 14746180,
           "sceneCaptureBytes": 41472000,
           "releaseBudgetAccountedBytes": 85248580
         },
         {
           "height": 1440,
-          "graphTargetBytes": 51609600,
           "width": 2560,
+          "graphTargetBytes": 51609600,
           "shadowBudgetBytes": 14746180,
           "sceneCaptureBytes": 73728000,
           "releaseBudgetAccountedBytes": 140083780
         },
         {
           "height": 2160,
-          "graphTargetBytes": 116121600,
           "width": 3840,
+          "graphTargetBytes": 116121600,
           "shadowBudgetBytes": 14746180,
           "sceneCaptureBytes": 165888000,
           "releaseBudgetAccountedBytes": 296755780
         }
+      ],
+      "name": "atmosphere-off",
+      "passes": [
+        "contact-shadows",
+        "compose",
+        "bloom-seed",
+        "bloom-x",
+        "bloom-y",
+        "final"
       ]
     },
     {
       "overrides": {
         "SUNSET_GLOW": 1.0,
-        "HEIGHT_FOG": 1.0,
+        "AO_QUALITY": 0.0,
         "FOG_STRENGTH": 0.0,
-        "AO_QUALITY": 0.0
+        "HEIGHT_FOG": 1.0
       },
-      "passes": [
-        "compose",
-        "bloom-seed",
-        "bloom-x",
-        "bloom-y",
-        "final"
-      ],
-      "name": "atmosphere-test-on",
       "allocations": [
         {
           "height": 720,
-          "graphTargetBytes": 11980800,
           "width": 1280,
+          "graphTargetBytes": 11980800,
           "shadowBudgetBytes": 14746180,
           "sceneCaptureBytes": 18432000,
           "releaseBudgetAccountedBytes": 45158980
         },
         {
           "height": 1080,
-          "graphTargetBytes": 26956800,
           "width": 1920,
+          "graphTargetBytes": 26956800,
           "shadowBudgetBytes": 14746180,
           "sceneCaptureBytes": 41472000,
           "releaseBudgetAccountedBytes": 83174980
         },
         {
           "height": 1440,
-          "graphTargetBytes": 47923200,
           "width": 2560,
+          "graphTargetBytes": 47923200,
           "shadowBudgetBytes": 14746180,
           "sceneCaptureBytes": 73728000,
           "releaseBudgetAccountedBytes": 136397380
         },
         {
           "height": 2160,
-          "graphTargetBytes": 107827200,
           "width": 3840,
+          "graphTargetBytes": 107827200,
           "shadowBudgetBytes": 14746180,
           "sceneCaptureBytes": 165888000,
           "releaseBudgetAccountedBytes": 288461380
         }
+      ],
+      "name": "atmosphere-test-on",
+      "passes": [
+        "compose",
+        "bloom-seed",
+        "bloom-x",
+        "bloom-y",
+        "final"
       ]
     },
     {
       "overrides": {
         "SUNSET_GLOW": 0.0,
-        "HEIGHT_FOG": 0.0,
+        "AO_QUALITY": 0.0,
         "FOG_STRENGTH": 0.0,
-        "AO_QUALITY": 0.0
+        "HEIGHT_FOG": 0.0
       },
-      "passes": [
-        "compose",
-        "bloom-seed",
-        "bloom-x",
-        "bloom-y",
-        "final"
-      ],
-      "name": "atmosphere-test-off",
       "allocations": [
         {
           "height": 720,
-          "graphTargetBytes": 11980800,
           "width": 1280,
+          "graphTargetBytes": 11980800,
           "shadowBudgetBytes": 14746180,
           "sceneCaptureBytes": 18432000,
           "releaseBudgetAccountedBytes": 45158980
         },
         {
           "height": 1080,
-          "graphTargetBytes": 26956800,
           "width": 1920,
+          "graphTargetBytes": 26956800,
           "shadowBudgetBytes": 14746180,
           "sceneCaptureBytes": 41472000,
           "releaseBudgetAccountedBytes": 83174980
         },
         {
           "height": 1440,
-          "graphTargetBytes": 47923200,
           "width": 2560,
+          "graphTargetBytes": 47923200,
           "shadowBudgetBytes": 14746180,
           "sceneCaptureBytes": 73728000,
           "releaseBudgetAccountedBytes": 136397380
         },
         {
           "height": 2160,
-          "graphTargetBytes": 107827200,
           "width": 3840,
+          "graphTargetBytes": 107827200,
           "shadowBudgetBytes": 14746180,
           "sceneCaptureBytes": 165888000,
           "releaseBudgetAccountedBytes": 288461380
         }
+      ],
+      "name": "atmosphere-test-off",
+      "passes": [
+        "compose",
+        "bloom-seed",
+        "bloom-x",
+        "bloom-y",
+        "final"
       ]
     },
     {
       "overrides": {
         "HEIGHT_FOG": 1.0,
-        "FOG_STRENGTH": 0.0,
-        "FOG_HEIGHT": 128.0,
+        "SUNSET_GLOW": 1.0,
         "AO_QUALITY": 0.0,
-        "SUNSET_GLOW": 1.0
+        "FOG_HEIGHT": 128.0,
+        "FOG_STRENGTH": 0.0
       },
-      "passes": [
-        "compose",
-        "bloom-seed",
-        "bloom-x",
-        "bloom-y",
-        "final"
-      ],
-      "name": "atmosphere-test-raised",
       "allocations": [
         {
           "height": 720,
-          "graphTargetBytes": 11980800,
           "width": 1280,
+          "graphTargetBytes": 11980800,
           "shadowBudgetBytes": 14746180,
           "sceneCaptureBytes": 18432000,
           "releaseBudgetAccountedBytes": 45158980
         },
         {
           "height": 1080,
-          "graphTargetBytes": 26956800,
           "width": 1920,
+          "graphTargetBytes": 26956800,
           "shadowBudgetBytes": 14746180,
           "sceneCaptureBytes": 41472000,
           "releaseBudgetAccountedBytes": 83174980
         },
         {
           "height": 1440,
-          "graphTargetBytes": 47923200,
           "width": 2560,
+          "graphTargetBytes": 47923200,
           "shadowBudgetBytes": 14746180,
           "sceneCaptureBytes": 73728000,
           "releaseBudgetAccountedBytes": 136397380
         },
         {
           "height": 2160,
-          "graphTargetBytes": 107827200,
           "width": 3840,
+          "graphTargetBytes": 107827200,
           "shadowBudgetBytes": 14746180,
           "sceneCaptureBytes": 165888000,
           "releaseBudgetAccountedBytes": 288461380
         }
+      ],
+      "name": "atmosphere-test-raised",
+      "passes": [
+        "compose",
+        "bloom-seed",
+        "bloom-x",
+        "bloom-y",
+        "final"
+      ]
+    },
+    {
+      "overrides": {
+        "SHADOW_FILTER": 0.0
+      },
+      "allocations": [
+        {
+          "height": 720,
+          "width": 1280,
+          "graphTargetBytes": 12902400,
+          "shadowBudgetBytes": 14746180,
+          "sceneCaptureBytes": 18432000,
+          "releaseBudgetAccountedBytes": 46080580
+        },
+        {
+          "height": 1080,
+          "width": 1920,
+          "graphTargetBytes": 29030400,
+          "shadowBudgetBytes": 14746180,
+          "sceneCaptureBytes": 41472000,
+          "releaseBudgetAccountedBytes": 85248580
+        },
+        {
+          "height": 1440,
+          "width": 2560,
+          "graphTargetBytes": 51609600,
+          "shadowBudgetBytes": 14746180,
+          "sceneCaptureBytes": 73728000,
+          "releaseBudgetAccountedBytes": 140083780
+        },
+        {
+          "height": 2160,
+          "width": 3840,
+          "graphTargetBytes": 116121600,
+          "shadowBudgetBytes": 14746180,
+          "sceneCaptureBytes": 165888000,
+          "releaseBudgetAccountedBytes": 296755780
+        }
+      ],
+      "name": "shadow-native",
+      "passes": [
+        "contact-shadows",
+        "compose",
+        "bloom-seed",
+        "bloom-x",
+        "bloom-y",
+        "final"
+      ]
+    },
+    {
+      "overrides": {
+        "SHADOW_FILTER": 2.0
+      },
+      "allocations": [
+        {
+          "height": 720,
+          "width": 1280,
+          "graphTargetBytes": 12902400,
+          "shadowBudgetBytes": 14746180,
+          "sceneCaptureBytes": 18432000,
+          "releaseBudgetAccountedBytes": 46080580
+        },
+        {
+          "height": 1080,
+          "width": 1920,
+          "graphTargetBytes": 29030400,
+          "shadowBudgetBytes": 14746180,
+          "sceneCaptureBytes": 41472000,
+          "releaseBudgetAccountedBytes": 85248580
+        },
+        {
+          "height": 1440,
+          "width": 2560,
+          "graphTargetBytes": 51609600,
+          "shadowBudgetBytes": 14746180,
+          "sceneCaptureBytes": 73728000,
+          "releaseBudgetAccountedBytes": 140083780
+        },
+        {
+          "height": 2160,
+          "width": 3840,
+          "graphTargetBytes": 116121600,
+          "shadowBudgetBytes": 14746180,
+          "sceneCaptureBytes": 165888000,
+          "releaseBudgetAccountedBytes": 296755780
+        }
+      ],
+      "name": "shadow-smooth",
+      "passes": [
+        "contact-shadows",
+        "compose",
+        "bloom-seed",
+        "bloom-x",
+        "bloom-y",
+        "final"
+      ]
+    },
+    {
+      "overrides": {
+        "SHADOW_SOFTNESS": 0.0
+      },
+      "allocations": [
+        {
+          "height": 720,
+          "width": 1280,
+          "graphTargetBytes": 12902400,
+          "shadowBudgetBytes": 14746180,
+          "sceneCaptureBytes": 18432000,
+          "releaseBudgetAccountedBytes": 46080580
+        },
+        {
+          "height": 1080,
+          "width": 1920,
+          "graphTargetBytes": 29030400,
+          "shadowBudgetBytes": 14746180,
+          "sceneCaptureBytes": 41472000,
+          "releaseBudgetAccountedBytes": 85248580
+        },
+        {
+          "height": 1440,
+          "width": 2560,
+          "graphTargetBytes": 51609600,
+          "shadowBudgetBytes": 14746180,
+          "sceneCaptureBytes": 73728000,
+          "releaseBudgetAccountedBytes": 140083780
+        },
+        {
+          "height": 2160,
+          "width": 3840,
+          "graphTargetBytes": 116121600,
+          "shadowBudgetBytes": 14746180,
+          "sceneCaptureBytes": 165888000,
+          "releaseBudgetAccountedBytes": 296755780
+        }
+      ],
+      "name": "shadow-crisp",
+      "passes": [
+        "contact-shadows",
+        "compose",
+        "bloom-seed",
+        "bloom-x",
+        "bloom-y",
+        "final"
+      ]
+    },
+    {
+      "overrides": {
+        "SHADOW_FILTER": 2.0,
+        "SHADOW_SOFTNESS": 1.5
+      },
+      "allocations": [
+        {
+          "height": 720,
+          "width": 1280,
+          "graphTargetBytes": 12902400,
+          "shadowBudgetBytes": 14746180,
+          "sceneCaptureBytes": 18432000,
+          "releaseBudgetAccountedBytes": 46080580
+        },
+        {
+          "height": 1080,
+          "width": 1920,
+          "graphTargetBytes": 29030400,
+          "shadowBudgetBytes": 14746180,
+          "sceneCaptureBytes": 41472000,
+          "releaseBudgetAccountedBytes": 85248580
+        },
+        {
+          "height": 1440,
+          "width": 2560,
+          "graphTargetBytes": 51609600,
+          "shadowBudgetBytes": 14746180,
+          "sceneCaptureBytes": 73728000,
+          "releaseBudgetAccountedBytes": 140083780
+        },
+        {
+          "height": 2160,
+          "width": 3840,
+          "graphTargetBytes": 116121600,
+          "shadowBudgetBytes": 14746180,
+          "sceneCaptureBytes": 165888000,
+          "releaseBudgetAccountedBytes": 296755780
+        }
+      ],
+      "name": "shadow-softest",
+      "passes": [
+        "contact-shadows",
+        "compose",
+        "bloom-seed",
+        "bloom-x",
+        "bloom-y",
+        "final"
+      ]
+    },
+    {
+      "overrides": {
+        "SHADOW_STRENGTH": 0.0
+      },
+      "allocations": [
+        {
+          "height": 720,
+          "width": 1280,
+          "graphTargetBytes": 12902400,
+          "shadowBudgetBytes": 14746180,
+          "sceneCaptureBytes": 18432000,
+          "releaseBudgetAccountedBytes": 46080580
+        },
+        {
+          "height": 1080,
+          "width": 1920,
+          "graphTargetBytes": 29030400,
+          "shadowBudgetBytes": 14746180,
+          "sceneCaptureBytes": 41472000,
+          "releaseBudgetAccountedBytes": 85248580
+        },
+        {
+          "height": 1440,
+          "width": 2560,
+          "graphTargetBytes": 51609600,
+          "shadowBudgetBytes": 14746180,
+          "sceneCaptureBytes": 73728000,
+          "releaseBudgetAccountedBytes": 140083780
+        },
+        {
+          "height": 2160,
+          "width": 3840,
+          "graphTargetBytes": 116121600,
+          "shadowBudgetBytes": 14746180,
+          "sceneCaptureBytes": 165888000,
+          "releaseBudgetAccountedBytes": 296755780
+        }
+      ],
+      "name": "shadow-strength-zero",
+      "passes": [
+        "contact-shadows",
+        "compose",
+        "bloom-seed",
+        "bloom-x",
+        "bloom-y",
+        "final"
+      ]
+    },
+    {
+      "overrides": {
+        "SHADOW_STRENGTH": 0.5
+      },
+      "allocations": [
+        {
+          "height": 720,
+          "width": 1280,
+          "graphTargetBytes": 12902400,
+          "shadowBudgetBytes": 14746180,
+          "sceneCaptureBytes": 18432000,
+          "releaseBudgetAccountedBytes": 46080580
+        },
+        {
+          "height": 1080,
+          "width": 1920,
+          "graphTargetBytes": 29030400,
+          "shadowBudgetBytes": 14746180,
+          "sceneCaptureBytes": 41472000,
+          "releaseBudgetAccountedBytes": 85248580
+        },
+        {
+          "height": 1440,
+          "width": 2560,
+          "graphTargetBytes": 51609600,
+          "shadowBudgetBytes": 14746180,
+          "sceneCaptureBytes": 73728000,
+          "releaseBudgetAccountedBytes": 140083780
+        },
+        {
+          "height": 2160,
+          "width": 3840,
+          "graphTargetBytes": 116121600,
+          "shadowBudgetBytes": 14746180,
+          "sceneCaptureBytes": 165888000,
+          "releaseBudgetAccountedBytes": 296755780
+        }
+      ],
+      "name": "shadow-strength-half",
+      "passes": [
+        "contact-shadows",
+        "compose",
+        "bloom-seed",
+        "bloom-x",
+        "bloom-y",
+        "final"
       ]
     }
   ]

@@ -1,6 +1,6 @@
 # Provenance and license
 
-UN Aurora Lite 0.1.3 is licensed under **GPL-3.0-only**. See `LICENSE`.
+UN Aurora Lite 0.1.4 is licensed under **GPL-3.0-only**. See `LICENSE`.
 
 ## New work
 
@@ -18,8 +18,10 @@ by mravatin / the Sulkan contributors, under GPL-3.0-only.
 It is shared with the loader's shadow caster so wind deformation is consistent.
 
 `sulkan/frame.glsl`, `sulkan/shadows.glsl` and `sulkan/shadow-filter.glsl`
-are includes supplied at runtime by Sulkan. Their UBO declarations and shadow
-implementations are not replaced by this pack.
+are includes supplied unchanged at runtime by Sulkan. `shaders/shadows.glsl` wraps
+their coordinate, receiver-gradient, comparison and normal-offset helpers with this
+pack's weighted filtering and cascade blending. Its precision-bias formula follows
+the GPL-3.0-only release implementation; the loader UBO and sampler ABI are preserved.
 
 References:
 
